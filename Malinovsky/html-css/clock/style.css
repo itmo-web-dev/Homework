@@ -68,7 +68,7 @@ span {
     position: absolute;
     left: 50%;
     bottom: 50%;
-    animation: tick-tak 60s infinite linear;
+    animation: tick-tak 60s infinite steps(60, end);
     }
 .hour, .minute, .second {
     transform-origin: 1px 100%;
