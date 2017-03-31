@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="utf-8">
-    <title> HTML Reference</title>
+    <title> func: min_value test</title>
+    <script src="min_value.js"></script>
+    <script src="seasons.js"></script>
+    <script src="translit_number.js"></script>
 </head>
 <body>
     <header> 
+    <!-- Test for mimimum -->
+    <script>
+    var trace = false;
+    
+    var data_in = [10, 23, -1]; 
+    var min_rez = minimum(data_in);
+    console.assert( -1 == min_rez, "error input: ", data_in);
 
+    var data_in = [-66.9, 23, 100]; 
+    var min_rez = minimum(data_in);
+    console.assert( -66.9 == min_rez, "error input: ", data_in); 
+    
+    var data_in = []; 
+    var min_rez = minimum(data_in);
+    if(trace) console.log(min_rez);
+    console.assert( 'zero_length' == min_rez, "error input: "); 
+        
+    var data_in = ["p-66.9", 23, 100]; 
+    var min_rez = minimum(data_in);
+    if(trace) console.log(min_rez);
+    console.assert( "wrong_value" == min_rez, "error input: "); 
+    
+    var data_in = [-66000, 23, 100]; 
+    var min_rez = minimum(data_in);
+    if(trace) console.log(min_rez);
+    console.assert( -66000 == min_rez, "error input: ", data_in); 
+       
+    console.log(" tests - OK  ->   func: minimum ");
+    </script>
+    
+    <!-- Test for mimimum -->
+    <script>
+        var seasons = ["winter", "spring", "summer", "autumn"];
+        var year =[0,0,1,1,1,2,2,2,3,3,3,0]
+        var i, season;
+        for(i=1; i<13; i++){
+            season = get_season(i);
+            if(trace) console.log(season);
+            console.assert( seasons[year[i-1]] == season, "error output: ");
+        }
+        
+        season = get_season(13);
+        if(trace) console.log(min_rez);
+        console.assert( "NaN" == season, "error input: ", season); 
+        
+        season = get_season(-2);
+        if(trace) console.log(min_rez);
+        console.assert( "NaN" == season, "error input: ", season);
+
+        season = get_season("test");
+        if(trace) console.log(min_rez);
+        console.assert( "NaN" == season, "error input: ", season); 
+        
+        console.log(" tests - OK  ->   func: get_season(num) ");
+    </script>
+    
+    <!-- Test for translit -->
+    <script>
+    
+    </script>
+    
      </header>
     
     <article>
