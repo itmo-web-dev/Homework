@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title> func: min_value test</title>
+    <script type="text/javascript" src="translit_number.js"></script>
+   
+</head>
+<body>
+    <header> 
+    <!-- Test for translit -->
+    <script type="text/javascript">
+        var trace = false;
+        
+        var data_in = -1;
+        var min_rez = is_minus(data_in);
+        console.assert( true == min_rez, "error input: ", data_in);
+        
+        var data_in = 15;
+        var min_rez = is_minus(data_in);
+        console.assert( false == min_rez, "error input: ", data_in);
+        
+        var data_in = 0;
+        var min_rez = is_minus(data_in);
+        console.assert( "NaN" == min_rez, "error input: ", data_in);
+        
+        
+        console.log(" tests - OK  ->   func: is_minus")
+    </script>
+    
+     </header>
+    
+    <article>
+    </article>
+    
+    <footer>
+    </footer>
+</body>
+</html>
