@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  border: 0;
+  }
+
+  body{
+    font-size: 10px;
+  }
+  
+.dev_button {
+        width: 50rem;
+        height: 7.5rem;
+        font-family: Lato;
+        font-size: 6rem;
+        text-decoration: none;
+        font-color: #000;
+}
+.dev_button a{
+        font-size: 1.6rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-color: #000;
+}
+.interface{
+    text-align: center;
+    margin-top: 30vh;
+}
+.section_header {
+    background-image: url(first_page_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;  
+    height: 100wh;
+}

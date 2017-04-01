@@ -1,0 +1,36 @@
+[GeekBrains] HTML_CSS. Основы создания сайтов - 2015\
+Design and Build Scroll-Based CSS Animations\
+Digital Tutors - Introduction to jQuery for Designers\
+DigitalTutors Mastering CSS Animations Tutorial\
+GIT и Composer для начинающих\
+GoIT - Онлайн курсы HTML CSS JavaScript\
+ITVDN JavaScript Patterns\
+ITVDN Создание адаптивного сайта с Bootstrap 3\
+JavaScript Best Practices\
+Javascript Build Automation with Gulp.js\
+Javascript Module Fundamentals\
+JavaScript Testing With Jasmine\
+JavaScript с самого начала. Видеокурс (2016)\
+JavaScript-разработка. Создаем интерактивные веб-страницы\
+jQuery\
+jQuery and JavaScript in Drupal Series\
+jQueryAir2\
+js\
+Lynda - CSS - Animation\
+Lynda - CSS Grid - First Look\
+Lynda - Debugging the Web - JavaScript\
+Lynda - Design the Web - Creating CSS-Only Navigation Menus\
+Lynda - Design the Web - CSS Animated Rollovers\
+Lynda - Design the Web Getting CSS from Photoshop\
+Lynda - Design the Web SVG Rollovers with CSS\
+Lynda - jQuery Essential Training (2016)\
+Lynda - jQuery for Web Designers (Updated 2016)\
+Lynda - Test-Driven Development in PHP with PHPUnit\
+Lynda. CSS. Selectors\
+Lynda. Customizing Bootstrap 3 with LESS\
+Lynda. Design the Web. Pie Charts with CSS\
+Lynda.com - Bootstrap 3 Добавь интерактивности на свой сайт 2014 RU\
+Lynda.com - JavaScript Essential. Основной курс (2011)\
+Lynda.com - JavaScript Events. События JavaScript (2013)\
+Lynda.com - jQuery Essential Training (2013 RUS)\
+System Volume Information\

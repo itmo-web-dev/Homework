@@ -12,23 +12,22 @@
 особый вариант 0
 */
 
-function is_minus(num):
-   if(num > 0){
-        return false;
-   }
-   else{
-        return true;
+console.log("in side: translit_number.js");
+
+function is_minus(num){
+    if(num ==0)
+        return "NaN";
+    return (num > 0)? false: true;
    }
    
-function translit(num):
-   {
+function translit(num){
     var znak = ["отрицательное","положительное"];
     var zero_text = "нулевое число";
     var rez_value="";
     
     if (num == 0){ return zero_text;}
     
-    if is_minus(num){
+    if(is_minus(num)){
         rez_value += znak[0];
     }else{
         rez_value += znak[1];

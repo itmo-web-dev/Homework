@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> test dialog boxs</title>
+    <link href="assets/style.css" rel="stylesheet">
+    <link href="assets/bootstrap.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <script language="JavaScript">
+        function openWindow(url){
+             msgWindow = open(url)
+             }
+    </script>
+    <style>
+        button a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <section class="section_header">
+        <div class="container">
+            <header class="interface col-lg-4 col-lg-offset-4 centered"> <!-- mt -->
+                <h1> ITMO WEB DEV </h1>
+            </header>
+          
+            <div class="col-lg-4 col-lg-offset-5 centered">
+                <form>
+                   <input type="button"  class="dev_button btn btn-default" value="открыть главную страницу через js" onClick="openWindow('index.html')">
+                   <button type="button" class="dev_button btn btn-default"">
+                         <a href="index_href.html" target="_blank"> открыть главную страницу через html </a>
+                   </button>
+                   <button type="button" class="dev_button btn btn-default" onClick="openWindow('index.html')" >
+                         <a href="index_href.html" target="_blank"> если заблокирован javascript откроется страница </a>
+                   </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

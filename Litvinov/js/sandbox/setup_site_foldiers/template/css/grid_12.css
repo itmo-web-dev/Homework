@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    font: "Arial";
+}
+
+.container{
+    width: 192px;
+    margin: auto;
+}
+
+.row {
+    width: 100%;
+    float: left;
+    text-align: justify;
+}
+
+//[160.0, 320.0, 480.0, 640.0, 800.0, 960.0, 1120.0, 1280.0, 1440.0, 1600.0, 1760.0]
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11 {float: left;}
+.col-1{width: 8.33333%; }
+.col-2{width: 16.6667%; }
+.col-3{width: 25.0%; }
+.col-4{width: 33.3333%; }
+.col-5{width: 41.6667%; }
+.col-6{width: 50.0%; }
+.col-7{width: 58.3333%; }
+.col-8{width: 66.6667%; }
+.col-9{width: 75.0%; }
+.col-10{width: 83.3333%; }
+.col-11{width: 91.6667%; }
+.offset-1{margin-left: 8.33333%; }
+.offset-2{margin-left: 16.6667%; }
+.offset-3{margin-left: 25.0%; }
+.offset-4{margin-left: 33.3333%; }
+.offset-5{margin-left: 41.6667%; }
+.offset-6{margin-left: 50.0%; }
+.offset-7{margin-left: 58.3333%; }
+.offset-8{margin-left: 66.6667%; }
+.offset-9{margin-left: 75.0%; }
+.offset-10{margin-left: 83.3333%; }
+.offset-11{margin-left: 91.6667%; }
