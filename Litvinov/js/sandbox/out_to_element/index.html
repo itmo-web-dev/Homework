@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!--
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    -->
+    <meta charset="utf-8">
+    <title> HTML Reference</title>
+    
+</head>
+<body>
+    <h1> Out section </h1>
+    <p id="output"></p>
+    
+    <h2> print function </h2>
+    <p id="prn_func"></p>
+    
+    <button onclick="getElementById('event').innerHTML=Date()"> Проверить время</button>
+    <p id="event"><hr></p>
+    
+    <p id=find>     Please check out in the string where 'check' occurs! </p>
+    <button onclick="use_indexOf()">Click here</button>
+    <p id="findstr"><hr></p>
+    <button onclick="use_search()">Click here</button>
+    <p id="find_search"><hr></p>
+
+    <p> The slice() method </p>
+    <p id="slice"><hr></p>
+    
+    <p> The substring() method </p>
+    <p id="substring"><hr></p>
+
+    <p> The substr() method  второй параметр длинна в символах</p>
+    <p id="substr"><hr></p>
+
+    <p> The relpace() method заменяет строку Hello на строку Hi</p>
+    <button onclick="use_replace()">Try it</button>
+    <p id="relpace">Please visit Hello <hr></p>
+
+    <p> The upper_case() method заменяет буквы на строяные или прописные</p>
+    <button onclick="use_uppercase('upper')">uppercase</button>
+    <button onclick="use_uppercase('low')">uppercase</button>
+    <p id="case">Please visit Hello <hr></p>
+
+    
+
+    
+    <script type="text/javascript" src="js_output.js"></script>
+</body>
+</html>
