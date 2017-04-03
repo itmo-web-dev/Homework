@@ -1,0 +1,25 @@
+body {
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+}
+
+.div_ex{
+	width: 400px;
+	height: 400px;
+	background-color: #ff0000;
+	margin: 40px;
+}
+
+.ex_img{
+    width: 100%;
+}
+
+.mb30{
+	margin-bottom: 30px;
+}
+
+.p0{
+	padding: 0;
+}
