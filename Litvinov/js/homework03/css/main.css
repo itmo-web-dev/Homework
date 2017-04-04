@@ -1,0 +1,19 @@
+body {
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+}
+
+.task1 {
+    margin-top: 100px;
+}
+
+#span1{
+    margin-left: 0;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 24px;
+}
