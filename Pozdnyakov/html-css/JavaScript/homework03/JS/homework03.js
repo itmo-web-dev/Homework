@@ -25,11 +25,16 @@ function calendar() {
     
 //2. Написать функцию подсчета суммы от n до m
     
-function numSumn(n, m) {
+function numSumn(n, m) { 
     if (n === m) return m;
+    if (n > m) {
     return n + numSumn((n - 1), m);
+    } else {
+    return n + numSumn((n + 1), m);    
+    }
 }    
-//console.log(numSumn(10, 7));
+
+console.log(numSumn(5, 9));
     
     
 //3. Написать функцию factorial(n), которая возвращает факториал числа n, использовать рекурсию!
@@ -81,111 +86,111 @@ function myRandom() {
 } 
 
 var count =  myRandom();   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());
-console.log(count());   
-console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());
+//console.log(count());   
+//console.log(count());
 
+//console.log(arr.length + ' длина массива');
     
-console.log(arr.length + ' длина массива');
-
 } ());
+
 
     
     
