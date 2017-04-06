@@ -9,6 +9,10 @@ body {
     margin-top: 100px;
 }
 
+.task2 {
+    margin-top: 50px;
+}
+
 #span1{
     margin-left: 0;
     font-size: 18px;
@@ -16,4 +20,11 @@ body {
 
 h1 {
     font-size: 24px;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px;
 }

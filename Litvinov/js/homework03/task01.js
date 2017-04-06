@@ -32,7 +32,11 @@ function verbal_day(num){
                 day_name = future[2];
                 break;
     }
-       
+    // числительные оканчивающиеся на 1(21 день, 31 день )
+    var n = num.toString();
+    if (n[n.length-1] == "1")
+        day_name = future[0];
+    
     if (num == 0){
         return now;
     }else if (num == -1){
