@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+    <title>Homework 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/media.css" />
+</head>
+
+<body>
+	<div class="container">
+	    <div class="row">
+            <div class="col-lg-2 col-lg-offset-5 task1">
+                <h1>Введите число:<br> <span id="span1"></span></h1>   
+                <form name="form1"> 
+                   <input type="text" id="number" onkeyup="verbal_day_ui();">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5 task2 ">
+                <h1>Использование каррирования:<br><tr></h1>   
+                <p id="font32">Font size </p>
+                <p id="font16">Font size </p>
+                <p id="font8">Font size </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5" id="table_values">
+                <h1> Заполнение случайными числами таблицы:
+                <table id="myTable"></table>
+       
+            </div>
+        </div>
+	</div>
+	
+    
+    <script type="text/javascript" src="task01.js"></script>
+    <script type="text/javascript" src="task02.js"></script>
+    <script type="text/javascript" src="task03.js"></script>
+    <script type="text/javascript" src="task04_curry.js"></script>
+    <script type="text/javascript" src="task05.js"></script>
+	<script src="libs/jquery/jquery-2.1.4.min.js"></script>
+	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="js/common.js"></script>
+	
+</body>
+</html>
