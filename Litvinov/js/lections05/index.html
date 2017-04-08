@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+    <title>Homework 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+    <script>
+    var objHuman = {
+        name:"Иван",
+        lastname:'',
+        foto:'',
+        age: 21,
+        email: "@",
+        home_city: ""
+        };
+    for (property in objHuman){
+        var line = "свойство: "+property+ " содержит: "+ objHuman[property] +"<br>";
+        console.log(line);
+        document.writeln(line);
+        // document.writeElement(line);
+    };
+    
+    var objSlider = {
+        id: "color solider",
+        container: "200px:400px",
+        slider:  ["red", "green", "blue"]
+    };
+    for(var prop in objSlider){
+        var str1 = typeof(prop)+" "+prop+" "+ typeof(objSlider[prop]);
+        document.writeln(str1+"<br>")
+        if(typeof(objSlider[prop]) == "object"){
+            for(var sub in objSlider[prop]){
+                document.writeln("--"+objSlider[prop][sub]+"<br>")
+            }
+       };
+        
+        console.log(str1);
+        document.writeln(str1+"<br>");
+    };
+    // TODO ошибка инициализации
+    /*
+    var menu = {
+        name: "Мое меню",
+        item: {
+            name: "",
+            url: ".html"
+        };
+    };*/
+    var a ={
+        name: "",
+        age: 2,
+        print: function(){
+            console.log("this "+this.age);
+        }
+    }
+    a.print()
+        
+    </script>
+	
+    <script type="text/javascript" src="task.js"></script>
+</body>
+</html>
