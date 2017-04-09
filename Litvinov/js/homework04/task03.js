@@ -16,11 +16,11 @@ function is_eng_letter(password){
 }
 
 function is_more_two_digits(password){
-    var match = password.match(/(\d)/img);
+    var match = password.match(/\d/img);
     return (match != null)&&(match.length > 2);
     }
 function is_one_not_alphabet_symbol(password){
-    var match = password.match(/(\W)/img);
+    var match = password.match(/\W/img);
     return (match != null)&&(match.length<2);
     }
 
