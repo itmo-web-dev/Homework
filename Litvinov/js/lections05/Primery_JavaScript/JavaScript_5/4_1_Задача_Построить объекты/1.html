@@ -1,0 +1,117 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+	//Задача построить объекты человек, окно, слайдер, меню
+	
+	var objHuman = {
+		name: "Ivan",
+		lastname: "Ivanov",
+		age: 30,
+		sex: "male",
+		login: "ivan",
+		password: "*****",
+		email: "avan@mail.ru",
+		dateBirtday: new Date(1985, 05, 11)
+	};
+	
+	console.log("Объект человек:");
+	for (var key in objHuman)
+	{
+		console.log("Свойство " + key + " содержит " + objHuman[key]);
+	}
+	
+	var objWindow = {
+		height: 1500,
+		width: 2000,
+		backGroundColor: "orange",
+		title: "Новое окно!!!",
+		charset: "utf-8"
+	}
+	
+	console.log("\nОбъект окно:");
+	for (var key in objWindow)
+	{
+		console.log("Свойство " + key + " содержит " + objWindow[key]);
+	}
+	
+	var objSlide = {
+		name: "Цветовой слайдер",
+		height: 1500,
+		width: 2000,
+		slides: [
+			{
+				name: "Слайд 1",
+				color: "green"
+			},
+			{
+				name: "Слайд 2",
+				color: "red"
+			},
+			{
+				name: "Слайд 3",
+				color: "blue"
+			}
+		]	
+	}
+	
+	console.log("\nОбъект слайдер:");
+	for (var key in objSlide)
+	{
+		if (typeof objSlide[key] == "object" && objSlide[key].length > 0)
+		{
+			console.log("Свойство " + key + " содержит массив из " + objSlide[key].length + " элементов");
+			for (var i = 0; i < objSlide[key].length; i++)
+			{
+				console.log("Элемент №" + i + " содержит следующие свойства:");
+				for(var j in objSlide[key][i])
+				{
+					console.log("Свойство " + j + " содержит " + objSlide[key][i][j]);
+				}
+			}
+		} else {
+			console.log("Свойство " + key + " содержит " + objSlide[key]);
+		}
+	}
+	
+	var objMenu = {
+		name: "Основное меню",
+		style: "orange",
+		menuItams:[
+			{ 
+				name:"О компании",
+				url: "http://www.exampl.ru/about"
+			},
+			{ 
+				name:"Цены",
+				url: "http://www.exampl.ru/price"
+			},
+			{ 
+				name:"Контакты",
+				url: "http://www.exampl.ru/contact"
+			}
+		]	
+	}
+	
+	console.log("\nОбъект меню:");
+	for (var key in objMenu)
+	{
+		if (typeof objMenu[key] == "object" && objMenu[key].length > 0)
+		{
+			console.log("Свойство " + key + " содержит массив из " + objMenu[key].length + " элементов");
+			for (var i = 0; i < objMenu[key].length; i++)
+			{
+				console.log("Элемент №" + i + " содержит следующие свойства:");
+				for(var j in objMenu[key][i])
+				{
+					console.log("Свойство " + j + " содержит " + objMenu[key][i][j]);
+				}
+			}
+		} else {
+			console.log("Свойство " + key + " содержит " + objMenu[key]);
+		}
+	}
+</script>
+</body>
+<footer></footer>
+</html>

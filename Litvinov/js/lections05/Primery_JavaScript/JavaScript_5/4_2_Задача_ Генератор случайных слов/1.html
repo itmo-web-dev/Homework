@@ -1,0 +1,44 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+	//Задача Написать генератор случайных слов от 3 до 5 букв в правилах грамматики русского языка
+	
+	//Словарь гласных букв
+	var vowels = ["а", "у", "о", "ы", "и", "э", "я", "ю", "е", "ё"];
+	//Словарь согласных букв
+	var consonants = ["б", "в", "г", "д", "ж", "з", "й", "к", "л", "м", "н", "п", "р", "с", "т", "ф", "х", "ц", "ч", "ш", "щ"];
+	
+	//Генерируем количество букв
+	var countChar = Math.floor(Math.random()*3) + 3;
+	
+	//Переменная для хранения сгенерированного слова
+	var randomWord = "";
+	
+	//Переменная флаг, если true то добавляем случайную гласную, если false согласную
+	var flag = false;
+	//Вспомогательная переменная для хранения индекса случайной буквы из словаря
+	var tempIndex;
+	
+	for(var i = 0; i < countChar; i++)
+	{
+		if (flag){
+			//Получаем случайный индекс в массивe vowels 
+			tempIndex = Math.floor(Math.random()* vowels.length);
+			console.log(tempIndex);
+			randomWord = randomWord + vowels[tempIndex];
+			flag = false;
+		} else {
+			//Получаем случайный индекс в массивe consonants 
+			tempIndex = Math.floor(Math.random()*consonants.length);
+			console.log(tempIndex);
+			randomWord = randomWord + consonants[tempIndex];
+			flag = true;
+		}	
+	}	
+	
+	console.log(randomWord);
+</script>
+</body>
+<footer></footer>
+</html>
