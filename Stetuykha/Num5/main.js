@@ -41,9 +41,15 @@ function sortir(arr)
 позволяет сформировать и вернуть новый массив, в который 
 вошли все отрицательные элементы исходного массива.*/
 var massive = [2, 3, 54, 2, -2, -53];
-var result = filter(massive);
+var result = filter(massive, predikat);
 console.log(result);
+function predikat(value){return (value < 0)};
 function filter(array, predikat)
 {
-	
+	var inProg = [];
+	for(var num of array)
+	{
+		if (predikat(num)) inProg = inProg.concat(num);
+	}
+	return inProg;
 };
