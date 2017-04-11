@@ -1,10 +1,15 @@
 'use strict';
 
-var a = parseInt(prompt('Выберите наименьшее число 2, 6, 8'));
-    
-    if (a == 2) {
-        console.log ('Верно');    
-    }
-    else if (a != 2) {
-        console.log ('Не верно, введите еще раз');
-    }
+var a, b, c;
+a = parseInt (prompt('Введите первое число'));
+b = parseInt (prompt('Введите второе число'));
+c = parseInt (prompt('Введите третье число'));
+
+if ((a < b) && (a < c)) {
+    alert ('Наименьшее число: ' + a);
+} else if ((b < a) && (b < c)){
+    alert ('Наименьшее число: ' + b);
+} else if ((c < a) && (c < b)) {
+    alert ('Наименьшее число: ' + c);
+}
+   

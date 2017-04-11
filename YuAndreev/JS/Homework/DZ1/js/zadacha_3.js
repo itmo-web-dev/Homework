@@ -3,43 +3,43 @@
 var a = parseInt(prompt('Введите число от 0 до 9'));
 
     switch (a) {
-        case '0':
+        case 0:
             document.write ('ноль');
         break;
         
-        case '1':
+        case 1:
             document.write ('один');
         break;
         
-        case '2':
+        case 2:
             document.write ('два');
         break;
         
-        case '3':
+        case 3:
             document.write ('три');
         break;
         
-        case '4':
+        case 4:
             document.write ('четыре');
         break;
         
-        case '5':
+        case 5:
             document.write ('пять');
             break;
             
-        case '6':
+        case 6:
             document.write ('шесть');
             break;
             
-        case '7':
+        case 7:
             document.write ('семь');
             break;
             
-        case '8':
+        case 8:
             document.write ('восемь');
             break;
             
-        case '9':
+        case 9:
             document.write ('девять');
             break;
             
