@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+    <title>Homework 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="main.css" />
+	<script type="text/javascript" src="js/plotly-latest.min.js"> </script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div id="tester" style="width:600px;height:250px;"></div>
+    <div id="plot" style="width:480px; hight:400px"> </div>
+    <div id="myDiv" style="width:480px; hight:400px"> </div>
+    <div id="myDiv1" style="width:480px; hight:400px"> </div>
+    <table id="myTable"></table>
+       
+    <script>
+    TESTER = document.getElementById('tester');
+	Plotly.plot( TESTER, [{
+	x: [1, 2, 3, 4, 5],
+	y: [1, 2, 4, 8, 16] }], {
+	margin: { t: 0 } } );
+           
+        var line1 = {
+            x:[10, 20, 30, 40],
+            y:[10, 30, 40, 54],
+            type: "scatter"
+        }
+        var data = [line1];
+        
+        Plotly.newPlot("plot", data);
+        
+        
+        var data = [
+          {
+            z: [[1, 20, 30], [20, 1, 60], [30, 60, 1]],
+            type: 'heatmap'
+          }
+        ];
+
+        Plotly.newPlot('myDiv', data);
+
+        var data = [
+          {
+            z: [[1, 20, 30, 50, 1], [20, 1, 60, 80, 30], [30, 60, 1, -10, 20]],
+            x: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            y: ['Morning', 'Afternoon', 'Evening'],
+            type: 'heatmap'
+          }
+        ];
+
+        Plotly.newPlot('myDiv1', data);
+        
+        
+        
+        
+        
+        
+    </script>
+	
+    <script type="text/javascript" src="task.js"></script>
+    <script type="text/javascript" src="task05.js"></script>
+    <script type="text/javascript" src="table_game.js"></script>
+    </body>
+</html>
