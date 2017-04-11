@@ -67,16 +67,30 @@ var random_int = function(min, max) {
 dictionary.load(data);
 dictionary.info();
 // console.log(dictionary.get_alphabet());
-var word=[], word_length_max, total_word = 0, max_count, count=15;
+/* слова чередуются случайном порядке от 4 до 8,
+   среднее значение >5.5 min_diapozon =3 max_d=8
+   middle_value < 5.5.  min_d=4 max_d=9 
+   на выборке из 1500 слов коэф ~5.5 */
+var word=[], word_length_max, total_word = 0, max_count, count=1500;
+var min_d=4, max_d=8, middle_value=5.5;
 max_count = count;
 while(count--){
-    word_length_max = random_int(4, 8);
+    word_length_max = random_int(min_d, max_d);
     for(var i=0; i< word_length_max; i++){
         word.push(dictionary.get_random_letter());
         }
     console.log(word.join(""));
     word.length = 0;
     total_word += word_length_max;
+    
+    middle_value = total_word/(max_count-count);
+    if(middle_value > 5.5){
+        min_d=1, max_d=7;
+    }else{
+        min_d=4, max_d=10;
+    }
     // console.log("срелнее кол-во букв в слове: ", total_word/(10-count));
 }
 console.log("срелнее кол-во букв в слове: ", total_word/max_count);
+
+//TODO: на большом произведении получить список слов в 1 2 3 4 символа наиболее часто употребляемых 
