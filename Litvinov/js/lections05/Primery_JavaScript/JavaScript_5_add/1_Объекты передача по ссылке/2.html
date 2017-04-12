@@ -1,0 +1,24 @@
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+	//Пример кдонирование простого объекта
+	var user1 = {
+		name: "Саша",
+		age: 20
+	};
+	
+	var user2 = {};
+	
+	for(var key in user1)
+	{
+		user2[key] = user1[key];
+	}
+	
+	user2.name = "Маша";
+	
+	console.log(user1.name);	
+</script>
+</body>
+<footer></footer>
+</html>
