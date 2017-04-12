@@ -1,4 +1,69 @@
-'use strict';
+;(function(){
+    'use strict';
+    var graphX = [];
+    for (var x = -5; x += 0.01;)
+    {
+        if (x < 5)
+        {
+            graphX.push(x);
+        } else break;
+    };
+    function output()
+    {
+        var hraphY = [];
+        for (var i = 0; i < graphX.length; i++)
+        {
+            if (graphX[i] < 1)
+            {
+                hraphY.push(graphX[i] * graphX[i] - 4 * graphX[i])
+            } else if (graphX[i] >= 1) 
+                {
+                    hraphY.push(graphX[i] * graphX[i] - 4 * graphX[i])
+                }
+        };
+    return hraphY;
+    };
+    window.line1 = 
+    {
+        y: output(),
+        x: graphX,
+        type: 'scatter'
+    };
+/*-----------------------------------------------------------------------------------*/
+var arr = [1, null, 1, null, 1, null, 0, 0, null];
+function decode(a) {
+          if (a === 1) {
+              return 'X';
+          } else if (a === 0) {
+              return '0';
+          } else return null;
+        }; 
+function elementIndex (i, j) {
+            if (i === 0 && j ===0) return 0;
+            if (i === 0 && j ===1) return 1;
+            if (i === 0 && j ===2) return 2;
+            if (i === 1 && j ===0) return 3;
+            if (i === 1 && j ===1) return 4;
+            if (i === 1 && j ===2) return 5;
+            if (i === 2 && j ===0) return 6;
+            if (i === 2 && j ===1) return 7;
+            if (i === 2 && j ===2) return 8;
+        };    
+window.X0 = function () {
+        var str = '<table><tbody>';
+        for (var i = 0; i < 3; i++) {
+            str = str + '<tr>';
+            for (var j = 0; j < 3; j++) {
+                str = str + '<td>' + decode(arr[elementIndex(i, j)]) + '</td>';
+            };
+            str = str + '</tr>';
+        };
+
+        str = str + '</tbody></table>';
+        return str;
+
+    };
+/*--------------------------------------------------------------------------------------*/
 function cesar(string, crypt)
 {
     var upperC = 
@@ -27,3 +92,4 @@ function cesar(string, crypt)
     return joinedStr;
 }
 console.log(cesar('Привет', 4));
+}());
