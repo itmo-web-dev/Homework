@@ -1,0 +1,59 @@
+<!--
+1 Подключить стороннюю библиотеку для построения графиков.
+Построить график функции y = f(x):
+y = 5/x, при x>=1;
+y = x*x – 4*x, при x<1.
+Шаг варьирования x равен 0.01 и интервал варьирования -5 ? x ? 5.
+Расчёт функции y = f(x) реализовать в виде отдельной функции.
+
+К сожалению, не удалось реализовать шаг варьирования: просто изменить шаг в цикле не получается.
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="RU">
+<head>
+    <meta charset="UTF-8">
+    <title>"HomeDZ1"</title>
+   <script type="text/javascript"></script>
+    <script src="plotly-latest.min.js"></script>
+    <div id = "placeholder" style="width: 480px; height: 400px;"></div>
+    <script>
+    
+    var x = []
+   
+    for (i=-5.00; i<5.00; i++) {
+        x.push(i)
+    }
+    console.log(x)
+    
+    function raschety(){
+        var y = [];
+        for (var i=0; i<x.length; i++) {
+            if (x[i]<1) {
+                y1 = ((x[i]*x[i]) - (4*x[i]));
+            } else {
+                y1 = (5/x[i]);
+            } y.push(y1)
+            
+        } 
+        return y;
+    }
+        
+    var line1 = {
+        x:x,
+        y:raschety(),
+        type:"scatter"
+        
+    };
+    
+        var data = [line1];
+        Plotly.newPlot("placeholder", data);
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
