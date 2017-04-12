@@ -35,7 +35,7 @@ console.log(b2);
 console.log(c2);
 
 
-if (a2 === c2+b2) {
+if (a2 === c2+b2 || b2 === a2+c2 || c2 === a2+b2) {
     console.log('треугольник прямоугольный')
 } else {
     console.log('треугольник не прямоугольный')

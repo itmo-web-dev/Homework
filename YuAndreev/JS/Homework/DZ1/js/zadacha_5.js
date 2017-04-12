@@ -7,7 +7,7 @@ var a, b, c;
 a = parseInt (prompt('Ведите первое число'));
 b = parseInt (prompt('Ведите  второе число'));
 c = parseInt (prompt('Ведите  третье число'));
-    if ((a === b || a === c || b === c)) {
+    if (a === b || a === c || b === c) {
         alert ('true');
     } else {
         alert ('false');
