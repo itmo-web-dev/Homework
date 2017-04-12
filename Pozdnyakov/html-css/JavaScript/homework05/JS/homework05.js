@@ -20,7 +20,11 @@ console.log('Задачки');
             'Музыка',
             'Велосипед'
                     ],
-        studyPlace: 'СПБГУ'
+        studyPlace: 'СПБГУ',
+        studentInfo: function() {
+    return console.log(objStudent.name + ' ' + objStudent.lastname + '. ' + years(objStudent.age) + '. ' + 'Интересы: ' + objStudent.interests + '. ' + 'Учится в ' + objStudent.studyPlace + '.')
+}
+        
     };
 
 
@@ -39,12 +43,7 @@ function years() {
     }
 }    
     
-
-function studentInfo() {
-    return console.log(objStudent.name + ' ' + objStudent.lastname + '. ' + years(objStudent.age) + '. ' + 'Интересы: ' + objStudent.interests + '. ' + 'Учится в ' + objStudent.studyPlace + '.')
-}
-
-studentInfo(); 
+console.log(objStudent.studentInfo());
     
     
 //Массивы, циклы, условия:
