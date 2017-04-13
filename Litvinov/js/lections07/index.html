@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+    <title>Homework 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<script type="text/javascript" src="math_sd.js"></script>
+	<style>
+   .round {
+    border-radius: 300px; /* Радиус скругления */
+    border: 3px solid green; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+    width: 100px;
+    height: 100px;
+   }
+    .red { background-color: red;}
+    .yellow { background-color: yellow;}
+    .green { background-color: green;}
+    .zero {background-color: gray;}
+        
+    </style>
+</head>
+<body>
+    
+       
+    <script>
+     /* 
+     тип узла  
+     1 - элементы 
+     3 - текст
+     7 - инструкция 
+     можно было добраться до  элемента id 
+     node - только узлы 
+     
+     Шаблоны вызова - вызвать свойства или посмотреть элементы 
+     методы получения узла
+     Id 
+     TagName  возвращают коллекцию и надо ее искать 
+     
+     установка значений атрибутов 
+     TagName('p')
+     tagName.hasAttribute('id')
+     tagName.setAttribute("id", "li")
+     removeAttribute
+     tagP.attributes
+     tagP.ClassList.add('colo') - классы стилей 
+     tagP.ClassList.remove('colo') - удаление классы стилей
+     кидать классы минячть цвета 
+     tagP.style.width='100px';
+     точечный массаж не могу обратиться к таблице стилей - только с конкретным элементом а его стили на дочение элементы 
+     
+     
+    В ставка в DOM
+        document.write - если ошибка то он вставит только текст
+        
+    parent.innerHTML - прощает некоторые ошибки
+    document crateElement("div")
+    appendChild
+    insertBefore - перед
+    insertAfter - - после 
+    
+    var s = document.createElement('a')
+    a.innerHTML = "fsdfsdfg";
+    tagP.appendChiled("a") - в объект p вставить a
+    
+    parent.delete
+     */
+    </script>
+    <button onclick="myFunction()">add li element</button>
+    <button onclick="lst_elements()">add for li</button>
+    
+    <div>
+        <ul id="myList">
+          <li>Coffee</li>
+          <li>Tea</li>
+        </ul>
+        <ul id="for_list">
+        </ul>
+    </div>
+    
+    <div class="round red" id="red">
+    </div>
+    <div class="round yellow" id="yellow">
+             
+    </div>
+    <div class="round green" id="green">
+                
+    </div>
+    
+    <script type="text/javascript" src="main.js"></script>
+    
+	 </body>
+</html>
