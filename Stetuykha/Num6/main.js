@@ -1,27 +1,21 @@
 ;(function(){
     'use strict';
     var graphX = [];
-    for (var x = -5; x += 0.01;)
+    for (var x = -5; x <= 5; x += 0.01)
     {
-        if (x < 5)
-        {
-            graphX.push(x);
-        } else break;
+        graphX.push(x)
     };
     function output()
     {
-        var hraphY = [];
+        var graphY = [];
         for (var i = 0; i < graphX.length; i++)
         {
-            if (graphX[i] < 1)
+            if (graphX[i] < 1 || graphX[i] >= 1)
             {
-                hraphY.push(graphX[i] * graphX[i] - 4 * graphX[i])
-            } else if (graphX[i] >= 1) 
-                {
-                    hraphY.push(graphX[i] * graphX[i] - 4 * graphX[i])
-                }
+                graphY.push(graphX[i] * graphX[i] - 4 * graphX[i])
+            } 
         };
-    return hraphY;
+    return graphY;
     };
     window.line1 = 
     {
@@ -54,7 +48,7 @@ window.X0 = function () {
         for (var i = 0; i < 3; i++) {
             str = str + '<tr>';
             for (var j = 0; j < 3; j++) {
-                str = str + '<td>' + decode(arr[elementIndex(i, j)]) + '</td>';
+                str = str + '<td>' + decode(arr[i*3+j]) + '</td>';
             };
             str = str + '</tr>';
         };
