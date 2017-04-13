@@ -10,10 +10,13 @@
         var graphY = [];
         for (var i = 0; i < graphX.length; i++)
         {
-            if (graphX[i] < 1 || graphX[i] >= 1)
+            if (graphX[i] < 1)
             {
                 graphY.push(graphX[i] * graphX[i] - 4 * graphX[i])
-            } 
+            } else if (graphX[i] >= 1) 
+            {
+                graphY.push(5 / graphX[i])
+            }
         };
     return graphY;
     };
