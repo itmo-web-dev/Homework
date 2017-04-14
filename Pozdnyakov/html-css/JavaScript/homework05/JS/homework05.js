@@ -22,7 +22,7 @@ console.log('Задачки');
                     ],
         studyPlace: 'СПБГУ',
         studentInfo: function() {
-    return console.log(objStudent.name + ' ' + objStudent.lastname + '. ' + years(objStudent.age) + '. ' + 'Интересы: ' + objStudent.interests + '. ' + 'Учится в ' + objStudent.studyPlace + '.')
+    return console.log(this.name + ' ' + this.lastname + '. ' + years(this.age) + '. ' + 'Интересы: ' + this.interests + '. ' + 'Учится в ' + this.studyPlace + '.')
 }
         
     };
