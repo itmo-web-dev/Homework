@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+	min-width: 350px;
+	position: relative;
+    width: 100%;
+     background:  url("../img/286_0204.jpg") repeat;
+    background-repeat: repeat;
+    
+}
+
+.message {
+    text-align: center;
+    font-family: "Patience", sans-serif;
+    font-size: 200px;
+    margin-top: -25px;
+    font-kerning: 50px;
+    font-weight: 400;
+    color: #29497F;
+    opacity: 0.85;
+    width: 100%;
+}
+
+.size_text{
+    font-size: 75px;
+}
+
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    height: 100%;
+    }
+
+.round {
+    border-radius: 300px; /* Радиус скругления */
+    box-shadow: 0 0 0 3px #007A7A, 0 0 20px #333; /* Параметры теней */
+    width: 300px;
+    height: 300px;
+   }
+.btn_photo01 {
+  background: url("../img/01_maage00023_low.jpg") center center no-repeat;
+  opacity: 0.87;
+}
+.btn_photo02 {
+  background: url("../img/02_Imaage00005_tn_low.jpg") center center no-repeat;
+  opacity: 0.87;
+}
+.btn_photo03 {
+  background: url("../img/03_DSC02836w_tn_low.jpg") center center no-repeat;
+  opacity: 0.87;
+}
+
+button, 
+button:active, 
+button:focus {
+    outline: none;
+}
+
+.obj_window{
+    position: absolute;
+    color: rebeccapurple;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+
+.main_window{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 60vh;
+   }
+
+.fade_dark{
+  width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 100vh;
+  opacity: 0.85;
+}
+
+.main_window__hide{
+    display: none;
+}
+
+
+.fade_dark__image{
+    margin-top: 150px;
+    width: 800px;
+    height: 800px;
+    background: url("../img/01_maage00023.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    /*background-origin: border-box;*/
+    background-size: contain;
+    border: 2px;
+    border-color: azure; 
+
+}
+
+h2{ margin-top: 150px; color: #999;}
+p{  color: #999; font: 16px;}
+.btn_close{
+    float: right;
+    color: #000;
+    font-size: 30px;
+    width: 40px;
+    height: 60px;
+    background-color: #222;
+    vertical-align: middle;
+    text-align: center;
+    border-color: #555;
+    }
