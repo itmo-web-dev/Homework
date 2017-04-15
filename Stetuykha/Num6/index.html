@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<script src = 'plotly-latest.min.js'></script>
-	<script src = 'main.js'></script>
 	<title>HW6</title>
+	<script src='main.js'></script>
+	<script src='plotly-latest.min.js'></script>
+	<div id="placeholder" style="width: 500px; height: 5000px;"></div>
+	<script>
+		var linear = line1;
+		var data = [line1];
+		Plotly.newPlot('placeholder', data);
+	</script>
+		<style>
+			td {
+				width: 40px;
+				height: 40px;
+				border: 1px solid black;
+				text-align: center;
+			}
+		</style>
 </head>
 <body>
-	
+	    <script>
+	        var html = X0();
+	        document.write(html);
+    	</script>
 </body>
 </html>
