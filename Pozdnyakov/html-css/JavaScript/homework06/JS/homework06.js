@@ -22,7 +22,7 @@
             if (aX[i] < 1) {
                 aY.push(aX[i] * aX[i] - 4 * aX[i])
             } else if (aX[i] >= 1) {
-                aY.push(aX[i] * aX[i] - 4 * aX[i])
+                aY.push(5 / aX[i])
             }
         };
         return aY;
@@ -74,7 +74,7 @@ window.X0 = function () {
     window.myLib = {
         searchMin: function(arr1) {
             var minEl = arr1[0];
-            for (var i = 0; i < arr1.length; i++) {
+            for (var i = 1; i < arr1.length; i++) {
                 if (minEl > arr1[i]) {
                     minEl = arr1[i]
                 };
@@ -83,7 +83,7 @@ window.X0 = function () {
         },
         searchMax: function(arr1) {
             var maxEl = arr1[0];
-            for (var i = 0; i < arr1.length; i++) {
+            for (var i = 1; i < arr1.length; i++) {
                 if (maxEl < arr1[i]) {
                     maxEl = arr1[i]
                 };
