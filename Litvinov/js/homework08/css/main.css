@@ -12,13 +12,13 @@ body {
      background:  url("../img/carbon.png") repeat;
     background-repeat: repeat;
     padding: 0;
-    /* width: 1200px;*/
+    /* width: 960px; */
 }
 
 .div_color {
             background-color: yellow;
-            width:400px;
-            height: 56.25%;
+            width:100%;
+            height: 100%;
             padding: 0;
             margin: 0;
         }
@@ -27,6 +27,8 @@ body {
     float: left;
     width:400px;
     height: 56.25%;
+    padding: 0;
+    margin: 0;
 }
 .image_wrap{
     position: absolute;

@@ -16,80 +16,8 @@
 
 <body>
     <section class="work_s" >
-        <!-- <div class="container-fluid"> -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-sm-12 p0 align_rigth">
-                   <div class="work_block">
-                        <div class="image_wrap">
-                            <div class="work_descr">
-                               <h4> PROJECT NAME</h4>
-                               <p> some description</p>
-                            </div>
-                        </div>
-                        <div class="div_color">
-                        <img src="img/sherlock_001.jpg" alt='' />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-sm-12 p0 align_rigth">
-                   <div class="work_block">
-                        <div class="image_wrap">
-                            <div class="work_descr">
-                               <h4> PROJECT NAME</h4>
-                               <p> some description</p>
-                            </div>
-                        </div>
-                        <div class="div_color">
-                        <img src="img/sherlock_002.jpg" alt='' />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-sm-12 p0 align_rigth">
-                   <div class="work_block">
-                        <div class="image_wrap">
-                            <div class="work_descr">
-                               <h4> PROJECT NAME</h4>
-                               <p> some description</p>
-                            </div>
-                        </div>
-                        <div class="div_color">
-                        <img src="img/sherlock_003.jpg" alt='' />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-sm-12 p0 align_rigth">
-                   <div class="work_block">
-                        <div class="image_wrap">
-                            <div class="work_descr">
-                               <h4> PROJECT NAME</h4>
-                               <p> some description</p>
-                            </div>
-                        </div>
-                        <div class="div_color">
-                        <img src="img/sherlock_004.jpg" alt='' />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-sm-12 p0 align_rigth">
-                   <div class="work_block">
-                        <div class="image_wrap">
-                            <div class="work_descr">
-                               <h4> PROJECT NAME</h4>
-                               <p> some description</p>
-                            </div>
-                        </div>
-                        <div class="div_color">
-                        <img src="img/sherlock_001.jpg" alt='' />
-                        </div>
-                    </div>
-                </div>
-                
-                                
-                
-            </div>
+        <div>
         </div>
-    
     </section>
     
     
@@ -97,40 +25,7 @@
     <script src="libs/jquery/jquery-2.1.4.min.js"></script>
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/common.js"></script>
-	<script src="task01.js"></script>
-	<script src="task02.js"></script>
-	<script>
-    $(document).ready(function() {
-        jQuery(function ($) {
-            function fix_size() {
-                var images = $('.work_block img');
-                images.each(setsize);
-
-                function setsize() {
-                    var img = $(this),
-                        img_dom = img.get(0),
-                        container = img.parents('.work_block');
-                    if (img_dom.complete) {
-                        resize();
-                    } else img.one('load', resize);
-
-                    function resize() {
-                        if ((container.width() / container.height()) < (img_dom.width / img_dom.height)) {
-                            img.width('100%');
-                            img.height('auto');
-                            return;
-                        }
-                        img.height('100%');
-                        img.width('auto');
-                    }
-                }
-            }
-            $(window).on('resize', fix_size);
-            fix_size();
-        });
-    });
-    
-    </script>
+	
 	
 </body>
 </html>

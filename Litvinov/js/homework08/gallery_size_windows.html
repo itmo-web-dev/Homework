@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+    <title>Homework 8</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/media.css" />
+   
+</head>
+
+<body>
+    <section class="work_s" >
+        <!-- <div class="container-fluid"> -->
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12 div_c  p0">
+                       <div class="work_block">
+                            <div class="image_wrap">
+                                <div class="work_descr">
+                                   <h4> PROJECT NAME</h4>
+                                   <p> some description</p>
+                                </div>
+                            </div>
+                            <div class="div_color">
+                            <img src="img/sherlock_001.jpg" alt='' />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 div_c  p0">
+                       <div class="work_block">
+                            <div class="image_wrap">
+                                <div class="work_descr">
+                                   <h4> PROJECT NAME</h4>
+                                   <p> some description</p>
+                                </div>
+                            </div>
+                            <div class="div_color">
+                            <img src="img/sherlock_002.jpg" alt='' />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 div_c  p0">
+                       <div class="work_block">
+                            <div class="image_wrap">
+                                <div class="work_descr">
+                                   <h4> PROJECT NAME</h4>
+                                   <p> some description</p>
+                                </div>
+                            </div>
+                            <div class="div_color">
+                            <img src="img/sherlock_003.jpg" alt='' />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 div_c p0">
+                       <div class="work_block">
+                            <div class="image_wrap">
+                                <div class="work_descr">
+                                   <h4> PROJECT NAME</h4>
+                                   <p> some description</p>
+                                </div>
+                            </div>
+                            <div class="div_color">
+                            <img src="img/sherlock_004.jpg" alt='' />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 div_c p0">
+                       <div class="work_block">
+                            <div class="image_wrap">
+                                <div class="work_descr">
+                                   <h4> PROJECT NAME</h4>
+                                   <p> some description</p>
+                                </div>
+                            </div>
+                            <div class="div_color">
+                            <img src="img/sherlock_001.jpg" alt='' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+     
+                
+            </div>
+         <!-- </div> -->
+    
+    </section>
+    
+    
+    
+    <script src="libs/jquery/jquery-2.1.4.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+    function getWidth() {
+          if (self.innerWidth) {
+            return self.innerWidth;
+          }
+
+          if (document.documentElement && document.documentElement.clientWidth) {
+            return document.documentElement.clientWidth;
+          }
+
+          if (document.body) {
+            return document.body.clientWidth;
+          }
+        }
+    function getHeight() {
+          if (self.innerHeight) {
+            return self.innerHeight;
+          }
+
+          if (document.documentElement && document.documentElement.clientHeight) {
+            return document.documentElement.clientHeight;
+          }
+
+          if (document.body) {
+            return document.body.clientHeight;
+          }
+        }   
+        
+    function isScroll(){
+        /*  стандарт js говорит, что [1,] - это массив из одного элемента 1 - так же как [1]. Но в IE был косяк и получалось [1, undefined]. Хватило бы проверить длину, но человек пошёл другим путём - поставил унарный минус. В этом случае массив кастится в строку, а затем в число, к которому и применяется унарный минус. Правильный массив превращается в строку "1", затем число 1 и в итоге получается -1 - истинное значение. А вот неправильный - в строку "1,", которая не является валидным числом (запятая - это не точка), получается NaN и в итоге тоже NaN - ложное значение */
+        if(-[1,]){
+            if (document.body.offsetHeight > window.innerHeight) {
+                return true; // alert("Скролл есть");
+            }else {
+                return false; // alert("Скролла нет");
+            }
+
+        } else {
+            if (document.body.offsetHeight > document.documentElement.clientHeight) {
+                return true; // alert("Скролл есть");
+            }else {
+                return false; // alert("Скролла нет");
+            }
+        }
+    }
+        
+    $(document).ready(function() {
+        jQuery(function ($) {    function fix_size() {
+                // var images = $('.work_block img');
+                var images = $('.work_block');
+                console.log(images);
+            
+                images.each(setsize);
+                // dcolor.each(setsize);
+
+                function setsize() {
+                    var img = $(this),
+                        img_dom = img.get(0);
+                        // container = img.parents('.work_block');
+                        // container = img.parents('.work_block');
+                    if (img_dom.complete) {
+                        resize();
+                    } else img.one('load', resize);
+                    resize();
+
+                    function resize() {
+                        var scroll_x = 0;
+                        if(isScroll()){
+                            scroll_x = 18;
+                            };
+                        var whd_getwindow = getWidth()-scroll_x;
+                        if (whd_getwindow < 768)
+                            img.width(whd_getwindow);
+                        
+                        if((whd_getwindow >= 768)&&(whd_getwindow < 992))
+                            img.width(whd_getwindow/2);
+                        
+                        if(whd_getwindow >= 992)
+                            img.width(whd_getwindow/3);
+           
+                        console.log(whd_getwindow);
+                    }
+                }
+            }
+            $(window).on('resize', fix_size);
+            fix_size();
+        });
+    });
+    
+    </script>
+	
+</body>
+</html>
