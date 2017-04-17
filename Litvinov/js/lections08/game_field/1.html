@@ -1,0 +1,40 @@
+<html>
+<head>
+	<!-- Задача Игровое поле в числа-->
+	<style>
+		td {
+			width: 40px;
+			height: 40px;
+			border: 1px solid black;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+    <div id="container">
+    </div>
+	<script src="myUtils.js"></script>
+	<script>
+		//Запрашиваем порядок игровой матрицы (таблицы)
+		var n = parseInt(prompt("Введите порядой игровой матрицы", "2"));				
+		var html = window.myUtils.createGamePlace(n);	
+        container.innerHTML = html;
+		// document.write(html);	
+        
+        var counter=1;
+        container.onclick = function(event){
+            if(event.target.tagName === 'TD'){
+                console.log(event.target.innerHTML);
+                if(event.target.innerHTML === counter.toString()){
+                    event.target.style.backgroundColor="red";
+                    counter++;
+                    console.log("counter: "+ counter);
+                    
+                }
+            }
+        }
+        
+	</script>
+</body>
+<footer></footer>
+</html>

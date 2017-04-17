@@ -28,12 +28,15 @@
             <div class="col-lg-4 col-lg-offset-5 centered">
                 <form>
                    <input type="button"  class="dev_button btn btn-default" value="открыть главную страницу через js" onClick="openWindow('index.html')">
-                   <button type="button" class="dev_button btn btn-default"">
+                   <button type="button" class="dev_button btn btn-default">
                          <a href="index_href.html" target="_blank"> открыть главную страницу через html </a>
                    </button>
+                   
                    <button type="button" class="dev_button btn btn-default" onClick="openWindow('index.html')" >
                          <a href="index_href.html" target="_blank"> если заблокирован javascript откроется страница </a>
                    </button>
+                   
+                   <a href='/link/for/non-js-users.htm' onclick='loadContent(5);return false;'>Article 5</a>
                 </form>
             </div>
         </div>
