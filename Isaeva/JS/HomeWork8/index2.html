@@ -1,0 +1,41 @@
+<!--
+2. Реализовать счётчик нажатий на кнопку: Дана кнопка внутри неё 
+записана цифра. При клике на кнопку – её значение должно 
+увеличиваться на единицу.-->
+
+<!DOCTYPE html>
+
+
+<html>
+    <header>
+        <meta charset="UTF-8">
+    </header>
+    <body>
+       
+        <button id="style1">1</button>
+        <style>
+            #style1 {
+                width: 80px;
+                height: 80px;
+                background-color: lightsteelblue;
+                color:dimgray;
+                font: bold;
+                font-size: x-large;
+                
+            }
+        
+        
+        </style>
+        <script>
+        var button = document.getElementById("style1");
+            console.log(button);
+            
+        button.onclick = function(){
+            var number = parseInt(button.innerHTML);
+            console.log(number);
+            var newnumber = number + 1;
+            button.innerHTML = newnumber;
+        } 
+        </script>
+    </body>
+</html>
