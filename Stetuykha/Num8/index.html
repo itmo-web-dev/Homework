@@ -4,15 +4,39 @@
 	<meta charset="UTF-8">
 	<title>HW8</title>
 </head>
-<body>
-	<div id="color" onclick="colorChange()" style="background-color: red; height: 100px; width: 100px"></div>
+<body style="display: flex">
+	<div id="color1" onclick="colorChange1()" style="background-color: red; margin: 10px; height: 100px; width: 100px"></div>
+	<div id="color2" onclick="colorChange2()" style="background-color: red; margin: 10px; height: 100px; width: 100px"></div>
+	<div id="color3" onclick="colorChange3()" style="background-color: red; margin: 10px; height: 100px; width: 100px"></div>
+	<div id="counter" onclick="counter()" style="background-color: #6fd; margin: 20px; height: 100px; width: 100px; text-align: center; line-height: 100px; font-size: 2em">0</div>
 <script>
-	function colorChange()
+	function colorChange1()
 	{
-		var counter = 1;
-		var block = document.getElementById("color");
-		if(counter%2 == 1) {block.style.backgroundColor="green"}
-		else if(counter%2 == 0) {block.style.backgroundColor="red"};
+		var block = document.getElementById("color1");
+		var color = block.style.backgroundColor;
+		if(color == "red") {block.style.backgroundColor="green"}
+		else {block.style.backgroundColor="red"};
+	};
+	function colorChange2()
+	{
+		var block = document.getElementById("color2");
+		var color = block.style.backgroundColor;
+		if(color == "red") {block.style.backgroundColor="green"}
+		else {block.style.backgroundColor="red"};
+	};
+	function colorChange3()
+	{
+		var block = document.getElementById("color3");
+		var color = block.style.backgroundColor;
+		if(color == "red") {block.style.backgroundColor="green"}
+		else {block.style.backgroundColor="red"};
+	};
+	var count = document.getElementById("counter")
+	function counter()
+	{
+		var num = parseInt(count.innerHTML);
+		var nNum = num+1;
+		count.innerHTML = nNum;
 	}
 </script>
 </body>
