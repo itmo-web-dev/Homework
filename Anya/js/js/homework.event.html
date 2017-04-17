@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="homework.event.css">
+</head>
+
+
+<body>
+<div class="main">
+
+<!-- <script>
+	function btnClick() {
+		activeBtn.style.backgroundColor = disactiveClr;
+		(activeBtn = this).style.backgroundColor = activeClr;
+	}
+	var disactiveClr = "#d7d7d7";
+	var activeClr = "green";
+	var activeBtn = null;
+	function Id() {
+		activeBtn = document.getElementById("b1");
+		for (var i = 1; i<5; ++i) document.getElementById("b" + i).onclick = btnClick;
+			// alert("ready");
+	}
+
+	var button1 = document.getElementById('button1');
+	var button2 = document.getElementById('button2');
+	button1.addElementListener('click', function(){
+		this.style.backgroundColor = 'red';
+	});
+	button2.addElementListener('click', function(){
+		this.style.backgroundColor = 'green';
+	});
+</script>
+
+<body onload="Id();">
+	<div id="b1" style="background-color: #f6f6f6; width: 80px; height: 40px; border: 1px #000;" >Button1</div>
+	<div id="b2" style="background-color: #f6f6f6; width: 80px; height: 40px; border: 1px #000;" >Button2</div>
+	<div id="b3" style="background-color: #f6f6f6; width: 80px; height: 40px; border: 1px #000;" >Button3</div>
+	<div id="b4" style="background-color: #f6f6f6; width: 80px; height: 40px; border: 1px #000;" >Button4</div>
+-->
+
+
+
+
+
+<!-- <script>
+	window.onload = function () {
+	}
+</script>
+ -->
+<img src="pic.jpg" height="300" width="296"><br>
+<button class="btn">0</button>
+<button class="btn">0</button>
+<button class="btn">0</button>
+
+<script>
+	window.onload = function () {
+		
+		// var count = 0;
+		// span.innerHTML = count;
+		var colors = ['#8B8378', '#2F4F4F', '#483D8B', '#4682B4', '#2E8B57', '#556B2F', '#8B8970', '#8B8386', '#36648B', '#9FB6CD', '#53868B', '#528B8B', '#458B74', '#698B69'];
+		function fromMinToMax(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
+		};
+
+		document.body.onclick = function(e) {
+			e = e || event;
+			var target = e.target || e.srcElement;
+			if (target.className == 'btn') {
+				// count++;
+				console.log(target.innerHTML);
+				target.innerHTML = parseInt(target.innerHTML) + 1;
+				target.style.backgroundColor=colors[fromMinToMax(0, colors.length)];
+			}
+		}
+
+
+		document.getElementById('add').onclick = startComm;
+	}
+	function startComm() {
+		var text = document.getElementById('txt').value;
+		var comm = document.createElement('p');
+		var newText = document.createTextNode(text);
+
+		comm.appendChild(newText);
+
+		document.getElementById('comments').appendChild(comm);
+		return true;
+	}
+</script>
+
+<form>
+	<textarea rows="5" cols="40" id="txt"></textarea><br>
+	<input type="button" id="add" value="added comment">
+</form>
+
+<div id="comments"></div>
+
+
+
+
+
+</div>
+</body>
+</html>
+

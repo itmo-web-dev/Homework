@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Lessons</title>
+	<!-- <script src="js/lesson1.js"></script>
+	<script src="js/array.js"></script>
+	<script src="js/hw.lesson1.js"></script> -->
+	<!-- <script src="js/hw.array.js"></script> -->
+	<!-- <script src="js/function.lesson.js"></script> -->
+	<!-- <script src="js/hw.function.js"></script> -->
+	<!-- <script src="js/regular.js"></script> -->
+	<!-- <script src="js/hw.regular.js"></script>
+ -->
+<!--  <script src="js/objects.js"></script> -->
+ <!--  <script src="js/hw.objects.js"></script> -->
+  <!-- <script src="js/pp.js"></script> -->
+<script src="js/game.js"></script>
+<script src="js/plotly-latest.min.js"></script>
+<!-- <script src="js/new.js"></script> -->
+<!-- <script src="js/timeout.js"></script>
+<script src="js/timeout.html"></script>
+ --><!-- 
+<script src="js/event.js"></script>
+ -->
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<!-- <div id="placeholder" style="width: 480px; height: 400px;">
+</div> -->
+
+<!-- <button onclick="alert('МЕНЯ НАЖАЛИ')">кнопка</button>
+
+<button id="sample_button">button</button>
+<script>
+	sample_button.onclick = function() {
+		alert('меня нажали');
+	}
+	// var button = document.getElementById("sample_button");
+	// button.onclick = function () {
+	// 	alert('меня нажали');
+	// }
+</script> -->
+
+<!-- <script>
+	function outputAlert() {
+		alert("меня нажали")
+	}
+</script>
+<button  id="sample_button" onclick="outputAlert()">btn</button>
+
+
+<input type="button" id="button1" value="Кнопка">
+<script>
+	var button = document.getElementById("button1");
+	button.onclick = function(event) {
+		alert(event.type + " сработал на" + event.currentTarget);
+		alert("Координаты курсора: " + event.clientX + " : " + event.clientY);
+		alert(this.id);
+	}
+</script>
+
+
+<style>
+	body * {
+		margin: 10px;
+		border: 1px solid #000;
+	}
+</style>
+
+<form onclick="alert('Событие сработало на элемент form')"
+	style="background-color: green;"> FORM
+	<div onclick="alert('Событие сработало на элемент div')"
+		style="background-color: blue;">DIV
+		<p onclick="alert('Событие сработало на элемент p')"
+		style="background-color: red;">P
+		</p>
+	</div>
+</form>
+
+
+<div onclick="func1">
+	<button id="1">1234</button>
+	<button id="2">1234</button>
+	<button id="3">1234</button>
+	
+	<button id="1" data_type="1">1234</button>
+</div> 
+
+<script>
+	function func1(event) {
+		if (event.target.id === 1) {
+		}
+		// if (button.classList.add(...))
+	}
+</script>
+
+
+<button id="button_sample" onclick="alert('Меня нажали')">BUTTON</button>
+<script>
+	function output_alert() {
+		alert("Еще одна обработка нажатия");
+		button_sample.removeEventListener("click", output_alert, false);
+	}
+
+	function output_alert_2() {
+		alert("И еще одна обработка нажатия");
+		button_sample.removeEventListener("click", output_alert_2, false);
+	}
+
+	button_sample.addEventListener("click", output_alert, false);
+	button_sample.addEventListener("click", output_alert_2, false);
+</script>
+<form>
+	<div onclick="alert('событие сработало на элементе div')" style="background-color: yellow;"></div>
+	<p onclick="alert('событие сработало на элементе p')" style="background-color: orange;"></p>
+</form>
+<script>
+	var elemForm = document.getElementByTagName('form')[0];
+
+	elemForm.addEventListener('click', function(e) {
+		alert('Событие ' + e.type + ' в' + e.target.tagName + ' перехвачено в ' + this.tagName + ' и остановлено');
+		e.stopPropagation();
+	}, true);
+
+
+	var elemDiv = document.getElementByTagName('div')[0];
+
+	elemDiv.addEventListener('click', function(e) {
+		alert('Событие ' + e.type + ' в' + e.target.tagName + ' перехвачено в ' + this.tagName + ' и остановлено');
+		e.stopPropagation();
+	}, true);
+
+	var elemP = document.getElementByTagName('p')[0];
+
+	elemP.addEventListener('click', function(e) {
+		alert('Событие ' + e.type + ' в' + e.target.tagName + ' перехвачено в ' + this.tagName + ' и остановлено');
+		e.stopPropagation();
+	}, true);
+</script> -->
+
+
+
+
+<script>
+	function mySubmit () {
+		var inputText = container.getElementsByTagName('input')[0].value;
+		if (inputText.length != 0) {
+			var newLi = document.createElement('li');
+			newLi.innerHTML = inputText;
+			var ul = document.getElementsByTagName('ul')[0];
+			ul.appendChild(newLi);
+		}
+	}
+</script>
+
+<div id="container">
+	<input type="text" name="">
+	<button id="sample_button" onclick="mySubmit()">SEND</button>
+</div>
+<div id="messages">	
+	<ul></ul>
+</div>
+
+
+
+
+
+</body>
+</html>

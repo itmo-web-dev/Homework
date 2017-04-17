@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="game.js"></script>
+
+</head>
+<body>
+
+	<style type="text/css">
+		td {
+			background-color: #f1f1f1;
+			width: 40px;
+			height: 40px;
+			border: 1px solid #000;
+			border-radius: 3px;
+			text-align: center;
+			font-weight: bolder;
+			color: #000;
+		}
+		td:hover{
+			background-color: #ddd;
+			box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+			border-radius: 12px;
+		}
+	</style>
+
+
+	<!-- <script>
+		var n = parseInt(prompt ('Введите порядок игровой матрицы', '2'));
+		var html = Game(n);
+		document.write(html);
+	</script>
+ -->
+<div id="container"></div>
+	<script>
+		//Запрашиваем порядок игровой матрицы (таблицы)
+		var n = parseInt(prompt("Введите порядой игровой матрицы", "2"));				
+		var html = Game(n);		
+		container.innerHTML = html;
+
+		var counter = 1;
+
+		container.onclick = function(event) {
+			if (event.target.tagName === 'TD') {
+				if (event.target.innerHTML === counter.toString()) {
+					event.target.style.boxShadow = "inset 0px 0px 10px 5px rgba(200, 0, 0, 0.3)";
+					counter++;
+					if(counter === n*n+1) {
+						var arrTD = document.querySelectorAll('td');
+						for (var i = 0; i<arrTD.length; i++) {
+							arrTD[i].style.backgroundColor = "green";
+						}
+					}
+				}
+			}
+		};		
+	</script>
+
+</body>
+</html>
