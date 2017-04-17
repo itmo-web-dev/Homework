@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HW8</title>
+</head>
+<body>
+	<div id="color" onclick="colorChange()" style="background-color: red; height: 100px; width: 100px"></div>
+<script>
+	function colorChange()
+	{
+		var counter = 1;
+		var block = document.getElementById("color");
+		if(counter%2 == 1) {block.style.backgroundColor="green"}
+		else if(counter%2 == 0) {block.style.backgroundColor="red"};
+	}
+</script>
+</body>
+</html>
