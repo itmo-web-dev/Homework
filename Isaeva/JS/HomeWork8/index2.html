@@ -31,10 +31,10 @@
             console.log(button);
             
         button.onclick = function(){
-            var number = parseInt(button.innerHTML);
+            var number = parseInt(this.innerHTML);
             console.log(number);
             var newnumber = number + 1;
-            button.innerHTML = newnumber;
+            this.innerHTML = newnumber;
         } 
         </script>
     </body>
