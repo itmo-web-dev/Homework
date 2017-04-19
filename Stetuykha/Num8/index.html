@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HW8</title>
+</head>
+<body style="display: flex">
+	<div id="color1" onclick="colorChange1()" style="background-color: red; margin: 10px; height: 100px; width: 100px"></div>
+	<div id="color2" onclick="colorChange2()" style="background-color: red; margin: 10px; height: 100px; width: 100px"></div>
+	<div id="color3" onclick="colorChange3()" style="background-color: red; margin: 10px; height: 100px; width: 100px"></div>
+	<div id="counter" onclick="counter()" style="background-color: #6fd; margin: 20px; height: 100px; width: 100px; text-align: center; line-height: 100px; font-size: 2em">0</div>
+	<div id="container">
+		<img src="imga.JPG" style = "width: 100px">
+		<input id='message' type="textarea" name="yourMessage">
+		<button id='send' onclick='sendMessage()'>SEND</button>
+	</div>
+	<div id="chatlist">
+		<ul>
+			<!--chatlist-->
+		</ul>
+	</div>
+<script>
+	function colorChange1()
+	{
+		var block = document.getElementById("color1");
+		var color = block.style.backgroundColor;
+		if(color == "red") {block.style.backgroundColor="green"}
+		else {block.style.backgroundColor="red"};
+	};
+	function colorChange2()
+	{
+		var block = document.getElementById("color2");
+		var color = block.style.backgroundColor;
+		if(color == "red") {block.style.backgroundColor="green"}
+		else {block.style.backgroundColor="red"};
+	};
+	function colorChange3()
+	{
+		var block = document.getElementById("color3");
+		var color = block.style.backgroundColor;
+		if(color == "red") {block.style.backgroundColor="green"}
+		else {block.style.backgroundColor="red"};
+	};
+	var count = document.getElementById("counter");
+	function counter()
+	{
+		var num = parseInt(count.innerHTML);
+		var nNum = num+1;
+		count.innerHTML = nNum;
+	};
+	function sendMessage()
+	{
+		var message = document.getElementById('message').value;
+		var newLi = document.createElement('li');
+		newLi.innerHTML = message;
+		var ul = document.getElementsByTagName('ul')[0];
+		ul.appendChild(newLi);
+	};
+</script>
+</body>
+</html>

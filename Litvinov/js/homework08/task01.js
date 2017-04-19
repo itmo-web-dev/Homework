@@ -5,22 +5,26 @@ console.log("in side task01.js");
 Время выводить в формате чч:мм:cc, при этом часы, минуты и секунды отобразить разными цветами. 
 */
 
+function divParam(name, color, tag){
+    var obj = new Object();
+    obj.name = name;
+    obj.color = color;
+    obj.data_tag = tag;
+    return obj;
+}
 
-function output_time(){
-    var time, regexp, hour, time_code;
-    time = new Date();
-    regexp = /\d+:\d+:\d+/ig;
-    hour= regexp.exec(time);
-    time_code = hour[0].split(":")
-    
-    document.getElementById("hour").innerHTML = time_code[0];
-    document.getElementById("hour").style.color = '#052C6E';
-    document.getElementById("min").innerHTML = time_code[1];
-    document.getElementById("min").style.color = '#052C6E';
-    document.getElementById("min").style.opacity = 0.85;
-    document.getElementById("sec").innerHTML = time_code[2];
-    document.getElementById("sec").style.opacity = 0.65;
-    document.getElementById("sec").style.color  = '#052C6E';
-    };
 
- 
+var button=document.getElementsByClassName('d1');
+for(var i=0; i<button.length;i++){
+    button[i].onclick = function(event){
+            var div_version = this.getAttribute('data-color-div');
+            var div_index = this.className.split(" ").splice(-1,1);
+            var div_color = this.style.backgroundColor;
+            if(div_color == "green"){
+                this.style.backgroundColor = "";
+            }else{
+                this.style.backgroundColor = "green";
+            }
+		}
+}
+

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<!-- Задача Игровое поле в числа-->
+	<style>
+		td {
+			background-color: #f1f1f1;
+			width: 40px;
+			height: 40px;
+			border: 1px solid #000;
+			border-radius: 3px;
+			text-align: center;
+			font-weight: bolder;
+			color: #000;
+		}
+		td:hover{
+			background-color: #ddd;
+			box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+			border-radius: 12px;
+		}	</style>
+</head>
+<body>
+	<script src="game2.js"></script>
+	<div id="container"></div>
+	<script>
+		//Запрашиваем порядок игровой матрицы (таблицы)
+		var n = parseInt(prompt("Введите порядой игровой матрицы", "2"));				
+		var html = window.game2.createGamePlace(n);		
+		container.innerHTML = html;
+
+		var counter = 1;
+
+		container.onclick = function(event) {
+			if (event.target.tagName === 'TD') {
+				if (event.target.innerHTML === counter.toString()) {
+					event.target.style.backgroundColor = "red";
+					counter++;
+				}
+			}
+		};		
+	</script>
+</body>
+<footer></footer>
+</html>
