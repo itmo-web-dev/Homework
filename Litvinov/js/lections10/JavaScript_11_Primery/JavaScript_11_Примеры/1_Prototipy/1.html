@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Primer Prototipy
+		function Storage() {
+			this.store = [];
+		}
+		
+		Storage.prototype.set = function(key, value) {
+			this.store[key] = value;
+		};
+		
+		Storage.prototype.get = function(key){
+			if(!key) return;
+			return this.store[key];
+		};
+		
+		storage = new Storage();		
+		storage.set("Privetstvie", "Privet mir");
+		alert(storage.get("Privetstvie"));
+	</script>
+</body>
+<footer></footer>
+</html>

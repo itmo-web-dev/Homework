@@ -1,0 +1,17 @@
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div class="tasks"></div>
+	<script src="taskManager.js"></script>
+	<script>
+		var mainDiv = document.querySelector('.tasks');
+		var taskManager = new TaskManager(mainDiv);
+		taskManager.addTask("Первая задача!");
+		taskManager.addTask("Вторая задача!");
+		taskManager.addTask("Третья задача!");
+	</script>
+</body>
+<footer></footer>
+</html>

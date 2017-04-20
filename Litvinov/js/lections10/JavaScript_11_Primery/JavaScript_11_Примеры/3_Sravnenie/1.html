@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Primer Sravnenie (privatnyh svojstv net, oni nachinajutsja s _)
+		function Storage() {
+			this._store = [];
+		}
+		
+		Storage.prototype.set = function(key, value) {
+			this.store[key] = value;
+		};
+		
+		Storage.prototype.get = function(key){
+			if(!key) return;
+			return this.store[key];
+		};
+		
+		storage = new Storage();		
+		storage.set("Privetstvie", "Privet mir");
+		alert(storage.get("Privetstvie"));
+	</script>
+</body>
+<footer></footer>
+</html>
