@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Lessons</title>
+<!--    <script src='js/homework08.js'></script>-->
+    <style>
+        .button {
+            display: block;
+            border: 2px solid red;
+            text-align: center;
+            width: 100px;
+            height: 20px;
+        }
+        img {
+            display: block;
+            width: auto;
+            height: 20vh;
+        }
+    </style>
+</head>
+
+<body>
+<!--
+1. Даны несколько div элементов на html. По первому нажатию на 
+каждый div он перекрашивается зеленым цветом, при повторном 
+нажатии перекрашивается обратно и так далее каждый клик 
+происходит чередование цвета. 
+-->   
+    <div>DIV</div>
+    <div>DIV2</div>
+    <div>DIV3</div>
+    <div>DIV4</div>
+    <script>
+        var divs = document.getElementsByTagName('div');
+            for (var i = 0; i < divs.length; i++) {
+                divs[i].setAttribute('onclick', 'changeColor(this)');   
+            }        
+        
+        function changeColor(that) {
+            var div_color = that.getAttribute('style');
+            if (/green/igm.test(div_color)) {
+              that.style.backgroundColor = 'white';  
+            } else {
+              that.style.backgroundColor = 'green';  
+            };
+        };
+    </script>
+<!--2. Реализовать счётчик нажатий на кнопку: Дана кнопка внутри неё 
+записана цифра. При клике на кнопку – её значение должно 
+увеличиваться на единицу.    -->
+<div id="button" onclick="counter()" class="button">Кнопка</div>
+<script>
+    function clicker() {
+        var i = 0;
+        return function() {
+            button.innerHTML = i++;
+        }
+    };
+    
+    var counter = clicker(); 
+</script>  
+<!--
+3. Дана картинка. Под ним инпут и кнопка. Реализовать механизм 
+добавления комментария под картинку введённого в инпут по 
+нажатию на кнопку.  
+-->
+<img src="image02.jpg">
+<input id="msg" type="text" autocomplete="off" placeholder="Ваш комментарий..." />
+<button id="submitMsg">Отправить</button>
+<ul id="messages"></ul>
+<script>
+       submitMsg.onclick = function() {
+	  var input = document.getElementById('msg');
+      var messageFromInput = input.value;
+      var listMessages = document.getElementById('messages');
+	  var newLi = document.createElement('li');
+	  newLi.innerHTML = messageFromInput;
+	  listMessages.appendChild(newLi);	 
+      input.value = null;
+      //return false;
+    }; 
+</script>
+</body>
+
+</html>
