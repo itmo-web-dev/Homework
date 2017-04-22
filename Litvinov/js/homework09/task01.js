@@ -20,29 +20,74 @@ function Product(name, price){
     this.price= price;
     };
 
-    
+/*
 function Basket(){
+    var that = this; 
     this.products=[];
     this.amount=0;
     this.sum=0;
+    var that = this;
+    
+    this.add = function(name, price){
+             var p = new Product(name, price);
+             that.products.push(p);
+            };
+    
+    for(var i=0; i<arguments.length; i++){
+        var name_tmp=arguments[i].name;
+        var price_tmp =arguments[i].price;
+        var p = new Product(name_tmp, price_tmp);
+        this.products.push(p);
+        };
+
+    return{ 
+        add: function(name, price){
+             var p = new Product(name, price);
+             that.products.push(p);
+            },
+        get_sum: function(){
+                that.sum = 0;
+                for(var i=0; i<that.products.length; i++){
+                    that.sum += that.products[i].price;
+                    }
+                return that.sum;
+                },
+         get_amount: function(){
+                that.amount = that.products.length;
+                return that.amount;
+                },
+         print_products: function(){
+             for(var i=0; i<that.products.length; i++){
+                 console.log(that.products[i].name, that.products[i].price);
+             }
+          }
+        }
+};
+    */
+/// easy method
+function Basket(){
+    var products=[];
+    var amount=0;
+    var sum=0;
+    
     this.add =function(name, price){
              var p = new Product(name, price);
-             this.products.push(p);
+             products.push(p);
             };
     this.get_sum = function(){
             this.sum = 0;
-            for(var i=0; i<this.products.length; i++){
-                this.sum += this.products[i].price;
+            for(var i=0; i<products.length; i++){
+                sum += products[i].price;
                 }
             return this.sum;
             };
      this.get_amount = function(){
-            this.amount = this.products.length;
-            return this.amount;
+            amount = products.length;
+            return amount;
             };
      this.print_products = function(){
-         for(var i=0; i<this.products.length; i++){
-             console.log(this.products[i].name, this.products[i].price);
+         for(var i=0; i<products.length; i++){
+             console.log(products[i].name, products[i].price);
          }
      }
     for(var i=0; i<arguments.length; i++){
@@ -51,6 +96,8 @@ function Basket(){
         this.add(name_tmp, price_tmp);
     };
 };
+    
+
 //---------------------------------------------------
     
 var product1 = new Product("батон", 30);
@@ -58,6 +105,14 @@ var product2 = new Product("хлеб", 34);
 var product3 = new Product("кефир", 10);
 
 var basket = new Basket(product1, product2, product3);
+console.log(basket);
+var basketValue;
+for(var propName in basket) {
+    //basketValue = basket[propName];
+    //console.log(propName, basketValue);
+    console.log("basket: public methods  " + propName)
+}
+    
 console.log("сумма "+basket.get_sum());
 console.log("количество "+basket.get_amount());
     
@@ -68,8 +123,8 @@ console.log(basket instanceof Basket);
 basket.add("батон", 30);
 basket.add("хлеб", 34);
 basket.add("кефир", 10);
-console.log("сумма "+basket.get_sum());
-console.log("количество "+basket.get_amount());
+//console.log("сумма "+basket.get_sum());
+//console.log("количество "+basket.get_amount());
     
 // basket.print_products();
 }());
