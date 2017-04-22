@@ -20,7 +20,7 @@ function Product(name, price){
     this.price= price;
     };
 
-
+/*
 function Basket(){
     var that = this; 
     this.products=[];
@@ -63,7 +63,39 @@ function Basket(){
           }
         }
 };
-
+    */
+/// easy method
+function Basket(){
+    var products=[];
+    var amount=0;
+    var sum=0;
+    
+    this.add =function(name, price){
+             var p = new Product(name, price);
+             products.push(p);
+            };
+    this.get_sum = function(){
+            this.sum = 0;
+            for(var i=0; i<products.length; i++){
+                sum += products[i].price;
+                }
+            return this.sum;
+            };
+     this.get_amount = function(){
+            amount = products.length;
+            return amount;
+            };
+     this.print_products = function(){
+         for(var i=0; i<products.length; i++){
+             console.log(products[i].name, products[i].price);
+         }
+     }
+    for(var i=0; i<arguments.length; i++){
+        var name_tmp=arguments[i].name;
+        var price_tmp =arguments[i].price;
+        this.add(name_tmp, price_tmp);
+    };
+};
     
 
 //---------------------------------------------------
@@ -78,7 +110,7 @@ var basketValue;
 for(var propName in basket) {
     //basketValue = basket[propName];
     //console.log(propName, basketValue);
-    console.log("basket: public methods" + propName)
+    console.log("basket: public methods  " + propName)
 }
     
 console.log("сумма "+basket.get_sum());
