@@ -20,7 +20,7 @@ function Product(name, price){
     this.price= price;
     };
 
-    
+
 function Basket(){
     var that = this; 
     this.products=[];
@@ -63,6 +63,9 @@ function Basket(){
           }
         }
 };
+
+    
+
 //---------------------------------------------------
     
 var product1 = new Product("батон", 30);
