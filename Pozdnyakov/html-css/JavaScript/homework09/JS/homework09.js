@@ -21,19 +21,19 @@
     }
 
     function basket() {
-        this.arrayOfGoods = [];
-        this.qntyGoods = 0;
-        this.sumnGoods = 0;
+        var arrayOfGoods = [];
+        var qntyGoods = 0;
+        var sumnGoods = 0;
         this.setGood = function (objGood) {
-            this.arrayOfGoods.push(objGood);
-            this.qntyGoods = this.qntyGoods + 1;
-            this.sumnGoods = this.sumnGoods + objGood.price;
+            arrayOfGoods.push(objGood);
+            qntyGoods = qntyGoods + 1;
+            sumnGoods = sumnGoods + objGood.price;
         };
         this.getSumGoods = function () {
-            return 'Товаров в корзине на сумму: ' + this.sumnGoods;
+            return 'Товаров в корзине на сумму: ' + sumnGoods;
         };
         this.getQntyGoods = function () {
-            return 'Количество товаров в корзине: ' + this.qntyGoods;
+            return 'Количество товаров в корзине: ' + qntyGoods;
         };
     }
 
