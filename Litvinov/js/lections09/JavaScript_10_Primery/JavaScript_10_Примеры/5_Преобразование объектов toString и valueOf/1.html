@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Пример Преобразование объектов: toString и valueOf
+
+		function User(firstName, lastName, age) {
+					
+			this.toString = function() {
+				return firstName + ' ' + lastName;
+			};
+			this.valueOf = function(){
+				return age;
+			};
+		}
+		
+		user = new User("Иван", "Иванов", 18);		
+		alert(user);
+		alert("Пользователь совершенно летний: " + (user >= 18?"Да":"Нет"));
+	</script>
+</body>
+<footer></footer>
+</html>

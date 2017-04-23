@@ -1,0 +1,43 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Пример Фабричные методы
+		function Shape(){
+			this.toString = function(){
+					return "Абстрактная фигура";
+			}
+		}
+		
+		Shape.point = function(data){
+			var shape = new Shape();
+			shape.centerX = data.centerX;
+			shape.centerY = data.centerY;
+			shape.toString = function(){
+				return "Точка: Координаты " + this.centerX + ":" + this.centerY;
+			}
+			return shape;
+		}
+		
+		Shape.circle = function(data){
+			var shape = new Shape();
+			shape.centerX = data.centerX;
+			shape.centerY = data.centerY;
+			shape.radius = data.radius;
+			shape.toString = function(){
+				return "Круг: Координаты центра " + this.centerX + ":" + this.centerY + " Радиус " + this.radius;
+			}
+			return shape;
+		}
+				
+		var circle = Shape.circle({centerX:20, centerY:20, radius:10});
+		console.log(circle.toString());
+		var point = Shape.point({centerX:20, centerY:20});
+		console.log(point.toString());
+		var shape = new Shape();
+		console.log(shape.toString());
+	</script>
+</body>
+<footer></footer>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="widjet.css">
+	</head>
+	<body>
+		<div id="1">
+		</div>
+		<div id="2">
+		</div>
+		<script src="widjet.js"></script>
+		<script>
+			new Slider(document.getElementById('1'), 
+				{	
+					delay:17, //Временная задержка между изменениями в слайдере
+					durationSleep: 3000, //Время показа одного слайда в милисекундах
+					durationMove:1000, //Время перелистывания слайда
+					arrImg:["image/1.png", "image/2.png", "image/3.png"]
+				});
+			new Slider(document.getElementById('2'), 
+				{	
+					delay:17, //Временная задержка между изменениями в слайдере
+					durationSleep: 3000, //Время показа одного слайда в милисекундах
+					durationMove:1000, //Время перелистывания слайда
+					arrImg:["image/4.png", "image/5.png", "image/6.png"]
+				});
+		</script>
+	</body>
+	<footer>
+	</footer>
+</html>

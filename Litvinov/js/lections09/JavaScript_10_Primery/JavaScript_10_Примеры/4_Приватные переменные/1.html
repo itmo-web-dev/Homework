@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Пример Приватных переменных
+
+		function Storage() {
+			var store = [];
+			
+			this.set = function(key, value) {
+				store[key] = value;
+			};
+			this.get = function(key){
+				if(!key) return;
+				return store[key];
+			};
+		}
+		
+		storage = new Storage();		
+		storage.set("Приветствие", "Привет мир");
+		console.log(storage.get("Приветствие"));
+		console.log(storage.store);
+	</script>
+</body>
+<footer></footer>
+</html>

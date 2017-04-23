@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+    <title>Homework 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<script type="text/javascript" src="math_sd.js"></script>
+</head>
+<body>
+       
+    <button  id="button_id">Test</button>
+    <form onClick='alert("form"+event.target);' style="background-color: green;hight:500px;" >
+        FORM
+       <div onClick='alert("div")' style="background-color: blue;hight:500px;">
+        DIUV
+           <p onClick='alert("p")' style="background-color: red;hight:500px;" id="p_id">
+               ppp
+           </p>
+        </div>
+    </form>
+    
+    <button id="button_simple" onclick='alert("Меня нажали")'> Кнопка </button>
+    <!--
+    function output_alert(){
+        alert("обработка нажатия");
+        button_simple.removeEventListner("click", output_alert, false);
+        }
+    function output_alert1(){
+        alert("обработка нажатия");
+        button_simple.removeEventListner("click", output_alert1, false);
+        }
+    ....
+    -->
+    <script>
+        function add_message(){
+           var input_text=container.getElementsByClassName('textarea01');
+           console.log(input_text);
+            
+            
+           var text = message__ul.innerHTML;
+            console.log("text");
+            message__ul.innerHTML = text + "<li>temp</li>"
+        }
+    </script>
+    
+    <div id="container">
+       <textarea class="textarea01">
+        </textarea>
+       <button onClick="add_message()" >add message  </button>
+    </div>
+    <div id="message">
+        <ul id="message__ul">
+            <li>  начало </li>
+            
+        </ul>
+        
+    </div>
+    
+    
+    <script type="text/javascript" src="main.js"></script>
+    
+	 </body>
+</html>

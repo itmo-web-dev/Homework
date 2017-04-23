@@ -1,0 +1,37 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Пример Полиморфный конструктор
+		function Shape(centerX, centerY, radius){
+			if (arguments.length == 3) {
+				this.centerX = centerX;
+				this.centerY = centerY;
+				this.radius = radius;
+				this.toString = function(){
+					return "Круг: Координаты центра " + this.centerX + ":" + this.centerY + " Радиус " + this.radius;
+				}
+			} else if (arguments.length == 2) {
+				this.centerX = centerX;
+				this.centerY = centerY;
+				this.toString = function(){
+					return "Точка: Координаты " + this.centerX + ":" + this.centerY;
+				}			
+			} else {
+				this.toString = function(){
+					return "Абстрактная фигура";
+				}
+			}			
+		}
+		
+		var circle = new Shape(20, 20, 10);
+		console.log(circle.toString());
+		var point = new Shape(20, 20);
+		console.log(point.toString());
+		var shape = new Shape();
+		console.log(shape.toString());
+	</script>
+</body>
+<footer></footer>
+</html>

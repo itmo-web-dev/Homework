@@ -1,0 +1,35 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Primer Nasledovanie v prototipnom stile
+		function Shape(centerX, centerY){
+			this.centerX = centerX;
+			this.centerY = centerY;
+		}
+		
+		Shape.prototype.toString = function(){
+			return "Koordinaty centra " + this.centerX + ":" + this.centerY;
+		}
+		
+		var shape = new Shape(10, 10);
+		console.log("Jekzempljar Shape " + shape);
+
+		function Circle(centerX, centerY, radius){
+			this.centerX = centerX;
+			this.centerY = centerY;
+			this.radius = radius;
+			this.toString = function(){
+				return (Circle.prototype.__proto__.toString.call(this)) + " Radius " + this.radius;
+			}
+		} 
+		
+		Circle.prototype.__proto__ = Shape.prototype;
+		
+		var circle = new Circle(20, 20, 10);
+		console.log("Jekzempljar Circle " + circle);
+	</script>
+</body>
+<footer></footer>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Пример Явное указание this
+
+		function User(firstName, lastName) {			
+			this.firstName = firstName;
+			this.lastName = lastName;		
+		}
+		
+		var fullName = function() {
+			return this.firstName + ' ' + this.lastName;
+		};		
+		
+		var user = new User("Иван", "Иванович");	
+		alert(fullName.call(user));
+		alert(fullName.apply(user));
+	</script>
+</body>
+<footer></footer>
+</html>
