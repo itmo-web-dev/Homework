@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+   <html>
+    <header>
+        <meta charset="utf-8">
+    </header>
+    <body>
+        <script>
+            
+function Human(name, age, pol, int){
+    this.name = name;
+    this.age = age;
+    this.pol = pol;
+    this.int = int;
+}
+            
+Human.prototype.toString = function(){
+		return  this.name + ". Возраст: " + this.age + ". Пол: " + this.pol + ". Интересы: " + this.int;
+    };
+
+            
+var human = new Human("Петя", 20, "муж", "музыка, программирование.");
+console.log("Человек: " + human);
+			
+			
+     
+function Student(name, age, pol, int, inst) {
+			this.name = name;
+			this.age = age;
+			this.pol = pol;
+			this.int = int;
+            this.inst = inst;
+            this.toString = function(){return (Student.prototype.__proto__.toString.call(this)) + ". Обучается в: " + this.inst
+                                      };
+};
+
+Student.prototype.__proto__ = Human.prototype;
+            
+var student = new Student("Петя", 18, "муж", "музыка, программирование", "ИТМО");
+console.log("Студент: " + student)
+
+        </script>
+    </body>
+</html>

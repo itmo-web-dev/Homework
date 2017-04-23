@@ -12,6 +12,7 @@
 - Вернуть количество товара.
 -->
 
+
 /
 <!DOCTYPE html>
 <html>
@@ -20,34 +21,44 @@
     </header>
     <body>
         <script>
-//Шаблон объекта товар           
-function tovar(name, price){
+//Шаблон объекта товар    
+            
+
+            
+function Tovar(name, price){
     
     this.name = name;
     this.price = price;
-    
     }
+
+        
+var tovar = new Tovar("shirt", 100);
+var tovar1 = new Tovar("boots", 250);
+var tovar2 = new Tovar("hat", 50);
+
 
 //Шаблон объекта корзина товаров
-function korzina(mass, kolvo, summ){
+function Korzina(){
     
-    function mass(){
-        return (this.mass = mass)};
+var mass = [];
+var kolvo = 0;
+var summ = 0;
+this.addtovar = function(objTovar){
+mass.push(objTovar);
+console.log(mass);
+kolvo = mass.length;
+console.log(kolvo);
+summ = summ + (objTovar). price;
+console.log(summ);
 
-    function kolvo(){
-        return this.kolvo = kolvo};
+};
+    
+}
 
-    function summ(){
-        return this.summ = summ};
-
-    }
-
-
-tovar.dobabittovar = new tovar("shirt", 5);
-console.log(tovar.dobabittovar)
-
-korzina.summ = new korzina(1, 2, 5)
-console.log(korzina.summ)     
+var korzina = new Korzina;
+korzina.addtovar(tovar);
+korzina.addtovar(tovar1);       
+korzina.addtovar(tovar2);           
 
         </script>
     </body>

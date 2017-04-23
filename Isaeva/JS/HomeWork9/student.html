@@ -1,0 +1,50 @@
+<!--
+Создать шаблон объектов «Человек».
+Свойства «Имя», «Возраст», «Пол», «Интересы».
+Метод преобразования к строке вида: «Человек: 
+Иван. Возраст: 25 лет. Пол: м. Интересы: 
+музыка, программирование.»
+Создать шаблон объектов «Студент».
+Свойства от наследованные от шаблона объектов 
+«Человек» и добавить «Институт».
+Переопределить метод преобразования к строке 
+вида: «Студент: Иван. Возраст: 25 лет. Пол: м. 
+Интересы: музыка, программирование. 
+Обучается в ИТМО.»-->
+
+
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+    </header>
+    <body>
+        <script>
+            
+function Human(name, age, pol, int){
+    this.name = name;
+    this.age = age;
+    this.pol = pol;
+    this.int = int;
+    this.toString = function(){
+        alert("Человек: " + name + ". Возраст: " + age + ". Пол: " + pol + ". Интересы: " + int)
+    }
+}
+            
+human = new Human("Петя", 20, "муж", "музыка, программирование.");
+human.toString()
+
+function Student(name, age, pol, int, inst) {
+            Human.call(this, name, age, pol, int);
+            this.inst = inst;
+                this.toString = function(){
+        alert("Студент: " + name + ". Возраст: " + age + ". Пол: " + pol + ". Интересы: " + int + ". Обучается в: " + inst)
+    }
+}
+            
+student = new Student("Вася", 19, "жен", "музыка, программирование", "Итмо");
+student.toString()
+            
+        </script>
+    </body>
+</html>
