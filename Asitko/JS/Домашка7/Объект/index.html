@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#b {
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: grey;
+			display: none;
+		}
+		#a {
+			z-index: 3;
+			position: fixed;
+			display: none;
+			background: #ffffff;
+			border: 1px solid black;
+		}
+		#wrap {
+			padding: 5px;
+			width: 400px;
+			height: 400px;
+		}
+		.button1{
+			float: left;
+			text-decoration: none;
+		}
+
+		.button2 {
+			float: right;
+			text-decoration: none;
+
+		}
+	</style>
+</head>
+<body>
+<a href="#" onclick='return showPopup()' class='button1'>Описание объекта</a>
+	<div id="a">
+		<div id='wrap'>
+			<a href="#" onclick='return closePopup()' class='button2'>Закрыть</a>
+		</div>
+	</div>
+	<div id='b'></div>
+</body>
+<script src='object.js'></script>
+</html>

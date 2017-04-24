@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#quadro1, #quadro2, #quadro3{
+			width: 100px;
+			height: 100px; 
+			background-color: red;
+			margin-right: 5px;
+			border-radius: 10px;
+		}
+		.button{float: left;}
+		#counter{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			float: left;
+			border-radius: 10px;
+			margin-right: 5px;
+		}
+		#counter span{
+			display: inline-block;
+			color: #222;
+			height: 100%;
+			width: 100%;
+			font-size: 52px;
+			text-align: center;
+			padding-top: 15%;
+		}
+	</style>
+</head>
+<body>
+	<div class='button' id='quadro1' onclick='color()'></div>
+	<div class='button' id='quadro2' onclick='color1()'></div>
+	<div class='button' id='quadro3' onclick='color2()'></div>
+	<div id='counter' onclick='counter()'></div>
+	<div class='image-wrap'>
+		<img src="i.jpg" alt="12121211">
+	</div>
+	<textarea name="text" id="text" cols="30" rows="2"></textarea><br>
+	<input type="submit" id='submit' onclick='comment()'>	
+	<ul id='list'>
+		
+	</ul>
+</body>
+<script src='handler.js'></script>
+</html>
