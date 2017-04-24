@@ -33,10 +33,15 @@ function Student(name, years, sex, interests, university){
 Student.prototype.toString = function(){
         return `Человек: ${this._name}. Возраст: ${this._years} лет. Пол: ${this._sex}. Интересы: ${this._interests}. Обучается в ${this._university}.`
         }
+Student.prototype.__proto__ = Person.prototype;
+    
     
 var petr= new Person("Иван",25,"м",["музыка", "программирование"] );
 console.log(petr.toString());
 var petr_student = new Student("Иван",25,"м",["музыка", "программирование"],"ИТМО" );
 console.log(petr_student.toString());   
 
+console.log(petr);
+console.log(petr_student);
+    
 }());

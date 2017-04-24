@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Chat lab</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="public/bootstrapPaper.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="public/script.js" type="text/javascript"></script>
+  </head>
+  <body>
+  	<!-- Контейнер всего на странице -->
+  	<div class="col-md-6 col-md-offset-3 fill">
+  		<!-- Строка ввода имени -->
+  		<div class="row">
+	  		<div class="col-md-10" style="padding-right: 0">
+		    	<input id="username" type="text" class="form-control" autocomplete="off" placeholder="Nickname" />
+		    </div>
+		    <div class="col-md-2" style="padding-left: 0">
+		    	<button type="button" id="confirmName" class="btn btn-default btn-block" autocomplete="off"> Confirm </button>
+		    </div>
+      	</div>
+      	<!-- строка ввода сообщения -->
+      	<div class="row">
+        	<form action="" id="msgFormId">
+		  		<div class="col-md-10" style="padding-right: 0">
+			    	<input id="msg" type="text" class="form-control" autocomplete="off" placeholder="Your message" />
+			    </div>
+			    <div class="col-md-2" style="padding-left: 0">
+			    	<button id="submitMsg" class="btn btn-primary btn-block">Send</button>
+			    </div>
+        	</form>
+      	</div>
+		<!-- блок сообщений -->
+      	<div style="padding-top: 15px;">
+	    	<!--список сообщений --> 
+        	<div id="chatMsgs" class="panel">
+	        	<div class="pannel-body">
+	          		<ul id="messages" class="cleanList scrollbar"></ul>
+	        	</div>
+        	</div>
+      	</div>
+    </div>
+  </body>
+</html>
