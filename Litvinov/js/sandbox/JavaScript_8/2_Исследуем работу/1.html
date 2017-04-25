@@ -1,0 +1,20 @@
+<html>
+<head>
+	<!-- Настройка кодировки -->
+	<meta charset="utf-8"></meta>
+	<script src="d3.js"></script>
+	<script src="domtree.js"></script>
+	<script src="createDescriptionObj.js"></script>
+	<title>Пример дерева</title>
+</head>
+<body>
+	<p><strong>Hello</strong>how are you doing?</p>
+	<div class="domtree"></div>
+	<script>
+		var result = createDescriptionObj(document);
+		
+		drawHtmlTree(result, 'div.domtree', 1000, 1000);		
+	</script>
+</body>
+<footer></footer>
+</html>

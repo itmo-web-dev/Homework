@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Пример Создание объектов в конструкторах
+
+		function Storage(max) {
+			this.store = [];
+			
+			this.set = function(key, value) {
+				this.store[key] = value;
+			};
+			this.get = function(key){
+				if(!key) return;
+				return this.store[key];
+			};
+
+			return { maxSize: max };
+		}
+		
+		storage = new Storage(20);		
+		storage.set("Приветствие", "Привет мир"); //Будет ошибка
+		alert(storage.maxSize);
+	</script>
+</body>
+<footer></footer>
+</html>

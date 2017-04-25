@@ -1,0 +1,66 @@
+<!--
+1. Создать шаблон объектов «Товар».
+Свойства товара «Имя» и «Цена».
+Создать шаблон объектов «Корзина товаров». 
+Приватные свойства объекта:
+- Массив товаров;
+- Количество товаров;
+- Сумма товаров.
+Методы объекта:
+- Добавить товар;
+- Вернуть сумму товара;
+- Вернуть количество товара.
+-->
+
+
+/
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+    </header>
+    <body>
+        <script>
+//Шаблон объекта товар    
+            
+
+            
+function Tovar(name, price){
+    
+    this.name = name;
+    this.price = price;
+    }
+
+        
+var tovar = new Tovar("shirt", 100);
+var tovar1 = new Tovar("boots", 250);
+var tovar2 = new Tovar("hat", 50);
+
+
+//Шаблон объекта корзина товаров
+function Korzina(){
+    
+var mass = [];
+var kolvo = 0;
+var summ = 0;
+this.addtovar = function(objTovar){
+mass.push(objTovar);
+console.log(mass);
+kolvo = mass.length;
+console.log(kolvo);
+summ = summ + (objTovar). price;
+console.log(summ);
+
+};
+    
+}
+
+var korzina = new Korzina;
+korzina.addtovar(tovar);
+korzina.addtovar(tovar1);       
+korzina.addtovar(tovar2);           
+
+        </script>
+    </body>
+</html>
+

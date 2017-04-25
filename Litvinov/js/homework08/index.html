@@ -11,20 +11,89 @@
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/fonts.css" />
 	<link rel="stylesheet" href="css/media.css" />
-   
+    <style>
+        .round {
+            border-radius: 300px; /* Радиус скругления */
+            border: 3px solid gray; /* Параметры рамки */
+            box-shadow: 0 0 7px #666; /* Параметры тени */
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        ul,li,h1 {
+            color: wheat;
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+        }
+        img{
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body>
-    <section class="work_s" >
-        <div>
-        </div>
+    <section class="tasks" >
+        <div class="container">
+            <div class="row">
+                <div> <h1> 1. Даны несколько div элементов на html. По первому нажатию на 
+    каждый div он перекрашивается зеленым цветом, при повторном 
+    нажатии перекрашивается обратно и так далее каждый клик 
+    происходит чередование цвета.  </h1>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-2 round yellow d1 d1__1" data-color-div="color_div_01">  </div>
+               <div class="col-md-2 round yellow d1 d1__2" data-color-div="color_div_02">  </div>
+               <div class="col-md-2 round yellow d1 d1__3" data-color-div="color_div_03">  </div>
+               <div class="col-md-2 round yellow d1 d1__4" data-color-div="color_div_04">  </div>
+               <div class="col-md-2 round yellow d1 d1__5" data-color-div="color_div_05">  </div>
+               <div class="col-md-2 round yellow d1 d1__6" data-color-div="color_div_06">  </div>
+           </div>
+ 
+            <div class="row">
+                <div><h1>  2. Реализовать счётчик нажатий на кнопку: Дана кнопка внутри неё    записана цифра. При клике на кнопку – её значение должно    увеличиваться на единицу.  </h1>
+                </div>
+            </div>
+            <button class="btn num_button" > 1 </button>
+            
+            <div class="row">
+                <div><h1>  3. Дана картинка. Под ним инпут и кнопка. Реализовать механизм 
+добавления комментария под картинку введённого в инпут по 
+нажатию на кнопку.</h1>
+                </div>
+                <div class="col-md-3 offset-md-2">
+                    <img src="img/sherlock_001.jpg" alt="" />
+                </div>
+            </div>
+            <div class="row">       
+                <div class="col-md-4 col-offset-md-6">
+                        <ul id="messages">
+                            <li>  начало </li>
+                        </ul>
+                </div>
+                
+                <textarea class="col-md-3 offset-md-2 textarea01" id="msg">        </textarea>
+                 <button class="btn btn-default" id="message" >add message  </button>
+                
+            </div>
+                                 
+            </div>
+    
     </section>
+
+   
     
     
     
     <script src="libs/jquery/jquery-2.1.4.min.js"></script>
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/common.js"></script>
+	<script src="task01.js"></script>
+	<script src="task02.js"></script>
+	<script src="task03.js"></script>
 	
 	
 </body>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <link rel="stylesheet" href="leaflet/leaflet.css"/>
+ <script src="leaflet/leaflet.js"></script>
+ <style>
+	#mapid { height: 400px; }
+ </style>
+</head>
+<body>
+	<div id="mapid"></div>
+	<button id="mapButton">My rest zone</button>
+	<script>
+		var map = L.map('mapid').setView([59.927131, 30.33813], 15);
+
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+
+		L.marker([59.927131, 30.33813]).addTo(map)
+			.bindPopup('I am here!!')
+			.openPopup();
+
+		mapButton.onclick = function(){
+			L.marker([59.927222, 30.339536]).addTo(map)
+			.bindPopup('Coffee zone!!!')
+			.openPopup();
+		}		
+	</script>
+</body>
+<footer>
+</footer>
+</html>

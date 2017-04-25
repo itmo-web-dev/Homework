@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div></div>
+
+	<script src="oop.js"></script>
+	<script>
+		var iterator = new Iterator(0, 100);
+		console.log(iterator._increment());
+		console.log(iterator._increment());
+		console.log(iterator._increment());
+		console.log(iterator._increment());
+		console.log(iterator._increment());
+		console.log(iterator._increment());
+		console.log(iterator._increment());
+		console.log(iterator._increment());
+
+
+		var animateText = new AnimateText(
+			document.getElementById('container'),
+			100,
+			0
+		);
+		console.log(animateText.tick());
+		console.log(animateText.tick());
+		console.log(animateText.tick());
+		console.log(animateText.tick());
+		console.log(animateText.tick());
+		console.log(animateText.tick());
+		console.log(animateText.tick());
+		console.log(animateText.tick());
+		setInterval(function() {animateText.tick();}, 2000);
+	</script>
+
+	
+
+</body>
+</html>

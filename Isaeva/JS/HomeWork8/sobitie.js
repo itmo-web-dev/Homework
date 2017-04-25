@@ -3,41 +3,19 @@
 //нажатии перекрашивается обратно и так далее каждый клик 
 //происходит чередование цвета. 
 
+var div1 = document.getElementsByTagName("div");
 
-var div1 = document.getElementById("one");
+console.log(div1);
 
-div1.onclick = function(){
+for (i=0; i<div1.length; i++) {
 
-var color1 = window.getComputedStyle(div1).backgroundColor;
+div1[i].onclick = function(){
+
+var color1 = window.getComputedStyle(this).backgroundColor;
     if (color1 === "rgb(127, 255, 212)") {
-        div1.style.backgroundColor = "rgb(255, 0, 0)";
+        this.style.backgroundColor = "rgb(255, 0, 0)";
     } else {
-        div1.style.backgroundColor = "rgb(127, 255, 212)";
+        this.style.backgroundColor = "rgb(127, 255, 212)";
     } 
 }
-
-
-var div2 = document.getElementById("two");
-
-div2.onclick = function(){
-
-var color1 = window.getComputedStyle(div2).backgroundColor;
-    if (color1 === "rgb(127, 255, 212)") {
-        div2.style.backgroundColor = "rgb(255, 0, 0)";
-    } else {
-        div2.style.backgroundColor = "rgb(127, 255, 212)";
-    } 
-}
-
-
-var div3 = document.getElementById("three");
-
-div3.onclick = function(){
-
-var color1 = window.getComputedStyle(div3).backgroundColor;
-    if (color1 === "rgb(127, 255, 212)") {
-        div3.style.backgroundColor = "rgb(255, 0, 0)";
-    } else {
-        div3.style.backgroundColor = "rgb(127, 255, 212)";
-    } 
 }

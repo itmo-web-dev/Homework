@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body>
+	<script>
+		//Пример Наследование в функциональном стиле
+		function Shape(centerX, centerY){
+			this.centerX = centerX;
+			this.centerY = centerY;
+			this.toString = function(){
+				return "Координаты центра " + this.centerX + ":" + this.centerY;
+			}
+		}
+		
+		var shape = new Shape(10, 10);
+		console.log("Экземпляр Shape " + shape);
+
+		function Circle(centerX, centerY, radius){
+			Shape.call(this, centerX, centerY);
+			this.radius = radius;
+			this.toString = function(){
+				return "Координаты центра " + this.centerX + ":" + this.centerY + " Радиус " + this.radius;
+			}
+		} 
+		
+		var circle = new Circle(20, 20, 10);
+		console.log("Экземпляр Circle " + circle);
+	</script>
+</body>
+<footer></footer>
+</html>

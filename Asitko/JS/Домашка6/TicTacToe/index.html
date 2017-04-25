@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Schedule</title>
+		<script src="graph.js"></script>
+<style>
+	td{
+		width: 40px;
+		height:40px;
+		border: 1px solid black;
+		text-align: center;
+		border-collapse: collapse;
+	}
+	body *{
+		margin: 10px;
+		border: 1px solid black;
+	}
+</style>
+
+</head>
+<body>
+	<script>
+
+		var html = TicTacToe();
+		document.write(html);
+
+	</script>
+<!-- 	<button onclick="alert('Меня нажали')">Button</button>
+	<button id="sample_button">Button</button>
+	<script>
+		var button = document.getElementById("sample_button");
+		button.onclick = function(){
+			alert("Меня нажали");
+		}
+	</script>
+
+	<script>
+		function outputAlert() {
+			alert('Меня нажали');
+		}
+	</script>
+	<button id="sample_button" onclick="outputAlert()">Button</button>
+
+	<input id="button1" type="button" value="Кнопка">
+<script>
+	var button = document.getElementById("button1");
+	button.onclick = function(event){
+			alert(event.type + 'сработал на'+ event.currentTarget);
+				alert('Координаты курсора:'
+					+event.clientX + ':'+event.clientY);
+				alert(this.id);
+		}
+</script>
+ -->
+
+<!-- BUBLING -->
+<!-- <form onclick="alert('Событие сработало на элементе form' + event.target)" style="background-color: green">FORM
+<div onclick="alert('Событие сработало на элементе div')" style="background-color: blue">DIV
+	<p onclick="alert('Событие сработало на элементе p')" style="background-color: red">P
+	</p>
+</div>
+</form>
+
+<button id="button_sample2" onclick="alert('Меня нажали')">Button</button>
+<script>
+	function output_alert() {
+		alert('Еще одна обработка нажатия');
+		button_sample2.removeEventListener('click', output_alert, false);
+	}
+	function output_alert_2() {
+		alert('Еще одна обработка нажатия');
+		button_sample2.removeEventListener("click", output_alert_2, false);
+	}
+
+	button_sample2.removeEventListener('click', output_alert, false);
+	button_sample2.removeEventListener('click', output_alert_2, false);
+</script> -->
+
+</body>
+</html>
