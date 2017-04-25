@@ -25,6 +25,18 @@ function days() {
 
 console.log(days(111));*/
 
+/* Написать функцию подсчета суммы от n до m*/    
+/*function numSumn(n, m) { 
+    if (n === m) return m;
+    if (n > m) {
+    return n + numSumn((n - 1), m);
+    } else {
+    return n + numSumn((n + 1), m);    
+    }
+}    
+
+console.log(numSumn(5, 9));*/
+
 /*Написать функцию factorial(n), которая возвращает факториал числа n,
 использовать рекурсию!Написать функцию factorial(n),
 которая возвращает факториал числа n, использовать рекурсию!*/
@@ -52,5 +64,49 @@ console.log(factor(7));*/
 }
 
 console.log(func(20)(20));*/
+
+/*Дополнительная задача к четвергу (на замыкание):
+Сделайте функцию, каждый вызов который будет генерировать случайные числа от 1 до 100, но так, чтобы они не повторялись,
+пока не будут перебраны все числа из этого промежутка. Решите задачу через замыкания - в замыкании должен хранится массив чисел, 
+которые уже были сгенерированы функцией.*/
+    
+/*var arr = [];  
+function myRandom() {
+    var num1;
+    return function randomizer() {
+     
+        if (arr.length === 100) {
+            arr = []; 
+        };
+        var i = 0 
+        while (i < 1) {
+        num1 = (Math.floor(Math.random() * 100) + 1);    
+        if (arr.indexOf(num1) == -1) {        
+            arr.push(num1);
+            i = 1;
+        }
+        }
+        return num1; // и выводим
+    }
+} 
+
+var count =  myRandom();   
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(count());
+console.log(arr.length + ' длина массива');*/
 
 }())
