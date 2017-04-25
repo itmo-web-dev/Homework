@@ -61,40 +61,6 @@ window.X0 = function () {
 
     };
 /*--------------------------------------------------------------------------------------*/
-
-window.myLib = {
-        minVal: function(arr1) {
-            var minOne = arr1[0];
-            for (var i = 1; i < arr1.length; i++) {
-                if (minOne > arr1[i]) {
-                    minOne = arr1[i]
-                };
-            }
-            return 'Минимальный элемент массива: ' + minOne;
-        },
-        maxVal: function(arr1) {
-            var maxOne = arr1[0];
-            for (var i = 1; i < arr1.length; i++) {
-                if (maxOne < arr1[i]) {
-                    maxOne = arr1[i]
-                };
-            }
-            return 'Максимальный элемент массива: ' + maxOne;
-        },        
-        getAverage: function(arr1) {
-            var av = 0;
-            for (var item of arr1) {
-                av = av + item;
-            }
-            return 'Среднее арифметическое значение элементов: ' + av / arr1.length;
-        },
-        cloneArr: function(arr1) {
-            var newArr = arr1.slice(0, arr1.length);
-            return 'Клон исходного масиива: ' + newArr;
-        }
-    };
-
-/*--------------------------------------------------------------------------------------*/
 function cesar(string, crypt)
 {
     var upperC = 
