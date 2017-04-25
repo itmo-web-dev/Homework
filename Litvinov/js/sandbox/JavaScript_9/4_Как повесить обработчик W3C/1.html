@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+<body>
+	<button id="button_sample" onclick="alert('Меня нажали')">Кнопка</button>
+	<script>
+		function output_alert(){
+			alert("Ещё одна обработка нажатия");
+			button_sample.removeEventListener("click", output_alert, false);
+		}
+		
+		function output_alert_2(){
+			alert("И ещё одна обработка нажатия");
+			button_sample.removeEventListener("click", output_alert_2, false);
+		}
+	
+		button_sample.addEventListener("click", output_alert, false);
+		button_sample.addEventListener("click", output_alert_2, false);
+	</script>
+</body>
+<footer></footer>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+	<button id="button_sample">Кнопка</button>
+	<script>
+		//Пример генерации сразу пачки событий при клике на кнопку
+		
+		button_sample.onclick = function (e){
+			console.log("Произошло событие " + e.type);
+		};
+		button_sample.onmousedown = function (e){
+			console.log("Произошло событие " + e.type);
+		};
+		button_sample.onmouseup = function (e){
+			console.log("Произошло событие " + e.type);
+		};		
+	</script>
+</body>
+<footer></footer>
+</html>
