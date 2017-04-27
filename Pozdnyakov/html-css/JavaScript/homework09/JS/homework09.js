@@ -120,7 +120,7 @@ function years() {
     User.anonim = function(){
         var user = new User();
         user.name = "Аноним";
-        return user;
+        return User;
     }
     
     User.fromObj = function(data){
