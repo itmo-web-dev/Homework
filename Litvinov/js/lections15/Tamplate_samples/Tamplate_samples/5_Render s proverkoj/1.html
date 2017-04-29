@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="mustache.min.js"></script>
+</head>
+<body>
+<script>
+	template = "{{#person?}} Hi {{name}}!{{/person?}}";
+	data = {
+		"person?": { "name": "Jon" }
+	};
+	result = Mustache.render(template, data);
+	console.log(result);
+</script>
+</body>
+</html>

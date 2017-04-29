@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="mustache.min.js"></script>
+</head>
+<body>
+<script>
+	data = {
+     "name": "Chris",
+     "value": 10000,
+     "taxed_value": 10000 - (10000 * 0.4),
+     "in_ca": true
+    };
+
+	template = "Hello {{name}}\nYou have just won {{value}} dollars!\n{{#in_ca}}\nWell,{{taxed_value}} dollars, after taxes.\n{{/in_ca}}Given the following hash:";
+    result = Mustache.render(template, data);
+	console.log(result);
+    
+    template = `Hello {{name}}
+You have just won {{value}} dollars!
+{{#in_ca}}
+Well, {{taxed_value}} dollars, after taxes.
+{{/in_ca}}
+Given the following hash:
+    `
+    result = Mustache.render(template, data);
+	console.log(result);
+</script>
+</body>
+</html>

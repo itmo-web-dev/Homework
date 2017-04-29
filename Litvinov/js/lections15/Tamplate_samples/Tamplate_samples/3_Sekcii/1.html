@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="mustache.min.js"></script>
+</head>
+<body>
+<script>
+	template = "Shown. {{#person}} <b>Never shown!</b>{{/person}}"
+	data = {"person": false}
+	result = Mustache.render(template, data);
+	console.log(result)
+</script>
+</body>
+</html>
