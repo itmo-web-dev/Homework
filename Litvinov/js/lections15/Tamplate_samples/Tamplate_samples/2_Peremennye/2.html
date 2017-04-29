@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="mustache.min.js"></script>
+</head>
+<body>
+<script>
+	data = {
+		album: {
+			title:"Blue Train",
+			artist:"John Coltrane"
+		}
+	};
+	template = "Title: {{album.title}}. " + 
+		"Artist: {{album.artist}}.";
+	result = Mustache.render(template, data);
+	console.log(result);
+</script>
+</body>
+</html>

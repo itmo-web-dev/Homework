@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.5.2</title>
+
+  <link rel="shortcut icon" type="image/png" href="libs/jasmine-2.5.2/jasmine_favicon.png">
+  <link rel="stylesheet" href="libs/jasmine-2.5.2/jasmine.css">
+
+  <script src="libs/jasmine-2.5.2/jasmine.js"></script>
+  <script src="libs/jasmine-2.5.2/jasmine-html.js"></script>
+    <script src="libs/jasmine-2.5.2/boot.js"></script>
+  <script src="js/plotly-latest.min.js"></script>
+  <script src="libs/jquery/jquery-3.2.1.min.js"></script>
+  <script src="libs/jquery/jquery.scrollTo-min.js"></script>
+  <style>
+      body{
+          height: 1000px;
+      }
+    </style>
+
+     
+  <!-- include spec files here... -->
+  <!-- <script src="task00_test.js"></script> -->
+</head>
+
+<body>
+ <script>    
+    text = ""
+    for(var i=0; i<70;i++){
+        text += "<p>Test</p>";
+    }
+    document.write(text);
+  </script>
+  <a href="#"> Home</a>
+  
+  <!-- include source files here... -->
+  <script>
+    $("a").on('click', function(){
+        //var s = $("#example").scrollTop();
+        //$(window).scrollTop(60);
+        //var a = $(window).scrollTop(0.1);
+        //console.log(a);
+        // true -- $("html,body").animate({ scrollTop: 1000 }, "slow");
+        //var a = $("html,body").scrollTop( 1000);
+        // console.log(a);
+        $('body').scrollTop( 500 );
+        
+
+        //$(document.body).scrollTop( 0.4);
+    });        
+</script>
+
+</body>
+</html>

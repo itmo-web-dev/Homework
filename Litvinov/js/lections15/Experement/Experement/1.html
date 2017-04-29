@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div 
+		data-curr-img="1" 
+		style="background-image:url(1.png);width: 44px; height:44px;">
+	</div>
+	<script>
+
+		function blink() {
+			var indexImg = $('div').attr("data-curr-img");
+			if(indexImg < 5){
+				indexImg++;
+			} else {
+				indexImg = 1;
+			}
+			$('div').css("background-image", "url("+indexImg + ".png)");
+			$('div').attr("data-curr-img", indexImg);
+		}
+		setInterval(blink, 100);
+	</script>
+</body>
+<footer>
+</footer>
+</html>

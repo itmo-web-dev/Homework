@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="mustache.min.js"></script>
+</head>
+<body>
+<script>
+	template = "{{#repo}}" +
+		"<b>{{name}}</b>" +
+		"{{/repo}}" +
+		"{{^repo}}"+
+		"No repos :(" +
+		"{{/repo}}";
+		data = {
+			"repo": []
+		};
+		result = Mustache.render(template, data);
+		console.log(result);
+</script>
+</body>
+</html>
