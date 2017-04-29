@@ -45,16 +45,32 @@ console.log("in side task01.js");
             };
     
     function is_intersect(rec01, rec02){
+<<<<<<< HEAD
        var value = rec02.max_x;
        var output = false;
        if (rec01.max_x > value && rec01.min_x< value){ output= true;}
        value = rec02.min_y;
+=======
+       var output = false;
+        
+       var value = rec02.max_x;
+       if (rec01.max_x > value && rec01.min_x< value){ output= true;}
+        
+       value = rec02.min_x;
+>>>>>>> origin/master
        if (rec01.max_x > value && rec01.min_x< value){ output=  true;}
        
        var value = rec02.max_y;
        if (rec01.max_y > value && rec01.min_y< value){ output=  true;}
+<<<<<<< HEAD
        value = rec02.min_y;
        if (rec01.max_y > value && rec01.min_y< value){output=  true;}
+=======
+        
+       value = rec02.min_y;
+       if (rec01.max_y > value && rec01.min_y< value){output=  true;}
+        
+>>>>>>> origin/master
        return output;
    }
     

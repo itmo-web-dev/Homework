@@ -2,10 +2,17 @@
 
 function color() {
 	var div = document.getElementById('quadro1');
+<<<<<<< HEAD
 	var color = div.style.backgroundColor;
 	if (color == 'red') {
 		div.style.backgroundColor = 'green';
 	} else {div.style.backgroundColor = 'red'};
+=======
+	var color = getComputedStyle(div).backgroundColor;
+	if (color == 'rgb(255, 0, 0)') {
+		div.style.backgroundColor = 'rgb(0, 255, 0)';
+	} else {div.style.backgroundColor = 'rgb(255, 0, 0)'};
+>>>>>>> origin/master
 }
 
 function color1() {

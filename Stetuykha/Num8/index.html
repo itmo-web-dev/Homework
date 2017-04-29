@@ -23,7 +23,7 @@
 	function colorChange1()
 	{
 		var block = document.getElementById("color1");
-		var color = block.style.backgroundColor;
+		var color = getComputedStyle(block).backgroundColor;
 		if(color == "red") {block.style.backgroundColor="green"}
 		else {block.style.backgroundColor="red"};
 	};
