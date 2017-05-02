@@ -85,7 +85,7 @@ function Square(obj, context_in, canvas){
         this.array_item.unshift(begin_point);
         }
     
-function Bonus(context_in){
+function Bonus(context_in, canvas){
     this._xp = 10;
     this._yp = 10;
     this.side = 20;
@@ -93,18 +93,35 @@ function Bonus(context_in){
     this._y = this._yp * this.side;
     this.fill_color = "red";
     this._context = context_in;
+    this._canvas = canvas;
 } 
 Bonus.prototype.render = function(){
-        this.render_rect();
-        console.log("render bonus")
-        }
-Bonus.prototype.render_rect = function(){
         this._context.beginPath();
-        this._context.rect(this._x, this._x, this.side, this.side);
+        this._context.rect(this._x, this._y, this.side, this.side);
         this._context.fillStyle = this.fill_color;
         this._context.fill();
-    console.log("render bonus",this._x, this._x, this.side, this.side, this.fill_color );
         }
-Bonus.prototype.clear = function(){
-        this._context.clearRect(0, 0, this.canvas.width, this.canvas.height)
+Bonus.prototype.clear_on_board = function(){
+        this._context.clearRect(0, 0, this._canvas.width, this._canvas.height)
         }
+Bonus.prototype.is_bonus =  function(x_in, y_in){
+        var result = false;
+        if ((this._x == x_in)&&(this._y==y_in)){
+            result  = true;
+            }
+        return result;
+}
+Bonus.prototype.generate_new_bonus = function(){
+     this._xp = Math_sd.getRandomInt(1, this.side);
+     this._yp = Math_sd.getRandomInt(1, this.side);
+     this._x = this._xp * this.side;
+     this._y = this._yp * this.side;
+     this.side = 20;
+     console.log("render bonus",this._x, this._y,
+                                this._xp, this._yp,
+                                this.fill_color );
+}
+Bonus.prototype.toString = function(){
+    var result = 'Bonus: this._x ' + this._x +' this._y ' +this._y;
+    return result;
+}

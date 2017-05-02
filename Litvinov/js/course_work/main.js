@@ -77,7 +77,8 @@ console.log("in side task01.js");
         this.snake = new Snake({x:5, y: 5,color: "yellow",side: this.board_side},
                                this.context,
                                this.canvas);
-        this.bonus = new Bonus(this.context);
+        this.bonus = new Bonus(this.context,
+                               this.canvas);
         this.board.render();
         this.keyboard_manager();
         },
@@ -105,6 +106,8 @@ console.log("in side task01.js");
                 myGameArea.move_y  = -1;
             }else if (event.keyCode === 32) {
                 myGameArea.timer.toggle();
+                myGameArea.move_x = xp;
+                myGameArea.move_y = yp;
                 }
             
             // проверяю направление движение змейки если нажимается кнопка обратная движению
@@ -120,10 +123,12 @@ console.log("in side task01.js");
         x_pos = myGameArea.current_x;
         y_pos = myGameArea.current_y;
         
+        // прибавляем значение полученное посл
         myGameArea.current_y += myGameArea.move_y;
         myGameArea.current_x += myGameArea.move_x;
 
-        if(!myGameArea.board_model.is_gameboard({x: myGameArea.current_x, y: myGameArea.current_y})){
+        if(!myGameArea.board_model.is_gameboard({x: myGameArea.current_x,
+                                                 y: myGameArea.current_y})){
              myGameArea.current_y = y_pos;
              myGameArea.current_x = x_pos;
              }
@@ -136,32 +141,25 @@ console.log("in side task01.js");
     
              
     function updateGameArea(){
-        var begin1 = myGameArea.board.board_data.get_coord(myGameArea.current_x,myGameArea.current_y);
-        /*
-        var point = new Square({x: begin1.x,y: begin1.y,color: "yellow",side: myGameArea.board_side},
-                               myGameArea.context,
-                               myGameArea.canvas);
-        point.clear()
-        */
-        myGameArea.snake.move(begin1.x,begin1.y);
         myGameArea.snake.clear();
         
         myGameArea.board.render();
-        
-        
+        myGameArea.bonus.render();
+                
         myGameArea.vector_moveing();
         
-        var x1 = myGameArea.current_x;
-        var y1 = myGameArea.current_y;
+        var begin = myGameArea.board.board_data.get_coord(myGameArea.current_x,
+                                                          myGameArea.current_y);
         
-        var begin = myGameArea.board.board_data.get_coord(x1, y1);
-            // console.log(begin);
-        if(y1==3){
+        if(myGameArea.bonus.is_bonus(begin.x, begin.y)){
+            myGameArea.bonus.generate_new_bonus();
             myGameArea.snake.add_item(begin.x,begin.y);
         }
-        //point.move(begin.x,begin.y)
-        // point.render();
+        
+        console.log("position ", begin.x, begin.y);
+        console.log(myGameArea.bonus.toString());
+        
         myGameArea.snake.move(begin.x,begin.y);
         myGameArea.snake.render();
-        myGameArea.bonus.render();
+
         }
