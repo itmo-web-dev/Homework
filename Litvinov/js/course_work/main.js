@@ -77,6 +77,7 @@ console.log("in side task01.js");
         this.snake = new Snake({x:5, y: 5,color: "yellow",side: this.board_side},
                                this.context,
                                this.canvas);
+        this.bonus = new Bonus(this.context);
         this.board.render();
         this.keyboard_manager();
         },
@@ -147,6 +148,7 @@ console.log("in side task01.js");
         
         myGameArea.board.render();
         
+        
         myGameArea.vector_moveing();
         
         var x1 = myGameArea.current_x;
@@ -161,4 +163,5 @@ console.log("in side task01.js");
         // point.render();
         myGameArea.snake.move(begin.x,begin.y);
         myGameArea.snake.render();
+        myGameArea.bonus.render();
         }
