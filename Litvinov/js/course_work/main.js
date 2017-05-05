@@ -38,16 +38,18 @@ console.log("in side task01.js");
     var myScore;
 
     window.startGame =function() {
-        // myGamePiece = new component(30, 30, "red", 10, 120);
-        //myGamePiece.gravity = 0.05;
-        //myScore = new component("30px", "Consolas", "black", 280, 40, "text");
         myGameArea.start();
     }
     
     var myGameArea = {
     
-    canvas : document.createElement("canvas"),
-        
+    create_canvas : function(){
+          var _field =document.getElementsByClassName('game_board')[0];
+          var _canvas =  document.createElement("canvas");
+          _canvas.className = "game_canvas";
+          _field.appendChild(_canvas);
+          return _canvas;
+         },
     init_variables : function(){
         this.count = 25;
         this.canvas.width = 20*this.count;
@@ -60,25 +62,40 @@ console.log("in side task01.js");
         this.current_y=2;
         this.move_x = 1;
         this.move_y = 0;
+        this.points = 0;
+        this.game_over = false;
     },
     start : function() {
+        this.canvas = this.create_canvas();
         this.init_variables();
-
         this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-        this.canvas.style.marginLeft = "215px";
-        this.canvas.style.marginTop = "150px";
         
         this.timer = new Timer(updateGameArea, this.interval);
         this.timer.start();
         
-        this.board_model = new BoardModel(this.board_width, this.board_height, this.board_side);
-        this.board = new BoardView(this.context, this.canvas, this.board_model);
+        this.board_model = new BoardModel(this.board_width,
+                                          this.board_height,
+                                          this.board_side);
+        this.board = new BoardView(this.context,
+                                   this.canvas,
+                                   this.board_model);
         this.snake = new Snake({x:5, y: 5,color: "yellow",side: this.board_side},
                                this.context,
                                this.canvas);
         this.bonus = new Bonus(this.context,
-                               this.canvas);
+                               this.canvas,
+                               this.board_side,
+                               "red");
+        this.audio = new Howl({
+                              src: ['effects/Sound7127[Wav_Library_Net].mp3'],
+                              autoplay: true,
+                              loop: true,
+                              volume: 0.10,
+                              onend: function() {
+                                console.log('end music intro!');
+                              }
+                            });
+        this.audio.play();  
         this.board.render();
         this.keyboard_manager();
         },
@@ -106,6 +123,11 @@ console.log("in side task01.js");
                 myGameArea.move_y  = -1;
             }else if (event.keyCode === 32) {
                 myGameArea.timer.toggle();
+                if(myGameArea.timer._paused){
+                      myGameArea.audio.stop();
+                    }else{
+                      myGameArea.audio.play();  
+                    }
                 myGameArea.move_x = xp;
                 myGameArea.move_y = yp;
                 }
@@ -126,13 +148,6 @@ console.log("in side task01.js");
         // прибавляем значение полученное посл
         myGameArea.current_y += myGameArea.move_y;
         myGameArea.current_x += myGameArea.move_x;
-
-        if(!myGameArea.board_model.is_gameboard({x: myGameArea.current_x,
-                                                 y: myGameArea.current_y})){
-             myGameArea.current_y = y_pos;
-             myGameArea.current_x = x_pos;
-             }
-        console.log(myGameArea.current_x, myGameArea.current_y);
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -145,21 +160,44 @@ console.log("in side task01.js");
         
         myGameArea.board.render();
         myGameArea.bonus.render();
-                
+        
         myGameArea.vector_moveing();
         
         var begin = myGameArea.board.board_data.get_coord(myGameArea.current_x,
                                                           myGameArea.current_y);
         
+        myGameArea.snake.move(begin.x,begin.y);
+        myGameArea.snake.render();
+        
+        var snake_tail = myGameArea.snake.get_element_pos();
         if(myGameArea.bonus.is_bonus(begin.x, begin.y)){
-            myGameArea.bonus.generate_new_bonus();
+            myGameArea.points++;
+            myGameArea.bonus.generate_new_bonus(snake_tail);
             myGameArea.snake.add_item(begin.x,begin.y);
         }
         
-        console.log("position ", begin.x, begin.y);
-        console.log(myGameArea.bonus.toString());
+        // проверка пересечения стен
+        if(!myGameArea.board_model.is_gameboard(snake_tail[0])){
+                console.log("game over: out of border");
+                myGameArea.game_over = true;
+                myGameArea.timer.game_over();  
+                }
+        // проверка само пересечения 
+        if( snake_tail.length > 3){
+            for(var i=2; i<snake_tail.length; i++){
+                if((snake_tail[0].x==snake_tail[i].x)&&(snake_tail[0].y==snake_tail[i].y)){
+                    console.log("game over: self intersection");
+                    myGameArea.game_over = true;
+                    myGameArea.timer.game_over();  
+                    break;
+                    } 
+               }
+            }
+        if(myGameArea.game_over){
+            myGameArea.audio.stop();
+            }
         
-        myGameArea.snake.move(begin.x,begin.y);
-        myGameArea.snake.render();
+}
+     
 
-        }
+

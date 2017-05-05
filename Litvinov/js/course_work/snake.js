@@ -59,10 +59,8 @@ function Square(obj, context_in, canvas){
             }
         }
     Snake.prototype.render=function(){
-        //this.array_item[0].render();
         for(var i=0;i<this.array_item.length;i++){
             this.array_item[i].render();
-            //console.log(i);
             }
         }
     Snake.prototype.move=function(x,y){
@@ -76,52 +74,69 @@ function Square(obj, context_in, canvas){
             this.array_item[i].move(this.array_item[i].x, this.array_item[i].y);
             this.array_item[i].set_number(i);
             }
-        //console.log(this.array_item[0]);
-        }
+        };
     Snake.prototype.add_item = function(x,y){
         var begin_point = new Square({x: x, y: y, color: this._color , side: this._side},
                                this._context,
                                this._canvas);
         this.array_item.unshift(begin_point);
-        }
+        };
+    Snake.prototype.get_element_pos = function(){
+        var output = [];
+        for(var i=0; i<this.array_item.length; i++){
+            output.push({x:this.array_item[i].x, 
+                         y:this.array_item[i].y});
+        } 
+        return output;
+    };
     
-function Bonus(context_in, canvas){
-    this._xp = 10;
-    this._yp = 10;
-    this.side = 20;
+function Bonus(context_in, canvas, side_in, color_in){
+    this.side = side_in;
+    this._xp = Math_sd.getRandomInt(6, this.side);
+    this._yp = Math_sd.getRandomInt(6, this.side);
     this._x = this._xp * this.side;
     this._y = this._yp * this.side;
-    this.fill_color = "red";
+    this.fill_color = color_in;
     this._context = context_in;
     this._canvas = canvas;
-} 
+}; 
 Bonus.prototype.render = function(){
         this._context.beginPath();
         this._context.rect(this._x, this._y, this.side, this.side);
         this._context.fillStyle = this.fill_color;
         this._context.fill();
-        }
+        };
 Bonus.prototype.clear_on_board = function(){
         this._context.clearRect(0, 0, this._canvas.width, this._canvas.height)
-        }
+        };
 Bonus.prototype.is_bonus =  function(x_in, y_in){
         var result = false;
         if ((this._x == x_in)&&(this._y==y_in)){
             result  = true;
             }
         return result;
-}
-Bonus.prototype.generate_new_bonus = function(){
-     this._xp = Math_sd.getRandomInt(1, this.side);
-     this._yp = Math_sd.getRandomInt(1, this.side);
-     this._x = this._xp * this.side;
-     this._y = this._yp * this.side;
-     this.side = 20;
-     console.log("render bonus",this._x, this._y,
-                                this._xp, this._yp,
-                                this.fill_color );
-}
+};
+Bonus.prototype.generate_new_bonus = function(arr){
+    var check_bonus_in_snake=true;
+    while(check_bonus_in_snake)
+        {
+        this._xp = Math_sd.getRandomInt(1, this.side);
+        this._yp = Math_sd.getRandomInt(1, this.side);
+        // проверка генерации бонуса на клетки занятые змеей 
+        check_bonus_in_snake = false;
+        for(var i=0; i< arr.length; i++){
+                if((arr[i].x==this._xp*this.side)&&
+                          (arr[i].y==this._yp*this.side)){
+                    check_bonus_in_snake = true;
+                    console.log("error: bonus in snake bod-> reculculate position ");
+                    break;
+                    }
+                }
+         }
+    this._x = this._xp * this.side;
+    this._y = this._yp * this.side;
+};
 Bonus.prototype.toString = function(){
     var result = 'Bonus: this._x ' + this._x +' this._y ' +this._y;
     return result;
-}
+};

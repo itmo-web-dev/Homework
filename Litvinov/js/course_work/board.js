@@ -30,15 +30,20 @@ console.log("in side board.js");
         var y_cell = obj_value.y;
         var result = true;
         
-        if((x_cell< 1)||(x_cell> this.width)){
+        if((x_cell < 1)||(x_cell > (this.width-1)*this.size)){
             result = false;
             }
-        if((y_cell< 1)||(y_cell> this.height)){
+        if((y_cell < 1)||(y_cell> (this.height-1)*this.size)){
             result = false;
             }
-        
         return result;
     };
+    BoardModel.prototype.clear = function(){
+        for(var i=0; i<this.map.length;i++){
+            this.map[i]=0;
+            }
+    };
+    BoardModel.prototype.add_data = function(x,y){};
 
     // отрисовка поля 
     function BoardView(context, canvas, obj_board_model){

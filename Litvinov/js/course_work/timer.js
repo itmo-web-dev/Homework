@@ -6,10 +6,13 @@ function Timer(func, delay){
     this._paused = false;
     this._delay = delay;
     this._timer_function = func;
+    this._game = true;
 };
 Timer.prototype.start = function(){
-    this._timer_id = setInterval(this._timer_function, this._delay);
-    this._paused = false;
+    if(this._game){
+        this._timer_id = setInterval(this._timer_function, this._delay);
+        this._paused = false;
+    }
 };
 Timer.prototype.stop = function(){
     clearInterval(this._timer_id);
@@ -21,6 +24,10 @@ Timer.prototype.toggle = function(){
     }else{
         this.stop();
     }
+};
+Timer.prototype.game_over = function(){
+    this._game = false;
+    this.stop();
 };
 Timer.prototype.toString = function(){
    console.log("this._paused: "         +this._paused + "\n",
