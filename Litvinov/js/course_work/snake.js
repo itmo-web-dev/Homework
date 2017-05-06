@@ -31,13 +31,13 @@ function Square(obj, context_in, canvas){
         this.y = y;
         }
     Square.prototype.clear = function(){
-        this._context.clearRect(0, 0, this.canvas.width, this.canvas.height)
+        this._context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         }
     Square.prototype.set_number = function(num){
         this.number  = num;
         }
-    
-    function Snake(obj, context_in, canvas){
+///  --------------------------------    
+    function Snake(context_in, canvas, obj){
         this.array_item = [];
         this._color = obj.color;
         this._context = context_in;
@@ -54,7 +54,7 @@ function Square(obj, context_in, canvas){
         
         }
     Snake.prototype.clear=function(){
-        for(var i=0;i<this.array_item.length;i++){
+       for(var i=0;i<this.array_item.length;i++){
             this.array_item[i].clear();
             }
         }
@@ -90,16 +90,22 @@ function Square(obj, context_in, canvas){
         return output;
     };
     
-function Bonus(context_in, canvas, side_in, color_in){
-    this.side = side_in;
-    this._xp = Math_sd.getRandomInt(6, this.side);
-    this._yp = Math_sd.getRandomInt(6, this.side);
-    this._x = this._xp * this.side;
-    this._y = this._yp * this.side;
-    this.fill_color = color_in;
+function Bonus(context_in, canvas, board_model_obj, bonus_init_obj){
     this._context = context_in;
     this._canvas = canvas;
-}; 
+    this.side = board_model_obj.side;
+    this.fill_color = bonus_init_obj.color;
+    this.height = board_model_obj.height;
+    this.width = board_model_obj.width;
+    this.min_value = bonus_init_obj.min_init_value;
+    console.log(this.side, this.fill_color, this.height, this.width, this.min_value);
+    
+    this._xp = Math_sd.getRandomInt(this.min_value, this.side);
+    this._yp = Math_sd.getRandomInt(this.min_value, this.side);
+    console.log(this._xp, this._yp)
+    this._x = this._xp * this.side;
+    this._y = this._yp * this.side;
+    }; 
 Bonus.prototype.render = function(){
         this._context.beginPath();
         this._context.rect(this._x, this._y, this.side, this.side);
@@ -120,8 +126,8 @@ Bonus.prototype.generate_new_bonus = function(arr){
     var check_bonus_in_snake=true;
     while(check_bonus_in_snake)
         {
-        this._xp = Math_sd.getRandomInt(1, this.side);
-        this._yp = Math_sd.getRandomInt(1, this.side);
+        this._xp = Math_sd.getRandomInt(1, this.width);
+        this._yp = Math_sd.getRandomInt(1, this.height);
         // проверка генерации бонуса на клетки занятые змеей 
         check_bonus_in_snake = false;
         for(var i=0; i< arr.length; i++){

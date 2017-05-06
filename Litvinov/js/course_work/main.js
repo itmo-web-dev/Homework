@@ -40,6 +40,12 @@ console.log("in side task01.js");
     window.startGame =function() {
         myGameArea.start();
     }
+    window.playGame =function() {
+        myGameArea.play();
+    }
+    window.pausedGame =function() {
+        myGameArea.paused();
+    }
     
     var myGameArea = {
     
@@ -50,42 +56,89 @@ console.log("in side task01.js");
           _field.appendChild(_canvas);
           return _canvas;
          },
+    /*
+    create_splash_screen: function(){
+          var _field =document.getElementsByClassName('game_board')[0];
+          var wrapper = document.createElement("DIV");
+          wrapper.className = "wrapper";
+          wrapper.onclick = function(){ playGame(); };
+          wrapper.style.width = "800px";
+          wrapper.style.height = "600px";
+        
+          var a = document.createElement("A");
+          a.className = "wrapper__start_button";
+          a.innerHTML  += "START GAME";
+          var p = document.createElement("P");
+          p.className = "wrapper__comment";
+          p.innerHTML  += "Click for the start </br></br> use keyboard arrow <-,->";
+          
+          _field.appendChild(wrapper);
+          wrapper.appendChild(a);
+          wrapper.appendChild(p);
+          return wrapper;    
+         },
+        */
     init_variables : function(){
-        this.count = 25;
-        this.canvas.width = 20*this.count;
-        this.canvas.height = 20*this.count;
-        this.board_width = 25;
-        this.board_height = 25;
-        this.board_side = 20;
-        this.interval = 200;
+        this.board_width = 28;
+        this.board_height = 21;
+        this.board_side = 22;
+        this.interval = 182;
         this.current_x=2;
         this.current_y=2;
         this.move_x = 1;
         this.move_y = 0;
         this.points = 0;
         this.game_over = false;
-    },
+        this.board_skin = { board_color:"#314151",
+                            grid_color: "#3c4151",
+                            border_color: "#1c2131",
+                            border: "5px",
+                            border_style: "solid"
+                            };
+        this.bonus_init = { color: "red",
+                            min_init_value: 6
+                          };
+        this.canvas.width = this.board_width*this.board_side;
+        this.canvas.height = this.board_height*this.board_side;
+        },
     start : function() {
         this.canvas = this.create_canvas();
-        this.init_variables();
         this.context = this.canvas.getContext("2d");
+        this.start_screen = new SplashScreen("START GAME",
+                                  "Click for the start </br></br> use keyboard arrow <-,->",
+                                   function(){ playGame(); });
         
+        this.start_screen.create();
+        this.start_screen.show();
+        
+        this.pause_screen = new SplashScreen("PAUSE GAME",
+                                  "press space for continue");
+        
+        this.pause_screen.create();
+        this.pause_screen.hide();
+        
+        this.game_over_screen = new SplashScreen("GAME OVER",
+                                  "refresh browser and play again");
+        
+        this.game_over_screen.create();
+        this.game_over_screen.hide();
+        
+        
+        this.init_variables();
+                
         this.timer = new Timer(updateGameArea, this.interval);
-        this.timer.start();
         
-        this.board_model = new BoardModel(this.board_width,
-                                          this.board_height,
-                                          this.board_side);
-        this.board = new BoardView(this.context,
-                                   this.canvas,
-                                   this.board_model);
-        this.snake = new Snake({x:5, y: 5,color: "yellow",side: this.board_side},
-                               this.context,
-                               this.canvas);
+        this.keyboard_manager();
+        
+        this.board_model = new BoardModel(this.board_width, this.board_height, this.board_side);
+        this.board = new BoardView(this.context, this.canvas, this.board_model, this.board_skin);
+        this.snake = new Snake(this.context,
+                               this.canvas,
+                               {x:5, y: 5,color: "yellow",side: this.board_side});
         this.bonus = new Bonus(this.context,
                                this.canvas,
-                               this.board_side,
-                               "red");
+                               this.board_model,
+                               this.bonus_init);
         this.audio = new Howl({
                               src: ['effects/Sound7127[Wav_Library_Net].mp3'],
                               autoplay: true,
@@ -95,10 +148,20 @@ console.log("in side task01.js");
                                 console.log('end music intro!');
                               }
                             });
-        this.audio.play();  
+        this.timer.start();
+        this.audio.stop();
         this.board.render();
-        this.keyboard_manager();
         },
+    play : function(){
+        myGameArea.start_screen.hide();
+        myGameArea.game_over_screen.hide();
+        myGameArea.timer.start();
+        this.audio.play();  
+    },
+    paused : function(){
+        myGameArea.timer.stop();
+        this.audio.stop();  
+    },
     keyboard_manager: function(){
         document.addEventListener('keydown', function(event){
             var xp, yp;
@@ -122,32 +185,27 @@ console.log("in side task01.js");
                 // Down
                 myGameArea.move_y  = -1;
             }else if (event.keyCode === 32) {
-                myGameArea.timer.toggle();
-                if(myGameArea.timer._paused){
-                      myGameArea.audio.stop();
-                    }else{
-                      myGameArea.audio.play();  
+                if(!myGameArea.game_over){
+                    myGameArea.timer.toggle();
+                    if(myGameArea.timer._paused ){
+                          myGameArea.pause_screen.show();
+                          myGameArea.audio.stop();
+                        }else{
+                          myGameArea.pause_screen.hide();
+                          myGameArea.audio.play();  
+                        }
+                    myGameArea.move_x = xp;
+                    myGameArea.move_y = yp;
                     }
-                myGameArea.move_x = xp;
-                myGameArea.move_y = yp;
-                }
-            
-            // проверяю направление движение змейки если нажимается кнопка обратная движению
-            // движение продолжается в том же направлении
-            if(xp == (-1)*myGameArea.move_x)
-                myGameArea.move_x = xp;
-            if(yp == (-1)*myGameArea.move_y)
-                myGameArea.move_y = yp;
+
+                    // проверяю направление движение змейки если нажимается кнопка обратная движению
+                    // движение продолжается в том же направлении
+                    if(xp == (-1)*myGameArea.move_x)
+                        myGameArea.move_x = xp;
+                    if(yp == (-1)*myGameArea.move_y)
+                        myGameArea.move_y = yp;
+                 }
 		  });
-        },
-    vector_moveing:  function(){
-        var x_pos, y_pos;
-        x_pos = myGameArea.current_x;
-        y_pos = myGameArea.current_y;
-        
-        // прибавляем значение полученное посл
-        myGameArea.current_y += myGameArea.move_y;
-        myGameArea.current_x += myGameArea.move_x;
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -156,24 +214,23 @@ console.log("in side task01.js");
     
              
     function updateGameArea(){
+        // новый шаг
+        myGameArea.current_y += myGameArea.move_y;
+        myGameArea.current_x += myGameArea.move_x;
+        var step = myGameArea.board_model.get_coord(myGameArea.current_x,
+                                                          myGameArea.current_y);
         myGameArea.snake.clear();
-        
         myGameArea.board.render();
         myGameArea.bonus.render();
-        
-        myGameArea.vector_moveing();
-        
-        var begin = myGameArea.board.board_data.get_coord(myGameArea.current_x,
-                                                          myGameArea.current_y);
-        
-        myGameArea.snake.move(begin.x,begin.y);
+
+        myGameArea.snake.move(step.x,step.y);
         myGameArea.snake.render();
         
         var snake_tail = myGameArea.snake.get_element_pos();
-        if(myGameArea.bonus.is_bonus(begin.x, begin.y)){
+        if(myGameArea.bonus.is_bonus(step.x, step.y)){
             myGameArea.points++;
             myGameArea.bonus.generate_new_bonus(snake_tail);
-            myGameArea.snake.add_item(begin.x,begin.y);
+            myGameArea.snake.add_item(step.x,step.y);
         }
         
         // проверка пересечения стен
@@ -184,7 +241,7 @@ console.log("in side task01.js");
                 }
         // проверка само пересечения 
         if( snake_tail.length > 3){
-            for(var i=2; i<snake_tail.length; i++){
+            for(var i=3; i<snake_tail.length; i++){
                 if((snake_tail[0].x==snake_tail[i].x)&&(snake_tail[0].y==snake_tail[i].y)){
                     console.log("game over: self intersection");
                     myGameArea.game_over = true;
@@ -194,6 +251,7 @@ console.log("in side task01.js");
                }
             }
         if(myGameArea.game_over){
+            myGameArea.game_over_screen.show();
             myGameArea.audio.stop();
             }
         
