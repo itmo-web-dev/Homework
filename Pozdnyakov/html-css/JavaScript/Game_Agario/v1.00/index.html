@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="point.js"></script>
+    <title>PointJS Game</title>
+</head>
+
+<body>
+    <script>
+        //pjs - движок, игровая сцена, участок экрана, на котором будет
+        //происходить всё действие
+        var pjs = new PointJS('2d', 400, 400, {
+            backgroundColor: "rgba(103, 89, 89, 0.63)"
+        });
+
+        //В коде часто будут использоваться свойства метода game
+        //Поэтому создаём переменную
+        var game = pjs.game;
+        //Для логирования:
+        var log = pjs.system.log;
+        
+        //Для растигивания на весь экран
+        pjs.system.initFullPage();
+        
+        //Для позиционирования в пространстве:
+        var p = pjs.vector.point;
+
+        //Включаем режим перехвата событий мыши
+        var m = pjs.mouseControl;
+        m.initMouseControl();
+        
+        //Рандомные переменные
+        var random = pjs.math.random;
+        var rc = pjs.colors.randomColor;
+
+        //Основной объект игры - игрок
+        var player = game.newCircleObject({
+            x: 100,
+            y: 100,
+            radius: 5,
+            fillColor: rc(0, 255),
+            strokeColor: "black",
+            strokeWidth: 2
+        });
+
+        //Создаём фон для игровой сцены.
+        //Фон представляет собой одинаковые квадраты, которые будут
+        //отрисовываться по иксу и по игрику
+        var s = 50,
+            x, y, fon = []; {
+            for (x = 0; x < 50; x++) {
+                for (y = 0; y < 50; y++) {
+                    fon.push(
+                        game.newRectObject({
+                            x: x * s,
+                            y: y * s,
+                            w: s - 1,
+                            h: s - 1,
+                            fillColor: "#483838"
+                        })
+                    )
+                }
+            }
+        };
+
+        //Массив, в который рандомно записываем объекты-враги,
+        //которые наш игрок будет поглощать
+        var box = []; {
+            for (var b = 0; b < 1200; b++) {
+                box.push(game.newCircleObject({
+                    x: random(0, 2500),
+                    y: random(0, 2500),
+                    radius: random(1, 6),
+                    fillColor: rc(0, 255)
+                }))
+            }
+        };
+
+        //Счётчик очков
+        var c = 0;
+        var score = game.newTextObject({
+            x: 100,
+            y: 100,
+            text: "Очки: 0",
+            size: 20,
+            padding: 10,
+            color: "white"
+        });
+
+        //newLoop - создание игрового цикла, внутри будет происходить
+        //вся логика игры
+        game.newLoop('agario', function() {
+            //Необходимо, чтобы каждый проход цикла объекты отрисовывались
+            //заново. То что было отрисовано очищаем
+            game.clear();
+
+            //Отрисовываем наш фон
+            for (var i in fon) {
+                //Отрисовывем только то, что в области видимости
+                if (fon[i].isInCamera())
+                    fon[i].draw()
+            }
+
+            //Отрисовываем кружки-враги
+            for (var j in box) {
+                //Отрисовывем только то, что в области видимости
+                if (box[j].isInCamera())
+                    box[j].draw()
+            }
+
+            //moveTimeC() - двигает объект к точке (позиция мыши),
+            //за указанное время (чем больше радиус, тем медленнее игрок)
+            player.moveTimeC(m.getPosition(), player.radius * 3 + 50);
+
+            //Чтобы отрисовать на игровом поле что-либо, использется
+            //функция draw()
+            player.draw();
+
+            //Обрабатываем столкновения объектов
+            for (var j in box) {
+
+                //Делаем притяжение врагов к игроку
+                if (box[j].getDistanceC(player.getPosition(1)) < player.radius + 30) {
+                    box[j].moveTimeC(player.getPosition(1), 40);
+                }
+
+                //Если динамик-боксы игрока и кружков-врагов пересекаются
+                if (player.isDynamicIntersect(box[j].getDynamicBox())) {
+                    //Удаляем кружок
+                    box.splice(j, 1);
+                    //Увеличиваем игрока
+                    if (player.radius < 100) {
+                        c++;
+                        // log(player.radius)
+                        player.scaleC(1.01);
+                        score.reStyle({
+                            text: "Очки: " + c
+                        });
+                    };
+                    
+                    if (c == 302) {
+                        alert('Поздравляем! Вы большой круг! Попробуйте ещё!');
+                        location.reload();
+                    };
+                }
+
+                //Так же следим за автопополнением кружков-врагов
+                if (box.length < 1199) {
+                    for (var b = 0; b < 200; b++) {
+                        box.push(game.newCircleObject({
+                            x: random(0, 2500),
+                            y: random(0, 2500),
+                            radius: random(1, 6),
+                            fillColor: rc(0, 255)
+                        }))
+                    }
+                }
+            }
+
+            score.setPositionS(p(10, 20));
+            score.draw();
+
+            //Установить камеру в позицию (позиция игрока) с учетом центра
+            pjs.camera.setPositionC(player.getPosition(1));
+
+        })
+
+        //Задаём активный игровой цикл, с помощью setLoop()
+        game.setLoop('agario');
+        //Запускаем активный игровой цикл
+        game.start();
+    </script>
+</body>
+
+</html>

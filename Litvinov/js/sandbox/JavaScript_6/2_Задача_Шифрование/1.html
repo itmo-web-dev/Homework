@@ -1,0 +1,20 @@
+<html>
+<head></head>
+<body>
+<script src="myUtils.js"></script>
+<script type="text/javascript">
+	//Задча Шифрование строки по ключу
+	
+	//Запрошиваем текст для шифрования
+	var text = prompt("Введите текст для шифрования:");
+	
+	//Запрашиваем ключ
+	var key = prompt("Введите ключ (один символ) для шифрования:");
+		
+	//Выводим зашифрованный текст
+	alert(myUtils.encryption(text, key));
+	console.log(myUtils.encryption(text, key));
+</script>
+</body>
+<footer></footer>
+</html>

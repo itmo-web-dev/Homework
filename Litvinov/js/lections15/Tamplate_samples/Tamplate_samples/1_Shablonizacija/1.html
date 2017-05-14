@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="mustache.min.js"></script>
+</head>
+<body>
+<script>
+	data = {
+		title:"Sketches of Spain",
+		artist:"Miles Davis"
+	};
+	template = "Title: {{title}}. Artist: {{artist}}.";
+	result = Mustache.render(template, data);
+	console.log(result);
+</script>
+</body>
+</html>

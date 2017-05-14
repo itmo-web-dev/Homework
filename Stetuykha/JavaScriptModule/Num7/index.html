@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script>
+		function watch()
+		{
+		var date = new Date();
+		var hours = date.getHours();
+		var minutes = date.getMinutes();
+		var seconds = date.getSeconds();
+		if (hours < 10) hours = "0" + hours;
+		if (minutes < 10) minutes = "0" + minutes;
+		if (seconds < 10) seconds = "0" + seconds;
+		document.getElementById("watchH").innerHTML = hours + ":";
+		document.getElementById("watchM").innerHTML = minutes + ":";
+		document.getElementById("watchS").innerHTML = seconds;
+		setTimeout("watch()", 1000);
+		}
+	</script>
+	<title>HW7</title>
+</head>
+<body onload = "watch()">
+	<span id="watchH" style="color: red; font-size: 120%; font-weight: bold;"></span>
+	<span id="watchM" style="color: green; font-size: 120%; font-weight: bold;"></span>
+	<span id="watchS" style="color: blue; font-size: 120%; font-weight: bold;"></span>
+
+<div id="goods"></div>
+
+<script src='main.js'></script>
+</body>
+</html>
