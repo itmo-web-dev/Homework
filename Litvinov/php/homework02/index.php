@@ -35,6 +35,7 @@ echo "<br>";
 echo "----------------------------------------------------------";echo "<br>";
 echo TASK02;
 echo "<br>";echo "<br>";
+
 $n = 1000000;
 $counter=0;
 for($i = 0; $i < $n ; $i++)
@@ -48,6 +49,7 @@ for($i = 0; $i < $n ; $i++)
         $counter++;
     }
 };
+
 echo '<br>';
 echo "кол-во счастливых билетов:  ", $counter;
 echo "<br>";
@@ -96,9 +98,144 @@ echo "<br>";
 echo TASK05;
 echo "<br>";echo "<br>";
 
-
-
-echo TASK06;
+function paint_line($n, $begin, $end){
+    for($i=0, $str=""; $i<$n ; $i++){
+        if(($i < $begin) or ($i >= $end)){
+            $str = $str."=";
+            continue;
+        }
+        $str = $str."*";
+    }
+    echo $str."<br>";
+}
+paint_line(6, 2, 4);
+paint_line(6, 0, 3);
+paint_line(6, 4, 6);
 echo "<br>";
 
+# четный ромб
+define("TOP_CORNER", 1);
+define("DOWN_CORNER", 3);
+
+function paint_corner($n, $type){
+    if( $type ==1 ){
+        $length_double = $n*2;
+        $left = $n--;
+        $right = 1+$n++;
+        for ($i = $n; $i > 0; $i--) {
+            $left--;
+            $right++;
+            paint_line($length_double, $left, $right);
+        }
+    }
+    if( $type == 3) {
+        $length_double = $n*2;
+        for ($i = 0; $i < $n; $i++) {
+            paint_line($length_double, $i, $length_double-$i);
+        }
+    }
+}
+$n = 5;
+paint_corner($n, TOP_CORNER);
+paint_corner($n, DOWN_CORNER);
+echo "<br>";
+# нечетный ромб
+function paint_corner_acute($length, $n, $type){
+    if( $type ==1 ){
+        $left = $n;
+        $right = $n-1;
+        for ($i = $n; $i > 0; $i--) {
+            $left--;
+            $right++;
+            paint_line($length, $left, $right);
+        }
+    }
+    if( $type == 3) {
+        $right = $length+1;
+        for ($i = 0; $i < $n; $i++) {
+            $left = $i;
+            $right--;
+            if($i==0) {
+                continue;
+            }
+            paint_line($length, $left, $right);
+        }
+    }
+}
+$n = 5;
+$length = 9;
+paint_corner_acute($length, $n, TOP_CORNER);
+paint_corner_acute($length, $n, DOWN_CORNER);
+echo "<br>";
+
+# ---- результат ---------
+echo "---- результат ---------"."<br>";
+$input = 10;
+function draw_romb($input)
+{
+    echo "Высота ромба: $input";echo "<br>";
+    if ($input % 2 == 0) {
+        $n = $input / (float)2.0;
+        paint_corner($n, TOP_CORNER);
+        paint_corner($n, DOWN_CORNER);
+    } else {
+        $n = round($input / 2.0, 0, PHP_ROUND_HALF_DOWN)+1;
+        $length = $input;
+        paint_corner_acute($length, $n, TOP_CORNER);
+        paint_corner_acute($length, $n, DOWN_CORNER);
+    }
+}
+echo "<br>";
+$input = 10;
+draw_romb($input);
+echo "<br>";
+$input = 7;
+draw_romb($input);
+echo "<br>";
+$input = 13;
+draw_romb($input);
+
+echo "<br>";
+echo TASK06;
+echo "<br>";echo "<br>";
+
+
+function table_mult($input)
+{
+    echo '<table>';
+    echo "<caption> Таблица умножения до $input </caption>";
+    echo "<tr>";
+    for ($i = 0, $str = ""; $i < $input + 1; $i++) {
+        if ($i == 0) {
+            $str = $str . "<th>N</th>";
+            continue;
+        }
+        $str = $str . "<th>$i</th>";
+    }
+    echo $str;
+    echo "</tr>";
+
+
+    for ($j = 1; $j < $input + 1; $j++) {
+        echo "<tr>";
+        for ($i = 1, $str = ""; $i < $input + 1; $i++) {
+            if ($i == 1) {
+                $str = $str . "<td>$j</td>";
+                # continue;
+            }
+            $mult = $i * $j;
+            $str = $str . "<td>$mult</td>";
+        }
+        echo $str;
+        echo "</tr>";
+    }
+
+    echo "</table>";
+}
+$input = 7;
+table_mult($input);
+$input = 10;
+table_mult($input);
+$input = 13;
+table_mult($input);
 ?>
