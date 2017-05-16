@@ -1,0 +1,49 @@
+INSERT INTO `tasks` (`id_task`, `text`, `status`) VALUES (NULL, 'помыть машину ', '0');
+
+
+UPDATE `tasks` SET status = 0 WHERE id_task = 1
+по всей таблице
+UPDATE `tasks` SET status = 0
+
+"DELETE FROM `tasks` WHERE `tasks`.`id_task` = 3"
+
+php 7
+
+<?php  
+$username="root";  
+$password="namungoona";  
+$hostname = "localhost";  
+//connection string with database  
+$dbhandle = mysqli_connect($hostname, $username, $password)  
+or die("Unable to connect to MySQL");  
+echo "";  
+// connect with database  
+$selected = mysqli_select_db($dbhandle, "police")  
+or die("Could not select examples");  
+//query fire  
+$result = mysqli_query($dbhandle,"select * from News;");  
+$json_response = array();  
+// fetch data in array format  
+while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {  
+// Fetch data of Fname Column and store in array of row_array
+$row_array['Headlines'] = $row['Headlines'];  
+$row_array['Details'] = $row['Details']; 
+$row_array['NewsPhoto'] = $row['NewsPhoto']; 
+
+//push the values in the array  
+array_push($json_response,$row_array);  
+}  
+//  
+echo json_encode($json_response); 
+mysqli_free_result($result);
+?>
+
+храняться все базы 
+там все базы и хранятся - C:\WebServers\usr\local\mysql5\data\
+
+функция для экспорта базы 
+- функция экспорта на сайте 
+
+хорошая статья
+Базы данных и phpMyAdmin в Denwer
+http://www.sdelaysite.com/kniga/tools/bazi-dannih-denwer
