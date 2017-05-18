@@ -1,0 +1,30 @@
+﻿хорошая ссылка:
+пошаговая настройка Xdebug + OpenServer + PHPStorm
+http://yiiframework.ru/forum/viewtopic.php?t=14281
+
+на Win7 у меня сетапится так
+https://cloud.mail.ru/public/LiH9/UX33hXcZo
+
+для OpenServer
+если просто искать и переименовывать в php.ini то при перезапуске настройка затираются 
+нужно редактировать файл здесь:
+
+c:\OpenServer\userdata\config\PHP-7.0-x64_php.ini
+в нем есть за комментированный кусок про xDebug 
+
+в него я прописал 
+и скопировал dll но возможно можно раз архивировать просто ...
+и перезапустил сервер
+... расширенный вывод заработал
+
+
+[Xdebug]
+zend_extension= "c:/OpenServer/modules/php/PHP-7.0-x64/ext/php_xdebug-2_5_3-7_0-vc14-x86_64.dll"
+xdebug.idekey = "PHPSTORM"
+xdebug.profiler_output_dir="c:/OpenServer/userdata/temp/xdebug/"
+xdebug.profiler_output_name = "cachegrind.out.%H%R"
+xdebug.remote_enable = 1
+xdebug.remote_handler = "dbgp"
+xdebug.remote_host = "localhost"
+xdebug.remote_port = 8080
+xdebug.trace_output_dir = "c:/OpenServer/userdata/temp/xdebug/"
