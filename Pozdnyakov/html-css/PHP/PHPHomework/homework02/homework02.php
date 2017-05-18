@@ -90,8 +90,13 @@ $str_num = '';
 
 for ($j = 0; $j < 40; $j++) {
     $str_num = (string)$j;
+<<<<<<< HEAD
     if ((($str_num[0] == 3) || ($str_num[1] == 3))
         && ($j%5 == 0)) {
+=======
+    if ((($str_num[0] == 3) || ($str_num[1] == 3)) 
+        && ($j%5 != 0)) {
+>>>>>>> 4dd4ec53c4dad92e21a5b4b6364a24afe29cc498
         echo "$j<br>";
     }
 }
