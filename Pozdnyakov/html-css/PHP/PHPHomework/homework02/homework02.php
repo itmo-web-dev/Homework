@@ -17,7 +17,7 @@ $current_day = (int)date("w");
 $day = '';
 
 foreach ($arr as $value) {
-    if (aray_search($value, $arr) == $current_day) {
+    if (array_search($value, $arr) == $current_day) {
         $day = "<b>$value</b>";
     } else {
         $day = $value;
@@ -26,7 +26,7 @@ foreach ($arr as $value) {
 }
 unset($value);
 
-echo r'<pre><h3>
+echo '<pre><h3>
 Задание 2:
 Доделать задачу про счастливые билетики - вывести процент от общего числа билетов
 </h3></pre>';
@@ -69,13 +69,14 @@ echo '<pre><h3>
 иначе если (год не делится на 400) тогда (год обычный)
 иначе (год високосный)*/
 
-$year = 2017;
+$year = 2000;
 $yaer_str = '';
 
-($year%4 != 0) ?  $yaer_str = "$year не високосный год" :
-    (($year%100 != 0) ? $yaer_str = "$year високосный год" :
-        (($year%400 != 0) ? $yaer_str = "$year не високосный год" : 
-            $yaer_str = "$year високосный год"));
+$yaer_str = 
+($year%4 != 0) ?  "$year не високосный год" :
+    (($year%100 != 0) ? "$year високосный год" :
+        (($year%400 != 0) ? "$year не високосный год" : 
+            "$year високосный год"));
 
 echo $yaer_str;
 
@@ -90,13 +91,8 @@ $str_num = '';
 
 for ($j = 0; $j < 40; $j++) {
     $str_num = (string)$j;
-<<<<<<< HEAD
-    if ((($str_num[0] == 3) || ($str_num[1] == 3))
-        && ($j%5 == 0)) {
-=======
     if ((($str_num[0] == 3) || ($str_num[1] == 3)) 
         && ($j%5 != 0)) {
->>>>>>> 4dd4ec53c4dad92e21a5b4b6364a24afe29cc498
         echo "$j<br>";
     }
 }
@@ -110,7 +106,7 @@ echo '<pre><h3>
 
 //Способ решения не укзан, так что..
 
-echo '<pre>
+/*echo '<pre>
         *
        ***
       *****
@@ -118,8 +114,33 @@ echo '<pre>
       *****
        ***
         *
-    </pre>';
+    </pre>';*/ // =(
 
+
+$height = 5;
+
+$str_space = '_';
+
+for ($j = 0; $j < $height ; $j++){
+    $str_space .= '_';
+};
+
+for ($l = 0; $l < $height*2; $l++) {
+   if ($l < $height) {
+        $a = $height + $l;
+        $b = $height - $l;
+        $str_space[$a] = '*';
+        $str_space[$b] = '*';
+        echo "$str_space<br>";
+   }
+     else if ($l > $height) {
+        $a = $l - $height;
+        $b = $height - $l; 
+        $str_space[$a] = '_';
+        $str_space[$b] = '_';
+        echo "$str_space<br>";            
+    }
+}
 
 echo '<pre><h3>     
 Задание 6:
@@ -168,6 +189,7 @@ $arr2 = [
 массивами!*/
    
 //Удалось приспособить метод пузырька:
+//мультисорт
 
 $n = count($arr2);
 
