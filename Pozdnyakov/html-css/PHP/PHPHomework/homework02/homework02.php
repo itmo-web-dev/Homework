@@ -17,7 +17,7 @@ $current_day = (int)date("w");
 $day = '';
 
 foreach ($arr as $value) {
-    if (array_search($value, $arr) == $current_day) {
+    if (aray_search($value, $arr) == $current_day) {
         $day = "<b>$value</b>";
     } else {
         $day = $value;
@@ -26,7 +26,7 @@ foreach ($arr as $value) {
 }
 unset($value);
 
-echo '<pre><h3>
+echo r'<pre><h3>
 Задание 2:
 Доделать задачу про счастливые билетики - вывести процент от общего числа билетов
 </h3></pre>';
@@ -90,7 +90,7 @@ $str_num = '';
 
 for ($j = 0; $j < 40; $j++) {
     $str_num = (string)$j;
-    if ((($str_num[0] == 3) || ($str_num[1] == 3)) 
+    if ((($str_num[0] == 3) || ($str_num[1] == 3))
         && ($j%5 == 0)) {
         echo "$j<br>";
     }
