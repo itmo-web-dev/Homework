@@ -4,6 +4,9 @@ function login($login, $pwd) {
 	if ($login == 'user1' && $pwd == '123') {
 		$_SESSION['name'] = $login;
 		return true;
+	} elseif ($login == 'admin' && $pwd == 'admin') {
+		$_SESSION['name'] = $login;
+		return true;
 	}
 	return false;
 }

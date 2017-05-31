@@ -1,4 +1,5 @@
-<form method="post" action="/login">
+<form id="auth_form">
+<p id="errros"></p>
 	<label for="login">Логин</label>
 	<input name="login" id="login" type="text">
 

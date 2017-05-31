@@ -28,7 +28,25 @@ function getGoodById($good_id) {
 	return false;
 }
 
-
+function addGood($goodID, $goodName, $description, $img) {
+    $newGood = [
+        'id' => $goodID,
+        'title' => $goodName,
+        'description' => $description,
+        'preview' => $img];
+    $goods_arr = getAllGoods();
+    array_push($goods_arr, $newGood);
+    $data = json_encode($goods_arr);
+    $fp = fopen('app/models/goods_data.txt', 'w+');
+    $test = fwrite($fp, $data);
+    if ($test) {
+        echo 'Данные в файл успешно занесены.';
+    } else {
+        echo 'Ошибка при записи в файл.';
+    }
+    fclose($fp);
+//    var_dump($goods_arr);
+}; 
 
 
 

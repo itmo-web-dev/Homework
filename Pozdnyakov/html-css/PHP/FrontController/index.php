@@ -23,6 +23,6 @@ function runController() {
 	$action(); //loginAction()
 
 }
-
+session_start();
 runController();
 
