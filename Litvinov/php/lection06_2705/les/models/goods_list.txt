@@ -1,0 +1,1 @@
+[{"id":1,"title":"Название 1","description":"Длинное описание","preview":"good.jpg"},{"id":2,"title":"Название 2","description":"Длинное описание","preview":"good.jpg"},{"id":3,"title":"Название 3","description":"Длинное описание","preview":"good.jpg"}]

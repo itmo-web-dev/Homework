@@ -5,91 +5,208 @@
  * Date: 17.05.2017
  * Time: 23:52
  */
-$arr = array();
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors', 1);
+ini_set("log_errors", 1);
+ini_set("log_errors_max_len", 0);
+ini_set("error_log", 'php_errors.log');
 
-$arr[0] =  <<<TASK1
-Задача 1
-   //Дана радиокнопка
-   \$radio_but = "&ltinput type='radio' name='php';
-   echo \$radio_but ."&gt &lt br &gt"; // неактивная радиокнопка
-   //напишите функцию make_checked, которая сделает радиокнопку активной (атрибут checked)
-   make_checked(\$radio_but); // вызов функции
-   echo \$radio_but ."&gt &lt br &gt"; // активная радиокнопка"
-TASK1;
-$arr[1] =  <<<TASK21
-Задача 2
-создать функцию с аргументом для вывода приветствия (Например, "Здравствуйте, ИМЯ").
-Установить значение по умолчанию для аргумента равное «Гость»
-TASK21;
+include_once("tasks.php");
 
-$arr[2] =  <<<TASK2
-Задача 3
-Допустим, пользователь вводит названия городов через пробел. Вы их присваиваете переменной.
-Переставьте названия так, чтобы названия были упорядочены по алфавиту.
-TASK2;
-$arr[3] =  <<<TASK3
-Задача 4
-Написать функцию - конвертер строки.
-Возможности:
-перевод всех символов в верхний регистр,
-перевод всех символов в нижний регистр,
-перевод всех символов в нижний регистр и первых символов слов в верхний регистр.
-Это должна быть одна функция
-TASK3;
-$arr[4] =  <<<TASK4
-Задача 5
-Используя функцию удаления HTML и PHP-тегов из строки, выведите на экран строку «&lt h1 &gt Hello, world! &lt /h1 &gt».
-Строка не должна выглядеть как заголовок первого уровня – все теги должны быть удалены.
-TASK4;
-$arr[5] =  <<<TASK5
-Задача 6
-Создайте массив. Объедините все элементы массива в строку и выведите её на экран.
-TASK5;
-$arr[6] =  <<<TASK6
-Задача 7
-В переменной \$date лежит дата в формате '30-11-2017'. Преобразуйте эту дату в формат '2017.11.30'.
-TASK6;
-$arr[7] =  <<<TASK7
-Задача 8
-Дана строка '/php/'. Сделайте из нее строку 'php', удалив концевые слеши.
-TASK7;
-$arr[8] =  <<<TASK8
-Задача 9
-Дана строка 'просто строка.'. В конце этой строки может быть точка, а может и не быть.
-Сделайте так, чтобы в конце этой строки гарантировано стояла точка.
-То есть: если этой точки нет - ее надо добавить, а если есть - ничего не делать. Задачу решите через rtrim
-TASK8;
-$arr[9] =  <<<TASK9
-Задача 10
-Написать функцию, которая выводит количество дней, оставшихся до нового года.
-Функция должна корректно работать при запуске в любом году.
-TASK9;
-$arr[10] =  <<<TASK10
-Задача 11*
-Функция принимает число, в цикле for пытается поделить (без остатка) его на числа из диапазона 1..num и выводит результат
-TASK10;
-
-
-
-$db_handle = mysqli_connect('localhost', 'root', 'toor');
-$mysql = mysqli_select_db($db_handle, "hometasks");
-if ($mysql == true){
-    echo "base connected"; echo "<br/>";
-}else{
-    echo "base is not connected"; echo "<br/>";
-}
-echo "<br/>"; echo "<br/>";
-
-$template = "template_01.php";
-$date = "18-05-2017";
-$v = "task";
-$v = mysqli_real_escape_string($db_handle, $v);
-foreach($arr as $value){
-    $value = mysqli_real_escape_string($db_handle, $value);
-    $sql = "INSERT INTO practika (text, data_creation, template_html) VALUES ('$value','$date', '$template')";
-    echo $sql;  echo "<br/>"; echo "<br/>";
-
-    mysqli_query($db_handle, $sql);
-    echo nl2br($value); echo "<br/>"; echo "<br/>";
+echo(nl2br($arr[0]));
+echo "<br/>";
+function make_checked(&$radio_but){
+    $radio_but .= "checked='checked'";
 }
 
+echo "<br/>";
+$radio_but = "<input type='radio' name='php' ";
+echo $radio_but .">Кнопка не нажата<br>"; // неактивная радиокнопка
+//напишите функцию make_checked, которая сделает радиокнопку активной (атрибут checked)
+make_checked($radio_but); // вызов функции
+echo $radio_but .">Кнопка нажата <br>"; // активная радиокнопка
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo(nl2br($arr[1]));
+echo "<br/>";
+function hello($user="Гость"){
+    echo "Здравствуйте, ".$user."<br/>";
+}
+hello('Peter');
+hello();
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo(nl2br($arr[2]));
+echo "<br/>";
+
+$cmd = "Москва Спб Тула Алмаата";
+function sort_string($cmd){
+    $arr_city = explode(" ", $cmd);
+    sort($arr_city);
+    return implode(" ", $arr_city);
+}
+echo "<br/>";
+echo $cmd."<br/>";
+echo sort_string($cmd)."<br/>";
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo(nl2br($arr[3]));
+echo "<br/>";
+
+$cmd = "User items";
+define("UPPER_CASE", 1);
+define("LOWER_CASE", 2);
+define("FIRTS_LETTER", 3);
+function convert_str($cmd, $type=0){
+    if (is_int($type) != true) {
+        return "N/A";
+          }
+    $output = "";
+    if($type == 1){
+        $out = strtoupper($cmd);
+        }
+    if($type == 2) {
+        $out = strtolower($cmd);
+    }
+    if($type == 3) {
+        $out = ucwords($cmd);
+    }
+    return $out;
+}
+echo "<br/>";
+echo convert_str($cmd, UPPER_CASE)."<br/>";
+echo convert_str($cmd, LOWER_CASE)."<br/>";
+echo convert_str($cmd, FIRTS_LETTER)."<br/>";
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo(nl2br($arr[4]));
+echo "<br/>";
+echo "<br/>";
+
+$cmd = "<h1>Hello, world!</h1>";
+echo strip_tags($cmd)."<br/>";
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo(nl2br($arr[5]));
+echo "<br/>";
+echo "<br/>";
+
+$cmd =['2', '5', '54'];
+var_dump($cmd);
+$out = implode(",", $cmd);
+echo $out."<br/>";
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo(nl2br($arr[6]));
+echo "<br/>";
+echo "<br/>";
+
+$date = '30-11-2017';
+print_r($date);echo "<br/>";
+$arr_date = explode("-", $date);
+$arr_date_reversed = array_reverse($arr_date);
+echo implode(".", $arr_date_reversed);
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo "<br/>";
+echo(nl2br($arr[7]));
+echo "<br/>";
+echo "<br/>";
+
+$cmd = "/php/";
+$str = str_replace('/', '', $cmd);
+echo $str."<br/>";
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo "<br/>";
+echo(nl2br($arr[8]));
+echo "<br/>";
+echo "<br/>";
+
+function check_point($str){
+    if(is_string($str) != true){
+        return "N/A";
+    }
+    $str = rtrim($str);
+    if (mb_substr($str, -1) !== '.'){
+        $str .= '.';
+    }
+    return $str;
+}
+
+$cmd = "string.";
+echo check_point($cmd)."<br/>";
+$cmd = "string";
+echo check_point($cmd)."<br/>";
+$cmd = "string    ";
+echo check_point($cmd)."<br/>";
+$cmd = "string.    ";
+echo check_point($cmd)."<br/>";
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo "<br/>";
+echo(nl2br($arr[9]));
+echo "<br/>";
+echo "<br/>";
+date_default_timezone_set('Europe/Moscow');
+
+function day_to_year_out($date="now"){
+     if($date == "now"){
+         $day = date("z");
+     }else{
+         $day = date("z", $date);
+     }
+
+     $is_vesokosniy = date("L", (int)$date);
+     if($is_vesokosniy){
+         echo "Весокосный год"."<br/>";
+         $rez = 365-$day;
+     }else{
+         echo "Обычный год"."<br/>";
+         $rez = 364-$day;
+     }
+    return (string)$rez;
+}
+
+echo day_to_year_out()."<br/>";
+$cmd = mktime(0, 0, 0, 1, 1, 1999);
+echo day_to_year_out($cmd)."<br/>";
+$cmd = mktime(0, 0, 0, 1, 1, 2008);
+echo day_to_year_out($cmd)."<br/>";
+
+#-----------------------------------------------------------------------
+echo "<br/>";
+echo "<br/>";
+echo(nl2br($arr[10]));
+echo "<br/>";
+echo "<br/>";
+
+function divide($value, $num=10){
+    for($i=1; $i<$num; $i++){
+        if($value%$i === 0 )
+            $arr[]=$i;
+    }
+    return $arr;
+}
+
+echo  "value=15, range=[1..10]" . "<br/>";
+foreach( divide(15, 10) as $value) {
+    echo  $value . " ";
+}
+echo "<br/>";
+
+$v = 25;
+$r = 30;
+echo  "value=$v, range=[1..$r]" . "<br/>";
+foreach( divide($v, $r) as $value) {
+    echo  $value . " ";
+}

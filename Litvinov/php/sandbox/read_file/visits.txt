@@ -1,0 +1,15 @@
+2017-05-30 21:43:40
+::1
+http://localhost:8080/
+2017-05-30 22:03:00
+::1
+http://localhost:8080/
+2017-05-30 22:03:30
+::1
+http://localhost:8080/read_file/site1.html
+2017-05-30 22:03:34
+::1
+http://localhost:8080/read_file/site2.html
+2017-05-30 22:03:51
+::1
+http://localhost:8080/read_file/visits.php

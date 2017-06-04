@@ -1,0 +1,400 @@
+27-05 - суббота 
+Во вторник будем приводить в порядок и доделывать то, что не реализовали сегодня, поэтому
+ко вторнику нужно, чтобы у всех работало то, что делали на занятии и:
+1. Добавьте личный кабинет пользователя, когда он авторизируется, то попадает в свой личный кабинет (там просто приветствие: добро пожаловать,... Логин....) 
+2. Доделать прошлое дз
+
+
+25-05 - четверг 
+домашнее задание 
+Задание к субботе:
+1. Хешировать пароль password_hash() и в функции аутентификации проверять соответственно захешированный пароль
+http://php.net/manual/ru/book.password.php
+2. Реализовать валидацию всех данных на сервере, получаемых от пользователя! Это было в занятии про GET и POST
+3. Если успеете: реализовать отправку на сервер именно комментариев, вместо {tst: "tst"}, и запись этих комментариев в файл, сервер отвечает, что все ок, только после записи в файл. (не забывайте, что комментировать может только аутентифицированный пользователь)
+
+PHP: Хэширование паролей - Manual
+php.net
+
+
+23-05 - вторник 
+Домашнее задание:
+1. Три формы - на доске. Гетзапросы.
+2. Вход на сайт реализовать с паролем.
+3. Геометрическая прогрессия.
+4. Творческое - механизм рекурсии.нарисовать19 пифагоровых штанов фракталами.
+---------------------
+
+23-05 21-46
+---------------------------------
+visits php
+
+<?php
+$lines = file ('visits.txt');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"> 
+<title>Our website</title>
+</head>
+<body>
+<h1>Browsing history</h1>
+<a href="login2.php">Go to the main page</a>
+<br/>
+<br/>
+<table border="1">
+<tr>
+<td>Time</td>
+<td>IP-adress</td>
+<td>Fromwhere</td>
+</tr>
+<?php
+$n = count($lines);
+
+for ($i=0; $i < $n; $i += 3) { 
+echo '<tr>';
+echo '<td>' . $lines[$i + 0] . '</td>';
+echo '<td>' . $lines[$i + 1] . '</td>';
+echo '<td>' . $lines[$i + 2] . '</td>';
+echo '</tr>';
+}
+
+?>
+
+</table>
+<?php
+echo "\n This website was visited ";
+echo $n/3;
+echo " times";
+?>
+</body>
+</html>
+
+----------------------------------
+23-05 21-22
+
+<?php
+$lines = file ('visits.txt');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"> 
+<title>Our website</title>
+</head>
+<body>
+<h1>Browsing history</h1>
+<a href="login2.php">Go to the main page</a>
+<br/>
+<br/>
+<table border="1">
+<tr>
+<td>Time</td>
+<td>IP-adress</td>
+<td>Fromwhere</td>
+</tr>
+<?php
+$n = count($lines);
+
+for ($i=0; $i < $n; $i += 3) { 
+echo '<tr>';
+echo '<td>' . $lines[$i + 0] . '</td>';
+echo '<td>' . $lines[$i + 1] . '</td>';
+echo '<td>' . $lines[$i + 2] . '</td>';
+echo '</tr>';
+}
+
+?>
+
+</table>
+<?php
+echo "\n This website was visited ";
+echo $n/3;
+echo " times";
+?>
+</body>
+</html>
+--------------------------------
+23-05 21-09
+
+<?php
+echo "Запись информации в файл";
+$f = fopen('visits.txt', 'a+');
+fwrite($f, date('Y-m-d H:i:s') . "\n");
+fwrite($f, $_SERVER['REMOTE_ADDR'] . "\n");
+fwrite($f, $_SERVER['HTTP_REFERER'] . "\n");
+fclose($f);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"> 
+<title>First page</title>
+</head>
+<body>
+<h1>This is the main page of the site</h1>
+We're now <a href="visits.php">watching</a> its attendance
+<br/>
+<br/>
+On this page link two sites: <a href="site1.html">one</a>, and <a href="site2.html">two</a>
+</body>
+</html>
+------------------------------
+23-05 20-11
+
+<?php
+session_start();
+if (!isset($_SESSION['username']) && isset($_SESSION['username']))
+$_SESSION['username'] = $_COOKIE['username'];
+
+$username = $_SESSION['username'];
+
+if ($username == null){
+header("Location: Login.php");
+exit();
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"> 
+<title>First page</title>
+<b>First</b> and <a href="page2.php">second</a> pages.
+<br/>
+<br/>
+You are logged in as <b><?php echo $username;?></b> | <a href ="Login.php">Exit</a>
+</head>
+<body>
+<h1>1</h1>
+</body>
+</html>
+-------------------------------------------------------
+23-05 20-00
+
+<?php
+echo "Cookies";
+
+function Login($username, $remember) {
+
+if ($username == '')
+return false;
+$_SESSION['username'] = $username;
+if ($remember)
+setcookie('username', $username, time() +3600*24*7);
+
+return true;
+}
+
+function Logout() {
+
+setcookie('username', '', time() - 1);
+
+unset($_SESSION['username']);
+}
+
+session_start();
+$enter_site = false;
+
+Logout();
+
+if (count($_POST) > 0) {
+$enter_site = Login($_POST['username'], $_POST['remember'] == 'on');
+}
+
+if ($enter_site) {
+header("Location: page1.php");
+exit();
+}
+
+?>
+
+<html lang="en">
+<head>
+<title>Entrance</title>
+<meta charset="utf-8"> 
+</head>
+<body>
+<h1>Entrance</h1>
+<form action="" method ="post">
+
+Enter name:
+<br/>
+<br/>
+<input type="text" name="username" />
+<br/>
+<br/>
+<input type="checkbox" name="remember" /> Remeber me
+<br/>
+<br/>
+<br/>
+<input type="submit" name="Log in" />
+
+</body>
+</html>
+
+----------------------------------------------------
+20 мая 
+
+Задания ко вторнику (23.05.2017): 
+Задание 1
+Создайте форму добавления какой-либо информации (регистрация пользователя, добавление товара или статьи - главное, чтобы было какое-то уникальное поле - логин, id и тд)
+
+Эту информацию нужно записывать в файл, если такой записи еще нет
+
+Вывести информацию из файла на экран
+Используйте функции!
+
+Задание 2
+Самостоятельно разберитесь с загрузкой файла на сервер
+Создайте форму для загрузки файла
+Обработайте ее
+
+Если будут возникать вопросы, пишите!
+
+-------------------------------------------------------
+20 мая суббота - тапочки 
+
+<form method="post" action="add_user.php">
+<label for="login">Login</label>
+<input name="login" id="login" type="text">
+
+<label for="pwd">Password</label>
+<input name="pwd" id="pwd" type="password">
+
+<button type="submit">Отправить</button> 
+</form>
+
+--------------------------------------------------------
+20 мая суббота
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Title</title>
+<meta charset="utf-8"> 
+</head>
+<body>
+<h1>Товары</h1>
+<?php include "goods_info.php";?>
+<?php foreach ($data as $key => $value):?>
+<div>
+<h1><?php echo $data[$key]['title']; ?></h1>
+<p><?php echo $data[$key]['description']; ?></p>
+<a href="...">Подробнее</a>
+</div>
+<?php endforeach;?>
+
+</body>
+</html>
+
+-----------------------------------------------------
+20  мая суббота
+
+<?php
+
+$data = [
+[
+'id' => 1,
+'title' => 'Title 1',
+'description' => 'Long description',
+'preview' => 'doog.jpg'
+],
+[
+'id' => 2,
+'title' => 'Title 2',
+'description' => 'Long description',
+'preview' => 'doog.jpg'
+],
+[
+'id' => 3,
+'title' => 'Title 3',
+'description' => 'Long description',
+'preview' => 'doog.jpg'
+]
+];
+-------------------------------------------------------
+18 - мая - четверг 
+
+Задание к субботе:
+1. Доделывайте дз с прошлых занятий
+2. Подготовить форму (например форму регистрации).
+Помимо полей ввода, у формы должен быть чекбокс или радиокнопка.
+Данные, вносимые пользователем валидируются с помощью JavaSctipt
+3. Создать массив, который будет хранит товары, либо статьи, либо записи блога
+Структура: 
+[ [ id => значения указывайте произвольные
+title => значение
+description => значение
+preview => значение]
+
+[ id => значение
+title => значение
+description => значение
+preview => значение ]
+и тд
+]
+
+
+--------------------------------------------------------
+17 мая - среда
+
+Задачки (пока такие - завтра добавлю на генераторы):
+В первую очередь: 1, 4, 5, 7, 9, 10 
+
+Задача 1
+//Дана радиокнопка
+$radio_but = "<input type='radio' name='php' ";
+
+echo $radio_but ."><br>"; // неактивная радиокнопка
+
+//напишите функцию make_checked, которая сделает радиокнопку активной (атрибут checked)
+
+make_checked($radio_but); // вызов функции
+
+echo $radio_but ."><br>"; // активная радиокнопка
+
+Задача 2
+создать функцию с аргументом для вывода приветствия (Например, "Здравствуйте, ИМЯ"). 
+Установить значение по умолчанию для аргумента равное «Гость»
+
+Задача 3
+Допустим, пользователь вводит названия городов через пробел. Вы их присваиваете переменной.
+Переставьте названия так, чтобы названия были упорядочены по алфавиту.
+
+Задача 4
+Написать функцию - конвертер строки. 
+Возможности:
+перевод всех символов в верхний регистр,
+перевод всех символов в нижний регистр,
+перевод всех символов в нижний регистр и первых символов слов в верхний регистр.
+Это должна быть одна функция
+
+Задача 5
+Используя функцию удаления HTML и PHP-тегов из строки, выведите на экран строку «<h1>Hello, world!</h1>». 
+Строка не должна выглядеть как заголовок первого уровня – все теги должны быть удалены.
+
+Задача 6
+Создайте массив. Объедините все элементы массива в строку и выведите её на экран.
+
+Задача 7
+В переменной $date лежит дата в формате '30-11-2017'. Преобразуйте эту дату в формат '2017.11.30'.
+
+Задача 8
+Дана строка '/php/'. Сделайте из нее строку 'php', удалив концевые слеши. 
+
+Задача 9
+Дана строка 'просто строка.'. В конце этой строки может быть точка, а может и не быть. Сделайте так, чтобы в конце этой строки гарантировано стояла точка. То есть: если этой точки нет - ее надо добавить, а если есть - ничего не делать. Задачу решите через rtrim
+
+Задача 10
+Написать функцию, которая выводит количество дней, оставшихся до нового года.
+Функция должна корректно работать при запуске в любом году.
+
+Задача 11*
+Функция принимает число, в цикле for пытается поделить (без остатка) его на числа из диапазона 1..num и выводит результат
