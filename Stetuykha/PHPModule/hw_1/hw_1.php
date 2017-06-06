@@ -17,6 +17,7 @@
 	$time = 0.5;
 	$speed = $path / $time;
 	echo '////speed = '.$speed.' kmph ';
+	echo '////speed = '.($speed*1000/3600).' kmps ';
 
 	# task-4
 	define("CON", "354");

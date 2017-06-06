@@ -69,7 +69,7 @@
                     };
     }
 
-var intervalID = setInterval(battle, 200);  
+var intervalID = setInterval(battle, 1000);  
 
     
     

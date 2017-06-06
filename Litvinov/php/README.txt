@@ -68,6 +68,12 @@ http://localhost/homework01/
 запускаетс€ перва€ домашн€€ работа 
 
 
+// подключение MYSQL
+хороша€ стать€ по общей настройке 
+https://hackware.ru/?p=21
+
+
+
 
 C:\www>php hello_world.php
 Hello world

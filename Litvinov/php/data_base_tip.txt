@@ -47,3 +47,7 @@ mysqli_free_result($result);
 хорошая статья
 Базы данных и phpMyAdmin в Denwer
 http://www.sdelaysite.com/kniga/tools/bazi-dannih-denwer
+
+добавление данных
+INSERT INTO practika (text, data_creation, template_html)
+VALUES               ('задача 1', '17-05', 'template.html')

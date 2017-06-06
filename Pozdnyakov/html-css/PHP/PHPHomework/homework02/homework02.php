@@ -69,13 +69,14 @@ echo '<pre><h3>
 иначе если (год не делится на 400) тогда (год обычный)
 иначе (год високосный)*/
 
-$year = 2017;
+$year = 2000;
 $yaer_str = '';
 
-($year%4 != 0) ?  $yaer_str = "$year не високосный год" :
-    (($year%100 != 0) ? $yaer_str = "$year високосный год" :
-        (($year%400 != 0) ? $yaer_str = "$year не високосный год" : 
-            $yaer_str = "$year високосный год"));
+$yaer_str = 
+($year%4 != 0) ?  "$year не високосный год" :
+    (($year%100 != 0) ? "$year високосный год" :
+        (($year%400 != 0) ? "$year не високосный год" : 
+            "$year високосный год"));
 
 echo $yaer_str;
 
@@ -105,7 +106,7 @@ echo '<pre><h3>
 
 //Способ решения не укзан, так что..
 
-echo '<pre>
+/*echo '<pre>
         *
        ***
       *****
@@ -113,8 +114,33 @@ echo '<pre>
       *****
        ***
         *
-    </pre>';
+    </pre>';*/ // =(
 
+
+$height = 5;
+
+$str_space = '_';
+
+for ($j = 0; $j < $height ; $j++){
+    $str_space .= '_';
+};
+
+for ($l = 0; $l < $height*2; $l++) {
+   if ($l < $height) {
+        $a = $height + $l;
+        $b = $height - $l;
+        $str_space[$a] = '*';
+        $str_space[$b] = '*';
+        echo "$str_space<br>";
+   }
+     else if ($l > $height) {
+        $a = $l - $height;
+        $b = $height - $l; 
+        $str_space[$a] = '_';
+        $str_space[$b] = '_';
+        echo "$str_space<br>";            
+    }
+}
 
 echo '<pre><h3>     
 Задание 6:
@@ -163,6 +189,7 @@ $arr2 = [
 массивами!*/
    
 //Удалось приспособить метод пузырька:
+//мультисорт
 
 $n = count($arr2);
 
