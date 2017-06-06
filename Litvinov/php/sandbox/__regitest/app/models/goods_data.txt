@@ -1,0 +1,1 @@
+[{"id":1,"title":"Балалайка","description":"Купи балалайку!","preview":"doog.jpg"},{"id":2,"title":"Матрешка","description":"Купи матрешку!","preview":"doog.jpg"},{"id":3,"title":"Водка","description":"Купи водку!","preview":"doog.jpg"}]

@@ -1,0 +1,23 @@
+<!--
+Подготовить форму (например форму регистрации).
+Помимо полей ввода, у формы должен быть чекбокс или радиокнопка.
+Данные, вносимые пользователем валидируются с помощью JavaSctipt
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Форма регистрации </title>
+</head>
+<body>
+    <form action="handler.php">
+        <p>Фамилия  <input name="family"></p>
+        <p>Имя      <input name="name"></p>
+        <p>e-mail   <input name="e_mail" placeholder="mail@yandex.com"></p>
+        <p> <input type="hidden" name="save" value="off">
+        <p> <input type="checkbox" запомнить подключение name="save"/> запомнить подключение </p>
+        <input type="submit">
+    </form>
+</body>
+</html>
