@@ -65,12 +65,14 @@ $data = [
     ];
 */
 // var_dump($_REQUEST);
-if($_REQUEST['user'] !== "") {
+if( isset($_REQUEST['user']) && ($_REQUEST['user'] !== "") ) {
     $data = [
         ['user'=>$_REQUEST['user'], 'pass'=>$_REQUEST['pass']]
          ];
     // var_dump($data);
     add_to_file($data);
+    read_file();
+} else{
     read_file();
 }
 
