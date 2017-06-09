@@ -1,0 +1,37 @@
+file -> c:\Apache24\conf\httpd.conf
+
+
+# в конце файла my setup
+LoadModule rewrite_module modules/mod_rewrite.so
+LoadModule php7_module "C:/php/php7apache2_4.dll"
+PHPIniDir "C:/php"
+ServerName localhost:8080
+
+.htaccess 
+RewriteEngine On 
+
+# закрываем дирректории для доступа 
+RewriteCond %{REQUEST_FILENAME} !-d
+# закрываем файлы для доступа из строки запроса
+RewriteCond %{REQUEST_FILENAME} !-f
+# закрываем symbolic_link
+RewriteCond %{REQUEST_FILENAME} !-l
+
+# L - path name
+RewriteRule ^(.*)$ index.php?url=$1 [QSA, L]
+
+другой вариант
+.htaccess
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /clean_urls/
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  RewriteRule ^(.*)$ index.php?$1
+
+</IfModule>
+	
+
