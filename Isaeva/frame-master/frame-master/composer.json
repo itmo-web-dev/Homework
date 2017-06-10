@@ -1,0 +1,23 @@
+{
+    "name": "sky/frame",
+    "description": "little frame",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sky",
+            "email": "frgyvu@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sky\\Frame\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/http-kernel": "^3.3",
+        "symfony/http-foundation": "^3.3",
+        "symfony/routing": "^3.3"
+    }
+}
