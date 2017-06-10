@@ -1,0 +1,93 @@
+<!--
+Подготовить форму (например форму регистрации).
+Помимо полей ввода, у формы должен быть чекбокс или радиокнопка.
+Данные, вносимые пользователем валидируются с помощью JavaSctipt
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Форма регистрации </title>
+    <script type="text/javascript">
+
+    function fild_is_not_filled(fild_out, is_correct){
+        var str = ""
+        if(!is_correct) {
+            str = "*данное поле обязательно для заполнения";
+            }
+        document.getElementById(fild_out).innerHTML = str;
+        }
+
+    function validate(){
+        var family = document.forms["form"]["family"].value;
+        var name = document.forms["form"]["name"].value;
+        var email = document.forms["form"]["email"].value;
+        var pass = document.forms["form"]["pass"].value;
+        var pass_check = document.forms["form"]["pass_check"].value;
+
+        if (family.length==0){
+            'length';
+            fild_is_not_filled("familyf", false);
+            return false;
+        } else {
+            fild_is_not_filled("familyf", true);
+            }
+
+        if (name.length==0){
+            fild_is_not_filled("namef", false);
+            return false;
+            }else {
+            fild_is_not_filled("namef", true);
+                 }
+        if (email.length==0){
+            fild_is_not_filled("emailf", false);
+            return false;
+        }else {
+            fild_is_not_filled("emailf", true);
+        }
+
+        if (pass.length==0){
+            fild_is_not_filled("passf", false);
+            return false;
+        }else {
+            fild_is_not_filled("passf", true);
+        }
+
+        if (pass_check.length==0){
+            fild_is_not_filled("pass_checkf", false);
+            return false;
+        }else {
+            fild_is_not_filled("pass_checkf", true);
+        }
+
+        //Проверим содержит ли значение введенное в поле email символы @ и .
+        var at = email.indexOf("@");
+        var dot = email.indexOf(".");
+        //Если поле не содержит эти символы знач email введен не верно
+        if (at < 1 || dot < 1){
+            document.getElementById("emailf").innerHTML="*email введен не верно";
+            return false;
+            }
+
+        if (pass !== pass_check){
+            document.getElementById("pass_checkf").innerHTML="*повторный пороли не совпадают";
+            return false;
+            }
+    }
+    </script>
+
+</head>
+<body>
+    <form name="form" action="form.php" onsubmit="return validate()" method="post">
+        <p>Фамилия     <input type="text" name="family">  </p><span style='color:red' id='familyf'></span><br />
+        <p>Имя         <input type="text" name="name">  </p><span style='color:red' id='namef'></span><br />
+        <p>e-mail      <input type="text" name="email" placeholder="mail@yandex.com"></p><span style='color:red' id='emailf'></span><br />
+        <p>Пароль      <input type="password" name="pass"></p> <span style='color:red' id='passf'></span><br />
+        <p>Повторный   <input type="password" name="pass_check"></p> <span style='color:red' id='pass_checkf'></span><br />
+        <p> <input type="hidden" name="save" value="off">
+        <p> <input type="checkbox" запомнить подключение name="save"/> запомнить подключение </p>
+        <input type="submit" value="Отправить форму">
+    </form>
+</body>
+</html>

@@ -5,73 +5,52 @@
  * Date: 16.05.2017
  * Time: 2:19
  */
+/**
+#TODO: добавить удоление полей из админской вкладки
+#TODO:
+ prg01: сохранять время и задачи
+ prg02: кнопки начала работы над задачей, окончания, паузы, общее время
+*/
+//echo PHP_VERSION;echo "<br/>";
+//echo PHP_VERSION_ID;
+/// var_dump(PHP_VERSION_ID);
 
-$db_handle = mysqli_connect('localhost', 'root', 'toor');
-mysqli_select_db($db_handle, "todo");
-
-// обработка POST
-if (isset($_POST['task']))
-{
-    $task = trim($_POST['task']);
-    if($task != ''){
-        $task = mysqli_real_escape_string($db_handle, $task);
-        # только текст 2 остальных столбца автоматически
-        $sql = "INSERT INTO tasks (text) VALUES ('$task')";
-        mysqli_query($db_handle, $sql);
-        #echo $sql;
-        # exit;
-    }
-    # чтобы не было вопроса на повторение запроса -> всегда стоит сделать redirect
-    header('Location: index.php');
-    exit();
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors', 1);
+ini_set("log_errors", 1);
+ini_set("log_errors_max_len", 0);
+ini_set("error_log", 'php_errors.log');
+echo '<h1> Triggering notice </h1>';
+if(isset($error)) {
+    var_dump($error);
 }
-else if(isset($_POST['id_task']))
-{
-    $id_task = $_POST['id_task'];
-    $id_task = mysqli_real_escape_string($db_handle, $id_task);
-    $sql = "UPDATE tasks SET status='1' WHERE id_task='$id_task'";
-    mysqli_query($db_handle, $sql);
+# ini_set('memory_limit', '1K');
+# var_dump((object) range(0, 1000));
 
-    header('Location: index.php');
-    exit();
-}
+
+
+
+# ini_set('display_errors', 0); # подавляет сообщения об ошибках
+
+include_once("Database.php");
+include_once("ModelTodo.php");
+include_once("config.inc.php");
+include_once("Log.php");
+include_once("Controller.php");
+
+
+$db = new Database($cfg['host'],
+                   $cfg['username'],
+                   $cfg['pass'],
+                   "todo" );
+
+# ??? Куда безопасно писать логи (т.к. все файлы кроме php браузер
+# ??? откроет и покажет)
+# $log = new FsLog('log.txt');
+$log = new DbLog($db);
+
+$controller = new Controller($db, $log);
+$controller->request();
+
 ?>
-
-<!DOCTYPE>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title> Работа с БД </title>
-    <link rel="stylesheet" href="styles.css" media="screen" />
-</head>
-<body>
-    <h1>TODO</h1>
-    <hr/>
-
-    <form method="post">
-        <input type="text" name="task" placeholder="что сделать" />
-        <input type="submit" value="Добавить задачу"/>
-    </form>
-    </hr>
-    <?php
-        $result = mysqli_query($db_handle, 'SELECT * FROM tasks ORDER by  status');
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-            if($row['status'] == 0)
-            {
-                echo '<form method="post">';
-                echo $row['text'];
-                echo ' ';
-                echo '<input type="submit" value="Выполнено!" />';
-                echo '<input type="hidden" value="' . $row['id_task'] . '" name="id_task" />';
-                echo '</form>';
-            }
-            else{
-                echo '<s>' . $row['text'] . '</s>';
-                echo '<br/><br/>';
-            }
-        }
-
-     ?>
-</body>
-</html>
 
