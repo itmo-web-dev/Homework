@@ -1,0 +1,13 @@
+[
+  {
+    "name": "show_all_goods",
+    "path": "/",
+    "controller": "\\Course\\Shop\\Controllers\\GoodsController::indexAction"
+  },
+
+  {
+    "name": "good_description",
+    "path": "/description/{id}",
+    "controller": "\\Course\\Shop\\Controllers\\GoodsController::descriptionAction"
+  }
+]
