@@ -1,0 +1,63 @@
+body {
+      font-family: 'Roboto', sans-serif;
+}
+
+header {
+/*    background-color: lightcyan;*/
+        margin: 1em 0.5em;
+/*        background-color: cadetblue;*/
+}
+
+header a {
+    color: white;
+/*    border: 1px solid lightblue;*/
+}
+
+header a:hover {
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+header a:visited {
+    color: white;
+}
+
+header a:active {
+    color: white;
+}
+
+.good {
+    border: 1px solid black;
+    border-radius: 30px;
+    color: #8e44ad;
+    margin: 2em;
+    width: 15em;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50em;
+}
+
+.header__greeting {
+    margin-bottom: 2em;
+}
+
+.header__greeting__logo__img {
+    height: 15em;
+}
+
+.header__greeting__text {
+    padding-top: 4em;
+    border-bottom: 1px solid white;
+}
+
+header {
+    background-image: url("../assets/masthead.jpg");
+    color: white;
+}
+
+.header__greeting__logo {
+}
