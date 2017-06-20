@@ -1,0 +1,19 @@
+{
+    "name": "alriore/mm",
+    "description": "lessons",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Litvinov Mikhail",
+            "email": "sid-4d@inbox.ru"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "liw\\": ""
+        }
+    }
+}

@@ -8,7 +8,8 @@
 error_reporting(E_ALL);
 ini_set('display_error', 1);
 
-function __autoload($className){
+/*
+function myAutoload($className){
     $class_pieces = explode('\\', $className);
     var_dump($class_pieces); echo"<br/>";
 
@@ -18,16 +19,19 @@ function __autoload($className){
    echo "Loaded classes/$className.php<br>";
 }
 
-/*
-# îäèí ôóíêöèÿ äëÿ àâòîçàãðóç÷èêà âòîðîé ïàðàìåòð
-# param2 - âûáðàñûâàòü ëè exception
-# param3 - â íâ÷àëî ëè èëè â êîíöå true
+
+# Ð¾Ð´Ð¸Ð½ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ð°Ð²Ñ‚Ð¾Ð·Ð°Ð³Ñ€ÑƒÐ·Ñ‡Ð¸ÐºÐ° Ð²Ñ‚Ð¾Ñ€Ð¾Ð¹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€
+# param2 - Ð²Ñ‹Ð±Ñ€Ð°ÑÑ‹Ð²Ð°Ñ‚ÑŒ Ð»Ð¸ exception
+# param3 - Ð² Ð½Ð²Ñ‡Ð°Ð»Ð¾ Ð»Ð¸ Ð¸Ð»Ð¸ Ð² ÐºÐ¾Ð½Ñ†Ðµ true
 spl_autoload_register('myAutoload', true, true);
 */
 
-# ïðîïèñûâàþ èìÿ êëàññà
-use app\App;
-use app\B;
+# Ð¿Ð¾Ð´Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð°Ð²Ñ‚Ð¾Ð·Ð°Ð³Ñ€ÑƒÐ·Ñ‡Ð¸Ðº Ð¸Ð· ÑÑ†ÐµÐ½Ð°Ñ€Ð¸Ñ
+require __DIR__.'/../vendor/autoload.php';
+
+# Ð¿Ñ€Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽ Ð¸Ð¼Ñ ÐºÐ»Ð°ÑÑÐ°
+use liw\app\App;
+use liw\app\B;
 
 
 # require_once __DIR__ . "/../app/App.php";
@@ -39,3 +43,4 @@ $app = new App();
 $app->run();
 $b = new B();
 
+// autoload.loc

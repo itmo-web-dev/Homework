@@ -5,7 +5,7 @@
  * Date: 10.06.2017
  * Time: 13:42
  */
-namespace app;
+namespace liw\app;
 
 
 class App{
