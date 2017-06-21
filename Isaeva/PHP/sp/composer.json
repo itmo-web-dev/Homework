@@ -1,0 +1,32 @@
+{
+   
+	 "name": "evgenia/3005",
+    "description": "projject",
+    "type": "project",
+    "authors": [
+        {
+            "name": "evgenia",
+            "email": "evgisaeva@yandex.ru"
+        }
+    ],
+
+	"autoload": {
+		"psr-4": {
+			"Course\\Shop\\": "app/"
+		}
+	},
+	
+    "minimum-stability": "dev",
+	"repositories":[
+		{
+			"type": "git",
+			"url": "https://github.com/ForCourses/frame"
+	
+		}
+		
+	],
+	
+    "require": {
+		"sky/frame": "dev-master"
+    }
+}

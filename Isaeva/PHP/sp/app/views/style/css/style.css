@@ -1,0 +1,124 @@
+html .img-slider {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.padding-less {
+    padding: 0;
+}
+
+.first-row {
+    padding-top: 40px;
+}
+
+.img {
+    width: 100%;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.goods-row {
+    padding-top: 50px;
+    background-color: #D3D3D3;
+}
+
+.mod-title {
+    padding: 15px 30px;
+}
+
+.mod-form {
+    padding: 40px 50px;
+}
+
+.btn-gray {
+    background-color: #D3D3D3;
+}
+
+.form-margin {
+    margin-top: 15px;
+}
+
+.btn-form-margin {
+    margin-top: 25px;
+}
+
+.catalog-row {
+    margin-top: 50px;
+}
+
+.item-count {
+    color: #c7254e;
+}
+
+/* coments */
+.media-body .author {
+    display: inline-block;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700;
+}
+.media-body .metadata {
+    display: inline-block;
+    margin-left: .5rem;
+    color: #777;
+    font-size: .8125rem;
+}
+.footer-comment {
+    color: #777;
+}
+.vote.plus:hover {
+    color: green;
+}
+.vote.minus:hover {
+    color: red;
+}
+.vote {
+    cursor: pointer;
+}
+.comment-reply a {
+    color: #777;
+}
+.comment-reply a:hover, .comment-reply a:focus {
+    color: #000;
+    text-decoration: none;
+}
+.devide {
+    padding: 0px 4px;
+    font-size: 0.9em;
+}
+.media-text {
+    margin-bottom: 0.25rem;
+}
+.title-comments {
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    color: rgba(0,0,0,.87);
+    margin-bottom: 1rem;
+    padding-bottom: .25rem;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+}
+
+.avatar{
+    height: 50px;
+    width: 50px;
+}
+
+.comment-form {
+    resize: none;
+}
+/* end of comments */
+
+.btn-add-good {
+    margin: 0;
+}
+.thumbnail > .goods{
+    height: 200px;
+}
