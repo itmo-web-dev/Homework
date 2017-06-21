@@ -1,3 +1,47 @@
+{
+    "db":{
+        "server" : "localhost",
+        "db_name" : "mydb",
+        "username" : "root",
+        "pass" : ""
+    },
+
+    "dirs":{
+        "templates":"app/views/"
+    },
+
+    "urls":{
+        "show_all_goods":{
+            "path" : "/",
+            "controller" : "\\Course\\Shop\\controllers\\GoodsController::indexAction"
+        },
+        "show_good":{
+            "path": "description/{id}",
+            "controller":"\\Course\\Shop\\controllers\\GoodsController::descriptionAction"
+        },
+        "add_good":{
+            "path": "good/add",
+            "controller":"\\Course\\Shop\\controllers\\GoodsController::addGoodAction"
+        },
+        "user_registration":{
+            "path": "account/registration",
+            "controller":"\\Course\\Shop\\controllers\\AccountController::registrationAction"
+        },
+        "user_login":{
+            "path": "account/login",
+            "controller":"\\Course\\Shop\\controllers\\AccountController::loginAction"
+        },
+        "account":{
+            "path": "account/",
+            "controller":"\\Course\\Shop\\controllers\\AccountController::accountAction"
+        },
+        "logout_account":{
+            "path": "account/logout",
+            "controller":"\\Course\\Shop\\controllers\\AccountController::logoutAction"
+        }
+    }
+}
+
 [
     {
         "name" : "show_all_goods",

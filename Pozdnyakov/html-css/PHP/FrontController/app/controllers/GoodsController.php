@@ -18,17 +18,23 @@ class GoodsController extends Controller {
 //        echo "fbvfdg";
 //        $v = $this->goods_model->getAllGoods();
 //        var_dump($v);
-         return $this->generateResponse('all_goods_view.php',            'template.php', [
+        //Без Твиг
+/*         return $this->generateResponse('all_goods_view.php',            'template.php', [
 			'goods_data' => $this->goods_model->getAllGoods(),
             'auth' => false,
-		]);
+		]);*/
+        //С твигом
+        return $this->generateResponse('all_goods_view.twig',[
+            'goods_data' => $this->goods_model->getAllGoods(),
+            'auth' => false,
+        ]);
     }
     
     public function descriptionAction($id) {
 //            $comments = getAllComments();
         	$good = $this->goods_model->getGoodById(isset($id) ? $id : '');
 
-        return $this->generateResponse('good_info_view.php', 'template.php', [
+        return $this->generateResponse('good_info_view.twig', [
             'app_title' => $good['title'],
             'current_good' => $good,
             'auth' => false//is_session(),

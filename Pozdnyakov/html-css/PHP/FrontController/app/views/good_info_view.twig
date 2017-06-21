@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div>
+    {#<h1><?php echo $current_good['title'];  ?></h1>#}
+    <h1>{{ current_good.title }}</h1>
+    {#<p><?php echo $current_good['description']; ?></p>#}
+    <p>{{ current_good.description }}</p>
+</div>
+
+{#<?php if ($auth): ?>#}
+{% if auth %}
+<form id="comment_form">
+    <textarea id="comment" title="Комментарий"></textarea>
+    <button type="submit">Оставить комментарий</button>
+</form>
+{#<?php else: ?>#}
+    {% else %}
+<p>Вы не можете оставлять комментарии</p>
+{#<?php endif; ?> #}
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<section class="all_goods col-md-offset-3 col-xs-offset-2">
+
+    <h1>Товары</h1>
+    <!--    <div class="row">-->
+    {#<?php foreach ($goods_data as $key => $value):?>#}
+    {% for key in goods_data %}
+    <div class="good col-md-6  col-xs-4">
+        <h2>
+            {#<?php echo $goods_data[$key]['title']; ?>#}
+            {{ key.title }}
+        </h2>
+        <p>
+            {#<?php echo $goods_data[$key]['description']; ?>#}
+            {{ key.description }}
+        </p>
+        <a href="/description/<?php echo''.$goods_data[$key]['id'];?>">Подробнее</a>
+    </div>
+    {#<?php endforeach;?>#}
+    {% endfor %}
+    <!--    </div>-->
+</section>
+
+{% endblock %}

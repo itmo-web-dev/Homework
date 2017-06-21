@@ -31,10 +31,10 @@ $router->run();*/
 
 require_once __DIR__ . '/vendor/autoload.php';
 session_start();
-$urls = file_get_contents('urls.json'); //файл json
+$config = file_get_contents('config.json'); //файл json
 //$urls = file_get_contents('C:\OpenServer\domains\FrontController\urls.json'); //файл json
 
-$app = new \Sky\Frame\App($urls);
+$app = new \Sky\Frame\App($config);
 
 //var_dump($app);
 
