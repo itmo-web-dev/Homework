@@ -1,8 +1,9 @@
 <?php
-
+/*require_once __DIR__ . '/app/core/Router.php';
 require_once __DIR__ . '/app/models/goods_model.php';
 require_once __DIR__ . '/app/models/auth_model.php';
 require_once __DIR__ . '/app/controllers/controllers.php';
+require_once __DIR__ . '/app/controllers/IndexController.php';
 
 
 
@@ -24,5 +25,19 @@ function runController() {
 
 }
 session_start();
-runController();
+$router = Router::getinstance();
+var_dump($router);
+$router->run();*/
+
+require_once __DIR__ . '/vendor/autoload.php';
+session_start();
+$urls = file_get_contents('urls.json'); //файл json
+//$urls = file_get_contents('C:\OpenServer\domains\FrontController\urls.json'); //файл json
+
+$app = new \Sky\Frame\App($urls);
+
+//var_dump($app);
+
+$app->run();
+//runController();
 
