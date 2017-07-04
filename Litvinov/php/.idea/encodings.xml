@@ -12,6 +12,12 @@
     <file url="file://$PROJECT_DIR$/lection07_0605/README.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/localhost/phpMyAdmin/config.inc.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sandbox/autoload_ex/web/index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sandbox/landing_page/config/app.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sandbox/landing_page/database/migrations/2017_06_21_065445_create_table_pages.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sandbox/landing_page/database/migrations/2017_06_21_065835_create_table_services.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sandbox/landing_page/database/migrations/2017_06_21_065836_create_table_portfolios.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sandbox/landing_page/database/migrations/2017_06_21_065837_create_table_peoples.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sandbox/landing_page/resources/views/layouts/site.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sandbox/todo/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sandbox/twig/index.php" charset="UTF-8" />
   </component>
