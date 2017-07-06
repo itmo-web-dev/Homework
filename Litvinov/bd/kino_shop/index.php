@@ -25,52 +25,118 @@ if(isset($error)) {
     var_dump($error);
 }
 
-
-# ini_set('memory_limit', '1K');
-# var_dump((object) range(0, 1000));
-
-
-/*
-
-# ini_set('display_errors', 0); # подавляет сообщения об ошибках
-*/
-/*
-include_once("Database.php");
-include_once("ModelTodo.php");
-include_once("config.inc.php");
-include_once("Log.php");
-include_once("Controller.php");
-
-
-$db = new Database($cfg['host'],
-                   $cfg['username'],
-                   $cfg['pass'],
-                   "todo" );
-
-# ??? Куда безопасно писать логи (т.к. все файлы кроме php браузер
-# ??? откроет и покажет)
-# $log = new FsLog('log.txt');
-$log = new DbLog($db);
-
-$controller = new Controller($db, $log);
-$controller->request();
-*/
-
+require_once('create_tables.php');
+require_once('queries.php');
+require_once('insert_data.php');
 
 $server = 'localhost';
 $username = "sid_db_12345";
 $password = "password";
 $dbname = "kinoshop";
 
-include_once("connect.php");
-include_once("init_tables.php");
+print_r( PDO::getAvailableDrivers() );
+echo "<br/>";
+echo "<br/>";
 
-$link = connect_db($server, $username, $password, $dbname);
+
+
+$reset = false;
+$pdo = NULL;
+
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=kinoshop', 'sid_db_12345', 'password');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    if ($reset) {
+        $pdo->exec(SQL_DROP_TABLES);
+    }
+    create_tables($pdo);
+}
+catch (PDOException $e){
+     exit($e->getMessage());
+}
+
+
+try{
+    insert_data_carrire_table($pdo);
+    //$pdo->exec(SQL_DELETE_ROW_CARRIRE_TABLE);
+}catch(PDOException $e){
+    echo $e->getMessage();
+}
+finally{
+    print_all_row_carrier_table($pdo);
+}
+
+
+
+
+
+
+
+
+/*
+try{
+    $pdo->beginTransaction();
+
+    $stmt = $pdo->prepare(SQL_INSERT_PERSON);
+    $stmt->execute([
+                    ":firstname"=>"Kirill",
+                    ":lastname"=> "Versetti",
+                    ":patro" => 'Alex'
+    ]);
+    // получить его идентификационный номер
+    $id = $pdo->lastInsertId(); // индентификатор последней вставленной записи
+    $stmt = $pdo->prepare(SQL_INSERT_ACCOUNT);
+    $stmt-> execute([
+        ':au_person_id'=>$id,
+        ':username'=>'kuzima-spb',
+        ':password' => '123456789'
+        ]);
+    $pdo->commit();
+}catch(PDOException $e){
+    echo $e->getMessage();
+    $pdo->rollBack();
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// include_once("connect.php");
+// include_once("init_tables.php");
+
+//$link = connect_db($server, $username, $password, $dbname);
 // create_film_table($link);
-source_film_sql($link);
-
-
-mysqli_close($link);
+//source_film_sql($link);
+//mysqli_close($link);
 
 ?>
 
