@@ -1,0 +1,413 @@
+[05-Jul-2017 22:22:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:62
+Stack trace:
+#0 {main}
+  thrown in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 62
+[05-Jul-2017 22:25:24 UTC] PHP Warning:  mysqli_select_db() expects exactly 2 parameters, 1 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 63
+[05-Jul-2017 22:25:24 UTC] PHP Stack trace:
+[05-Jul-2017 22:25:24 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:25:24 UTC] PHP   2. mysqli_select_db() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:63
+[05-Jul-2017 22:31:14 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 80
+[05-Jul-2017 22:31:14 UTC] PHP Stack trace:
+[05-Jul-2017 22:31:14 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:31:14 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:80
+[05-Jul-2017 22:31:14 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 87
+[05-Jul-2017 22:31:14 UTC] PHP Stack trace:
+[05-Jul-2017 22:31:14 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:31:14 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:87
+[05-Jul-2017 22:31:14 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 94
+[05-Jul-2017 22:31:14 UTC] PHP Stack trace:
+[05-Jul-2017 22:31:14 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:31:14 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:94
+[05-Jul-2017 22:31:14 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 97
+[05-Jul-2017 22:31:14 UTC] PHP Stack trace:
+[05-Jul-2017 22:31:14 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:31:14 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:97
+[05-Jul-2017 22:41:12 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 82
+[05-Jul-2017 22:41:12 UTC] PHP Stack trace:
+[05-Jul-2017 22:41:12 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:41:12 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:82
+[05-Jul-2017 22:41:12 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 89
+[05-Jul-2017 22:41:12 UTC] PHP Stack trace:
+[05-Jul-2017 22:41:12 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:41:12 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:89
+[05-Jul-2017 22:41:12 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 96
+[05-Jul-2017 22:41:12 UTC] PHP Stack trace:
+[05-Jul-2017 22:41:12 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:41:12 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:96
+[05-Jul-2017 22:41:12 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 99
+[05-Jul-2017 22:41:12 UTC] PHP Stack trace:
+[05-Jul-2017 22:41:12 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:41:12 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:99
+[05-Jul-2017 22:43:15 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:15 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:15 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:15 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:15 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:15 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:15 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:15 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:15 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:15 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:15 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:15 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:15 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:15 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:15 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:15 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[05-Jul-2017 22:43:16 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:16 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:16 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:16 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:16 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:16 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:16 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:16 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:16 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:16 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:16 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:16 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:16 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:16 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:16 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:16 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:18 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:18 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:18 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:18 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:19 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:19 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:19 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:19 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[05-Jul-2017 22:43:20 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:20 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:20 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:20 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:20 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:20 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:20 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:20 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:20 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:20 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:20 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:20 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:20 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:20 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:20 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:20 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[05-Jul-2017 22:43:20 UTC] PHP Warning:  mysqli_stmt_bind_param() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 84
+[05-Jul-2017 22:43:20 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:20 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:20 UTC] PHP   2. mysqli_stmt_bind_param() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:84
+[05-Jul-2017 22:43:20 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 91
+[05-Jul-2017 22:43:20 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:20 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:20 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:91
+[05-Jul-2017 22:43:20 UTC] PHP Warning:  mysqli_stmt_execute() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 98
+[05-Jul-2017 22:43:20 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:20 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:20 UTC] PHP   2. mysqli_stmt_execute() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:98
+[05-Jul-2017 22:43:20 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, boolean given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php on line 101
+[05-Jul-2017 22:43:20 UTC] PHP Stack trace:
+[05-Jul-2017 22:43:20 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[05-Jul-2017 22:43:20 UTC] PHP   2. mysqli_stmt_close() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:101
+[06-Jul-2017 01:13:53 UTC] PHP Warning:  file(d:/!!!itmo/home_task/Litvinov/bd/kino_shop/sql/kinoshop_table_data_model.sql): failed to open stream: No such file or directory in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 43
+[06-Jul-2017 01:13:53 UTC] PHP Stack trace:
+[06-Jul-2017 01:13:53 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:13:53 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:13:53 UTC] PHP   3. file() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:43
+[06-Jul-2017 01:13:53 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 44
+[06-Jul-2017 01:13:53 UTC] PHP Stack trace:
+[06-Jul-2017 01:13:53 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:13:53 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:15:48 UTC] PHP Warning:  file(d:/!!!itmo/home_task/Litvinov/bd/kino_shop/sql/kinoshop_table_data_model.sql): failed to open stream: No such file or directory in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 44
+[06-Jul-2017 01:15:48 UTC] PHP Stack trace:
+[06-Jul-2017 01:15:48 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:15:48 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:15:48 UTC] PHP   3. file() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:44
+[06-Jul-2017 01:15:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 45
+[06-Jul-2017 01:15:48 UTC] PHP Stack trace:
+[06-Jul-2017 01:15:48 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:15:48 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:17:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_error() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:53
+Stack trace:
+#0 D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php(70): source_film_sql(Object(mysqli))
+#1 {main}
+  thrown in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 53
+[06-Jul-2017 01:18:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_error() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+Stack trace:
+#0 D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php(70): source_film_sql(Object(mysqli))
+#1 {main}
+  thrown in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:18:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_error() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+Stack trace:
+#0 D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php(70): source_film_sql(Object(mysqli))
+#1 {main}
+  thrown in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:18:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_error() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+Stack trace:
+#0 D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php(70): source_film_sql(Object(mysqli))
+#1 {main}
+  thrown in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_error() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+Stack trace:
+#0 D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php(70): source_film_sql(Object(mysqli))
+#1 {main}
+  thrown in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_error() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+Stack trace:
+#0 D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php(70): source_film_sql(Object(mysqli))
+#1 {main}
+  thrown in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_error() in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+Stack trace:
+#0 D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php(70): source_film_sql(Object(mysqli))
+#1 {main}
+  thrown in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:56 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:56 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:56 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:56 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:56 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:56 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:56 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:56 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:56 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:56 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
+[06-Jul-2017 01:19:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php on line 55
+[06-Jul-2017 01:19:57 UTC] PHP Stack trace:
+[06-Jul-2017 01:19:57 UTC] PHP   1. {main}() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:0
+[06-Jul-2017 01:19:57 UTC] PHP   2. source_film_sql() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\index.php:70
+[06-Jul-2017 01:19:57 UTC] PHP   3. mysqli_error() D:\!!!itmo\home_task\Litvinov\bd\kino_shop\init_tables.php:55
