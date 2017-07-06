@@ -1,0 +1,41 @@
+mysqli_query($link, "CREATE TABLE myCity LIKE City");
+
+/* подготавливаем запрос на вставку строк */
+$query = "INSERT INTO myCity (Name, CountryCode, District) VALUES (?,?,?)";
+$stmt = mysqli_prepare($link, $query);
+if($stmt === FALSE){
+    die(mysqli_error($link));
+}
+
+
+mysqli_stmt_bind_param($stmt, "sss", $val1, $val2, $val3);
+
+$val1 = 'Stuttgart';
+$val2 = 'DEU';
+$val3 = 'Baden-Wuerttemberg';
+
+/* выполняем запрос */
+mysqli_stmt_execute($stmt);
+
+$val1 = 'Bordeaux';
+$val2 = 'FRA';
+$val3 = 'Aquitaine';
+
+/* выполняем запрос */
+mysqli_stmt_execute($stmt);
+
+/* закрываем запрос */
+mysqli_stmt_close($stmt);
+
+/* получаем все строки из таблицы myCity */
+$query = "SELECT Name, CountryCode, District FROM myCity";
+if ($result = mysqli_query($link, $query)) {
+    while ($row = mysqli_fetch_row($result)) {
+        printf("%s (%s,%s)\n", $row[0], $row[1], $row[2]);
+    }
+    /* очищаем результирующий набор */
+    mysqli_free_result($result);
+}
+
+/* удаляем таблицу */
+mysqli_query($link, "DROP TABLE myCity");

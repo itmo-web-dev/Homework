@@ -1,0 +1,38 @@
+https://laravel.com/docs/5.4
+
+$HOME/.composer/vendor/bin
+d:\!!!itmo\
+
+команда установщика
+composer global require "laravel/installer"
+
+c:\Users\s_i_d\AppData\Roaming\Composer\vendor\bin\laravel.bat
+
+команда создани€ присета
+ c:\Users\s_i_d\AppData\Roaming\Composer\vendor\bin\laravel.bat new landing_page
+
+https://laravelcollective.com/docs/5.4/html#installation
+//----- прописать в компоузере 5.4 версию
+
+создание базы данных 
+php artisan make:migration create_table_pages --create=pages
+
+php artisan make:migration create_table_services --create=services
+
+php artisan make:migration create_table_portfolios --create=portfolios
+
+php artisan make:migration create_table_peoples --create=peoples
+
+переходим в папочку: ..\database\migrations\
+
+описываю пол€ в миграции
+включаю нужные разширени€ 
+However, if you are not using Homestead, you will need to make sure your server meets the following requirements:
+PHP >= 5.6.4
+OpenSSL PHP Extension
+PDO PHP Extension
+Mbstring PHP Extension
+Tokenizer PHP Extension
+XML PHP Extension
+
+выполн€ю: php artisan migrate
